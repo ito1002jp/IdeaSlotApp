@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     // インスタンス配列
     var controllerArray : [UIViewController] = []
     var pageMenu : CAPSPageMenu?
-    var Test : String!
-    
     
     // サイト情報
     let siteInfo:[Dictionary<String,String>] = [
