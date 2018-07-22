@@ -21,7 +21,12 @@ class ViewController: UIViewController {
         ["title":"教えて！goo","url":"http://oshiete.goo.ne.jp/"],
         ["title":"OKWAVE","url":"http://okwave.jp/"],
         ["title":"発言小町","url":"http://komachi.yomiuri.co.jp/"],
-        ["title":"BIGLOBEなんでも相談室","url":"http://soudan.biglobe.ne.jp/sp/"]
+        ["title":"BIGLOBEなんでも相談室","url":"http://soudan.biglobe.ne.jp/sp/"],
+        ["title":"ヤフー！知恵袋 2","url":"http://chiebukuro.yahoo.co.jp/"],
+        ["title":"教えて！goo 2","url":"http://oshiete.goo.ne.jp/"],
+        ["title":"OKWAVE 2","url":"http://okwave.jp/"],
+        ["title":"発言小町 2","url":"http://komachi.yomiuri.co.jp/"],
+        ["title":"BIGLOBEなんでも相談室 2","url":"http://soudan.biglobe.ne.jp/sp/"]
     ]
     
     override func viewDidLoad() {
