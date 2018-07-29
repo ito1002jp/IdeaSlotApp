@@ -10,15 +10,21 @@
 		04E40C38C434E8DFF5A28DA8 /* Pods_IdeaSlotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868B7B11A58E048B54C0A026 /* Pods_IdeaSlotApp.framework */; };
 		1E7E95115086547ACA0F3279 /* Pods_IdeaSlotAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D18BEBFEA3ACB0DA537F216 /* Pods_IdeaSlotAppTests.framework */; };
 		42B41A28E8AC41FF8364AF9D /* Pods_IdeaSlotAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8061A756E9784DA8B6D3A6F /* Pods_IdeaSlotAppUITests.framework */; };
+		CE2697E6210DB23200F59F2B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2697E5210DB23200F59F2B /* CoreData.framework */; };
+		CE2697E8210DB23700F59F2B /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2697E7210DB23700F59F2B /* MagicalRecord.framework */; };
+		CE2697EC210DB46F00F59F2B /* IdeaSlotApp-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EB210DB46F00F59F2B /* IdeaSlotApp-Bridging-Header.m */; };
+		CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */; };
+		CE2697F0210DBCA300F59F2B /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* ToDoItemViewController.swift */; };
+		CE2697F3210DBFC100F59F2B /* IdeaSlotApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE2697F1210DBFC100F59F2B /* IdeaSlotApp.xcdatamodeld */; };
+		CE2697FB210DC53900F59F2B /* ToDo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697FA210DC53900F59F2B /* ToDo+CoreDataProperties.swift */; };
+		CE26981F210DC69B00F59F2B /* ToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26981E210DC69B00F59F2B /* ToDo+CoreDataClass.swift */; };
 		CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B79F6210475FF009BD29F /* AppDelegate.swift */; };
-		CE8B79F9210475FF009BD29F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B79F8210475FF009BD29F /* ViewController.swift */; };
+		CE8B79F9210475FF009BD29F /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B79F8210475FF009BD29F /* ToDoListViewController.swift */; };
 		CE8B79FC210475FF009BD29F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8B79FA210475FF009BD29F /* Main.storyboard */; };
 		CE8B79FE21047601009BD29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8B79FD21047601009BD29F /* Assets.xcassets */; };
 		CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */; };
 		CE8B7A0C21047601009BD29F /* IdeaSlotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A0B21047601009BD29F /* IdeaSlotAppTests.swift */; };
 		CE8B7A1721047601009BD29F /* IdeaSlotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */; };
-		CEE542B72104769000CB5E7F /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE542B52104769000CB5E7F /* ContentsViewController.swift */; };
-		CEE542B82104769000CB5E7F /* ContentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE542B62104769000CB5E7F /* ContentsViewController.xib */; };
 		CEE542BA210476DF00CB5E7F /* PageMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE542B9210476DF00CB5E7F /* PageMenu.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +52,18 @@
 		7D18BEBFEA3ACB0DA537F216 /* Pods_IdeaSlotAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaSlotAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B7B11A58E048B54C0A026 /* Pods_IdeaSlotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaSlotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8061A756E9784DA8B6D3A6F /* Pods_IdeaSlotAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaSlotAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE2697E7210DB23700F59F2B /* MagicalRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MagicalRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2697EA210DB46F00F59F2B /* IdeaSlotApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IdeaSlotApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE2697EB210DB46F00F59F2B /* IdeaSlotApp-Bridging-Header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "IdeaSlotApp-Bridging-Header.m"; sourceTree = "<group>"; };
+		CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemTableViewCell.swift; sourceTree = "<group>"; };
+		CE2697EF210DBCA300F59F2B /* ToDoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
+		CE2697F2210DBFC100F59F2B /* IdeaSlotApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IdeaSlotApp.xcdatamodel; sourceTree = "<group>"; };
+		CE2697FA210DC53900F59F2B /* ToDo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE26981E210DC69B00F59F2B /* ToDo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE8B79F3210475FF009BD29F /* IdeaSlotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdeaSlotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B79F6210475FF009BD29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE8B79F8210475FF009BD29F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE8B79F8210475FF009BD29F /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		CE8B79FB210475FF009BD29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE8B79FD21047601009BD29F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8B7A0021047601009BD29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,8 +74,6 @@
 		CE8B7A1221047601009BD29F /* IdeaSlotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdeaSlotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaSlotAppUITests.swift; sourceTree = "<group>"; };
 		CE8B7A1821047601009BD29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEE542B52104769000CB5E7F /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
-		CEE542B62104769000CB5E7F /* ContentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsViewController.xib; sourceTree = "<group>"; };
 		CEE542B9210476DF00CB5E7F /* PageMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PageMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6766FAB780E1DE48F34DA29 /* Pods-IdeaSlotAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotAppUITests/Pods-IdeaSlotAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD742A902FE1F85A8C3E7545 /* Pods-IdeaSlotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2697E8210DB23700F59F2B /* MagicalRecord.framework in Frameworks */,
+				CE2697E6210DB23200F59F2B /* CoreData.framework in Frameworks */,
 				CEE542BA210476DF00CB5E7F /* PageMenu.framework in Frameworks */,
 				04E40C38C434E8DFF5A28DA8 /* Pods_IdeaSlotApp.framework in Frameworks */,
 			);
@@ -134,14 +149,19 @@
 		CE8B79F5210475FF009BD29F /* IdeaSlotApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE26981E210DC69B00F59F2B /* ToDo+CoreDataClass.swift */,
+				CE2697FA210DC53900F59F2B /* ToDo+CoreDataProperties.swift */,
 				CE8B79F6210475FF009BD29F /* AppDelegate.swift */,
-				CE8B79F8210475FF009BD29F /* ViewController.swift */,
-				CEE542B52104769000CB5E7F /* ContentsViewController.swift */,
-				CEE542B62104769000CB5E7F /* ContentsViewController.xib */,
+				CE8B79F8210475FF009BD29F /* ToDoListViewController.swift */,
+				CE2697EF210DBCA300F59F2B /* ToDoItemViewController.swift */,
+				CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */,
 				CE8B79FA210475FF009BD29F /* Main.storyboard */,
 				CE8B79FD21047601009BD29F /* Assets.xcassets */,
 				CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */,
 				CE8B7A0221047601009BD29F /* Info.plist */,
+				CE2697EB210DB46F00F59F2B /* IdeaSlotApp-Bridging-Header.m */,
+				CE2697EA210DB46F00F59F2B /* IdeaSlotApp-Bridging-Header.h */,
+				CE2697F1210DBFC100F59F2B /* IdeaSlotApp.xcdatamodeld */,
 			);
 			path = IdeaSlotApp;
 			sourceTree = "<group>";
@@ -167,6 +187,8 @@
 		F44F1094BD83EC84BD744B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE2697E7210DB23700F59F2B /* MagicalRecord.framework */,
+				CE2697E5210DB23200F59F2B /* CoreData.framework */,
 				CEE542B9210476DF00CB5E7F /* PageMenu.framework */,
 				868B7B11A58E048B54C0A026 /* Pods_IdeaSlotApp.framework */,
 				7D18BEBFEA3ACB0DA537F216 /* Pods_IdeaSlotAppTests.framework */,
@@ -247,6 +269,7 @@
 				TargetAttributes = {
 					CE8B79F2210475FF009BD29F = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					CE8B7A0621047601009BD29F = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -283,7 +306,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE542B82104769000CB5E7F /* ContentsViewController.xib in Resources */,
 				CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */,
 				CE8B79FE21047601009BD29F /* Assets.xcassets in Resources */,
 				CE8B79FC210475FF009BD29F /* Main.storyboard in Resources */,
@@ -332,10 +354,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/PageMenu/PageMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PageMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,9 +410,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8B79F9210475FF009BD29F /* ViewController.swift in Sources */,
+				CE8B79F9210475FF009BD29F /* ToDoListViewController.swift in Sources */,
+				CE2697F0210DBCA300F59F2B /* ToDoItemViewController.swift in Sources */,
+				CE2697F3210DBFC100F59F2B /* IdeaSlotApp.xcdatamodeld in Sources */,
+				CE2697FB210DC53900F59F2B /* ToDo+CoreDataProperties.swift in Sources */,
+				CE2697EC210DB46F00F59F2B /* IdeaSlotApp-Bridging-Header.m in Sources */,
+				CE26981F210DC69B00F59F2B /* ToDo+CoreDataClass.swift in Sources */,
+				CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
-				CEE542B72104769000CB5E7F /* ContentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +591,7 @@
 			baseConfigurationReference = FEB136B2DEB1EE49CE134733 /* Pods-IdeaSlotApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IdeaSlotApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -570,6 +600,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = grief137.IdeaSlotApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IdeaSlotApp/IdeaSlotApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -580,6 +612,7 @@
 			baseConfigurationReference = FD742A902FE1F85A8C3E7545 /* Pods-IdeaSlotApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IdeaSlotApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -588,6 +621,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = grief137.IdeaSlotApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IdeaSlotApp/IdeaSlotApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -715,6 +749,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE2697F1210DBFC100F59F2B /* IdeaSlotApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE2697F2210DBFC100F59F2B /* IdeaSlotApp.xcdatamodel */,
+			);
+			currentVersion = CE2697F2210DBFC100F59F2B /* IdeaSlotApp.xcdatamodel */;
+			path = IdeaSlotApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE8B79EB210475FF009BD29F /* Project object */;
 }
