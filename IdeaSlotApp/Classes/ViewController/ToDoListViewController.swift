@@ -26,6 +26,8 @@ class ToDoListViewController: UIViewController ,UITableViewDelegate ,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         if todoEntities != nil{
             tableView.reloadData()
         }
@@ -43,9 +45,10 @@ class ToDoListViewController: UIViewController ,UITableViewDelegate ,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListItem")!
+        let cell = tableView.dequeueReusableCell(withIdentifier:"TodoListItem01")!
         if let todoEntities = todoEntities{
             cell.textLabel!.text = todoEntities[indexPath.row].item
+            print(cell)
         }
         return cell
     }

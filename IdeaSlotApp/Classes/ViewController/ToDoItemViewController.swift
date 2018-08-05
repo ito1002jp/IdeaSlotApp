@@ -19,11 +19,13 @@ class ToDoItemViewController: UIViewController {
         navigationController!.popViewController(animated:true)
     }
     @IBAction func save(_ sender: UIBarButtonItem) {
-//        if task != nil{
-//            editTask()
-//        }else{
-//            createTask()
-//        }
+        if task != nil{
+            editTask()
+            print("edit")
+        }else{
+            createTask()
+            print("create add")
+        }
 
         navigationController!.popViewController(animated: true)
     }
