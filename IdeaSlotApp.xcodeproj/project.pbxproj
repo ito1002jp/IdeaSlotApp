@@ -120,9 +120,9 @@
 		CE5585842115739E00E66A6C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CE8B79F6210475FF009BD29F /* AppDelegate.swift */,
 				CE558587211573E000E66A6C /* ViewController */,
 				CE558586211573D600E66A6C /* View */,
-				CE8B79F6210475FF009BD29F /* AppDelegate.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -130,6 +130,7 @@
 		CE558585211573B400E66A6C /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				CE8B7A0221047601009BD29F /* Info.plist */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -149,6 +150,39 @@
 				CE2697EF210DBCA300F59F2B /* ToDoItemViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE78631A2116E54C0053B87B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE5585822115701600E66A6C /* ToDo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE78631B2116E5570053B87B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B79FD21047601009BD29F /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CE78631C2116E5C60053B87B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CE78631D2116E5CC0053B87B /* Storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CE78631D2116E5CC0053B87B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B79FA210475FF009BD29F /* Main.storyboard */,
+				CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		CE8B79EA210475FF009BD29F = {
@@ -176,13 +210,11 @@
 		CE8B79F5210475FF009BD29F /* IdeaSlotApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE78631C2116E5C60053B87B /* UI */,
+				CE78631B2116E5570053B87B /* Resource */,
+				CE78631A2116E54C0053B87B /* Model */,
 				CE558585211573B400E66A6C /* Others */,
 				CE5585842115739E00E66A6C /* Classes */,
-				CE8B79FA210475FF009BD29F /* Main.storyboard */,
-				CE8B79FD21047601009BD29F /* Assets.xcassets */,
-				CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */,
-				CE8B7A0221047601009BD29F /* Info.plist */,
-				CE5585822115701600E66A6C /* ToDo.swift */,
 			);
 			path = IdeaSlotApp;
 			sourceTree = "<group>";
