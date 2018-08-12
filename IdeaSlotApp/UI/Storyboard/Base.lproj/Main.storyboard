@@ -13,7 +13,7 @@
         <!--Todo List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ToDoListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToDoListView" id="BYZ-38-t0r" customClass="ToDoListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="325" y="400"/>
         </scene>
-        <!--Paging Menu Controller-->
+        <!--Page View Controller01-->
         <scene sceneID="5L8-ky-gZ2">
             <objects>
-                <viewController storyboardIdentifier="PagingMenuVC01" id="AJ1-1R-Gbl" customClass="PagingMenuController" customModule="PagingMenuController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PagingMenuVC01" id="AJ1-1R-Gbl" customClass="PageViewController01" customModule="IdeaSlotApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EcG-LC-zEb"/>
                         <viewControllerLayoutGuide type="bottom" id="Pks-9p-SCe"/>
@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="325" y="1065"/>
         </scene>
-        <!--Paging Menu Controller-->
+        <!--Page View Controller02-->
         <scene sceneID="tO4-Mo-H2v">
             <objects>
-                <viewController storyboardIdentifier="PagingMenuVC02" id="JsH-40-bSH" customClass="PagingMenuController" customModule="PagingMenuController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PagingMenuVC02" id="JsH-40-bSH" customClass="PageViewController02" customModule="IdeaSlotApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wjc-JF-jeS"/>
                         <viewControllerLayoutGuide type="bottom" id="psE-wi-Ig9"/>
@@ -166,10 +166,28 @@
             </objects>
             <point key="canvasLocation" x="1016" y="1065"/>
         </scene>
-        <!--Paging Menu Controller-->
+        <!--Page Menu Tab Controller-->
+        <scene sceneID="Eqa-CF-3RA">
+            <objects>
+                <viewController storyboardIdentifier="PageMenuTab" id="dty-oZ-Xbg" customClass="PageMenuTabController" customModule="IdeaSlotApp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Mw-dZ-zyA"/>
+                        <viewControllerLayoutGuide type="bottom" id="oS8-Xf-AQA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6EK-EH-wpM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwr-px-qVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="1751"/>
+        </scene>
+        <!--Page View Controller03-->
         <scene sceneID="03H-lx-Vm7">
             <objects>
-                <viewController storyboardIdentifier="PagingMenuVC03" id="VJQ-YZ-oO3" customClass="PagingMenuController" customModule="PagingMenuController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PagingMenuVC03" id="VJQ-YZ-oO3" customClass="PageViewController03" customModule="IdeaSlotApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hmd-4d-J8F"/>
                         <viewControllerLayoutGuide type="bottom" id="E4v-bx-yj9"/>

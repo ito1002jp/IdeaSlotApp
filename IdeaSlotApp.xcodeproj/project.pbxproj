@@ -13,6 +13,11 @@
 		CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */; };
 		CE2697F0210DBCA300F59F2B /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* ToDoItemViewController.swift */; };
 		CE5585832115701600E66A6C /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* ToDo.swift */; };
+		CE5E1F3B211FF48700523D96 /* PageMenuTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */; };
+		CE5E1F3D211FFA2C00523D96 /* PagingMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */; };
+		CE5E1F3F211FFE5600523D96 /* PageViewController01.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */; };
+		CE5E1F41211FFE7B00523D96 /* PageViewController02.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */; };
+		CE5E1F43211FFE8800523D96 /* PageViewController03.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F42211FFE8800523D96 /* PageViewController03.swift */; };
 		CE66265B211203FF000E73F4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE66265A211203FF000E73F4 /* Realm.framework */; };
 		CE66265D21120405000E73F4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE66265C21120405000E73F4 /* RealmSwift.framework */; };
 		CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B79F6210475FF009BD29F /* AppDelegate.swift */; };
@@ -53,6 +58,11 @@
 		CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemTableViewCell.swift; sourceTree = "<group>"; };
 		CE2697EF210DBCA300F59F2B /* ToDoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		CE5585822115701600E66A6C /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuTabController.swift; sourceTree = "<group>"; };
+		CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PagingMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController01.swift; sourceTree = "<group>"; };
+		CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController02.swift; sourceTree = "<group>"; };
+		CE5E1F42211FFE8800523D96 /* PageViewController03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController03.swift; sourceTree = "<group>"; };
 		CE66265A211203FF000E73F4 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE66265C21120405000E73F4 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B79F3210475FF009BD29F /* IdeaSlotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdeaSlotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5E1F3D211FFA2C00523D96 /* PagingMenuController.framework in Frameworks */,
 				CE66265D21120405000E73F4 /* RealmSwift.framework in Frameworks */,
 				CE66265B211203FF000E73F4 /* Realm.framework in Frameworks */,
 				04E40C38C434E8DFF5A28DA8 /* Pods_IdeaSlotApp.framework in Frameworks */,
@@ -148,6 +159,10 @@
 			children = (
 				CE8B79F8210475FF009BD29F /* ToDoListViewController.swift */,
 				CE2697EF210DBCA300F59F2B /* ToDoItemViewController.swift */,
+				CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */,
+				CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */,
+				CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */,
+				CE5E1F42211FFE8800523D96 /* PageViewController03.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -240,6 +255,7 @@
 		F44F1094BD83EC84BD744B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */,
 				CE66265C21120405000E73F4 /* RealmSwift.framework */,
 				CE66265A211203FF000E73F4 /* Realm.framework */,
 				CE2697E7210DB23700F59F2B /* MagicalRecord.framework */,
@@ -470,8 +486,12 @@
 				CE8B79F9210475FF009BD29F /* ToDoListViewController.swift in Sources */,
 				CE5585832115701600E66A6C /* ToDo.swift in Sources */,
 				CE2697F0210DBCA300F59F2B /* ToDoItemViewController.swift in Sources */,
+				CE5E1F41211FFE7B00523D96 /* PageViewController02.swift in Sources */,
+				CE5E1F3B211FF48700523D96 /* PageMenuTabController.swift in Sources */,
 				CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
+				CE5E1F43211FFE8800523D96 /* PageViewController03.swift in Sources */,
+				CE5E1F3F211FFE5600523D96 /* PageViewController01.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
