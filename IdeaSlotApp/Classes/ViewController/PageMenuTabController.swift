@@ -14,8 +14,6 @@ class PageMenuTabController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("PageMenuTabController")
-        
         //PagingMenuController
         let options = PagingMenuOptions()
         let pagingMenuController = PagingMenuController(options: options)
@@ -34,6 +32,7 @@ class PageMenuTabController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }
 
 private struct PagingMenuOptions: PagingMenuControllerCustomizable{
@@ -47,14 +46,12 @@ private struct PagingMenuOptions: PagingMenuControllerCustomizable{
     }
     
     fileprivate var pageViewControllers: [UIViewController]{
-        print("pageViewControllers")
         return [pv1, pv2, pv3, pv4]
     }
     
     fileprivate struct MenuOption: MenuViewCustomizable{
         var displayMode: MenuDisplayMode{
-            return .segmentedControl
-            //return .infinite(widthMode: .flexible, scrollingMode: .scrollEnabled)
+            return .infinite(widthMode: .flexible, scrollingMode: .scrollEnabled)
         }
         var height: CGFloat {
             return 40
