@@ -14,6 +14,8 @@ class PageMenuTabController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("PageMenuTabController")
+        
         //PagingMenuController
         let options = PagingMenuOptions()
         let pagingMenuController = PagingMenuController(options: options)
@@ -38,19 +40,21 @@ private struct PagingMenuOptions: PagingMenuControllerCustomizable{
     let pv1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PagingMenuVC01") as! PageViewController01
     let pv2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PagingMenuVC02") as! PageViewController02
     let pv3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PagingMenuVC03") as! PageViewController03
-    let ToDoList = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ToDoListView") as! ToDoListViewController
+    let pv4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ToDoList") as! ToDoListViewController
 
     fileprivate var componentType: ComponentType{
-        return .all(menuOptions: MenuOption() as! MenuViewCustomizable, pagingControllers: pagingControllers)
+        return .all(menuOptions: MenuOption(), pagingControllers: pageViewControllers)
     }
     
-    fileprivate var pagingControllers: [UIViewController]{
-        return [pv1, pv2, pv3, ToDoList]
+    fileprivate var pageViewControllers: [UIViewController]{
+        print("pageViewControllers")
+        return [pv1, pv2, pv3, pv4]
     }
     
     fileprivate struct MenuOption: MenuViewCustomizable{
         var displayMode: MenuDisplayMode{
-            return .infinite(widthMode: .flexible, scrollingMode: .scrollEnabled)
+            return .segmentedControl
+            //return .infinite(widthMode: .flexible, scrollingMode: .scrollEnabled)
         }
         var height: CGFloat {
             return 40
@@ -65,7 +69,7 @@ private struct PagingMenuOptions: PagingMenuControllerCustomizable{
             return .roundRect(radius: 4, horizontalPadding: 4, verticalPadding: 4, selectedColor: UIColor.black)
         }
         var itemsOptions: [MenuItemViewCustomizable] {
-            return [MenuItem1(), MenuItem2(), MenuItem3(), ToDoListItem()]
+            return [MenuItem1(), MenuItem2(), MenuItem3(), MenuItem4()]
         }
     }
     
@@ -84,7 +88,7 @@ private struct PagingMenuOptions: PagingMenuControllerCustomizable{
             return .text(title: MenuItemText(text: "page yellow", color: UIColor.yellow, selectedColor: UIColor.white))
         }
     }
-    fileprivate struct ToDoListItem: MenuItemViewCustomizable {
+    fileprivate struct MenuItem4: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
             return .text(title: MenuItemText(text: "ToDoList", color: UIColor.white, selectedColor: UIColor.white))
         }
