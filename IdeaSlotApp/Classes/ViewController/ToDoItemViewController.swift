@@ -15,7 +15,7 @@ class ToDoItemViewController: UIViewController {
     var task:ToDo? = nil
     let realm = try! Realm()
     
-    @IBAction func cansel(_ sender: UIBarButtonItem) {
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
         navigationController!.popViewController(animated:true)
     }
     @IBAction func save(_ sender: UIBarButtonItem) {

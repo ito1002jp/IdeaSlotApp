@@ -33,9 +33,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="UeP-g4-Kmw" kind="show" identifier="edit" id="guN-EF-92S"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -52,12 +49,8 @@
                             <constraint firstItem="FPP-67-Ope" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="z2v-Ng-H3l"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ToDo List" id="RIF-1I-nBa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gtj-Nm-dZp">
-                            <connections>
-                                <segue destination="UeP-g4-Kmw" kind="show" id="ILl-Al-BPs"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="ToDo List" id="AdP-lq-nst">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EPx-GV-FNh"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="FPP-67-Ope" id="Fd7-00-s47"/>
@@ -65,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520" y="229"/>
+            <point key="canvasLocation" x="964" y="228"/>
         </scene>
         <!--ToDo Item-->
         <scene sceneID="uFC-01-uQz">
@@ -80,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-0d-UpT">
-                                <rect key="frame" x="70" y="93" width="274" height="30"/>
+                                <rect key="frame" x="70" y="49" width="274" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -92,15 +85,15 @@
                             <constraint firstItem="oUY-0d-UpT" firstAttribute="centerX" secondItem="kBO-Gc-znz" secondAttribute="centerX" id="uF2-hp-W9H"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ToDo Item" id="GDY-oY-i9E">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bpe-9c-8Aw">
+                    <navigationItem key="navigationItem" title="ToDo Item" id="lof-Pt-0dr">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3y3-rf-964">
                             <connections>
-                                <action selector="cansel:" destination="UeP-g4-Kmw" id="KJZ-Sq-GJX"/>
+                                <action selector="cancel:" destination="UeP-g4-Kmw" id="th6-LX-tgI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MML-Kq-WGE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="idW-H9-PCP">
                             <connections>
-                                <action selector="save:" destination="UeP-g4-Kmw" id="TAV-80-EdH"/>
+                                <action selector="save:" destination="UeP-g4-Kmw" id="810-dQ-jJR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSs-lO-a7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2115" y="229"/>
+            <point key="canvasLocation" x="1599" y="228"/>
         </scene>
         <!--Page View Controller01-->
         <scene sceneID="5L8-ky-gZ2">
@@ -184,27 +177,5 @@
             </objects>
             <point key="canvasLocation" x="1489" y="1065"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zxq-qL-ODl">
-            <objects>
-                <navigationController storyboardIdentifier="navigation controller" automaticallyAdjustsScrollViewInsets="NO" id="Zee-Q8-vO5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Cfa-I8-cZx">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f8h-hU-P2v"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CGR-76-J1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="894" y="229"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="guN-EF-92S"/>
-    </inferredMetricsTieBreakers>
 </document>
