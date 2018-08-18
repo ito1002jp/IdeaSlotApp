@@ -9,25 +9,23 @@
 import UIKit
 import RealmSwift
 
-class ToDoItemViewController: UIViewController {
+class WordsItemViewController: UIViewController {
     @IBOutlet weak var todoField: UITextField!
 
     var task:ToDo? = nil
     let realm = try! Realm()
     
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        navigationController!.popViewController(animated:true)
+    @IBAction func cancel(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func save(_ sender: UIBarButtonItem) {
+
+    @IBAction func save(_ sender: UIButton) {
         if task != nil{
             editTask()
-            print("edit")
         }else{
             createTask()
-            print("create add")
         }
-
-        navigationController!.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

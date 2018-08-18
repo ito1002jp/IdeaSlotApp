@@ -9,10 +9,10 @@
 import UIKit
 import RealmSwift
 
-class ToDoListViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource
+class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource
 {
     @IBOutlet weak var tableView: UITableView!
-    
+        
     let realm = try? Realm()
     var todoEntities:Results<ToDo>? = nil
     
@@ -48,7 +48,6 @@ class ToDoListViewController: UIViewController ,UITableViewDelegate ,UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier:"TodoListItem01")!
         if let todoEntities = todoEntities{
             cell.textLabel!.text = todoEntities[indexPath.row].item
-            print(cell)
         }
         return cell
     }
@@ -67,10 +66,10 @@ class ToDoListViewController: UIViewController ,UITableViewDelegate ,UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit"{
-            let todoController = segue.destination as! ToDoItemViewController
+            let wordsItemViewController = segue.destination as! WordsItemViewController
             if let todoEntities = todoEntities{
                 let task = todoEntities[tableView.indexPathForSelectedRow!.row]
-                todoController.task = task
+                wordsItemViewController.task = task
             }
         }
     }

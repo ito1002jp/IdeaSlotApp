@@ -18,9 +18,9 @@ class PageMenuTabController: UIViewController {
         let options = PagingMenuOptions()
         let pagingMenuController = PagingMenuController(options: options)
         
-        //adjust tab height
-        pagingMenuController.view.frame.origin.y += 20
-        pagingMenuController.view.frame.size.height -= 20
+        //adjust menu height
+//        pagingMenuController.view.frame.origin.y += 20
+//        pagingMenuController.view.frame.size.height -= 20
         
         addChildViewController(pagingMenuController)
         view.addSubview(pagingMenuController.view)
@@ -39,7 +39,7 @@ private struct PagingMenuOptions: PagingMenuControllerCustomizable{
     let pv1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PagingMenuVC01") as! PageViewController01
     let pv2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PagingMenuVC02") as! PageViewController02
     let pv3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PagingMenuVC03") as! PageViewController03
-    let pv4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ToDoList") as! ToDoListViewController
+    let pv4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ParentWordsView") as! ParentWordsListViewController
 
     fileprivate var componentType: ComponentType{
         return .all(menuOptions: MenuOption(), pagingControllers: pageViewControllers)

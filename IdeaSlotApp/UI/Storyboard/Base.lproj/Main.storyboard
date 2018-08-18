@@ -10,10 +10,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ToDo List-->
+        <!--Parent Words List View Controller-->
+        <scene sceneID="tRg-pt-OIy">
+            <objects>
+                <viewController storyboardIdentifier="ParentWordsView" id="uTt-At-u0v" customClass="ParentWordsListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dqo-Cu-kSn"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Qf-hO-S02"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZKe-Rm-M8x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-1c-Kgq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="8up-Gl-it5"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcP-e8-Rwl">
+                                <rect key="frame" x="297" y="653" width="86" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressButtn:" destination="uTt-At-u0v" eventType="touchUpInside" id="Jif-m3-gI3"/>
+                                    <action selector="testButton:" destination="c86-vk-QbB" eventType="touchUpInside" id="f4a-f3-Ihn"/>
+                                    <segue destination="UeP-g4-Kmw" kind="show" id="HLk-yn-peC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Qf-hO-S02" firstAttribute="top" secondItem="YcP-e8-Rwl" secondAttribute="bottom" constant="35" id="htw-Kv-qXe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YcP-e8-Rwl" secondAttribute="trailing" constant="11" id="xjc-HH-bcZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZC-Bz-5vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="c86-vk-QbB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="-607"/>
+        </scene>
+        <!--Words List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ToDoList" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ToDoListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WordsList" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="WordsListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,6 +75,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="UeP-g4-Kmw" kind="show" identifier="edit" id="SKE-dN-Mxh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -43,27 +88,25 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FPP-67-Ope" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UoS-Z1-s22"/>
-                            <constraint firstAttribute="trailing" secondItem="FPP-67-Ope" secondAttribute="trailing" id="YFe-gZ-omK"/>
-                            <constraint firstItem="FPP-67-Ope" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gPc-7H-lks"/>
-                            <constraint firstItem="FPP-67-Ope" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="z2v-Ng-H3l"/>
+                            <constraint firstItem="FPP-67-Ope" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BXc-9u-qdS"/>
+                            <constraint firstItem="FPP-67-Ope" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Yl1-Ue-ORH"/>
+                            <constraint firstItem="FPP-67-Ope" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oQJ-Xl-GLw"/>
+                            <constraint firstAttribute="trailing" secondItem="FPP-67-Ope" secondAttribute="trailing" id="ocK-fZ-pX8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ToDo List" id="AdP-lq-nst">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EPx-GV-FNh"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="url-xp-bil"/>
                     <connections>
                         <outlet property="tableView" destination="FPP-67-Ope" id="Fd7-00-s47"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="228"/>
+            <point key="canvasLocation" x="986" y="227"/>
         </scene>
-        <!--ToDo Item-->
+        <!--Words Item View Controller-->
         <scene sceneID="uFC-01-uQz">
             <objects>
-                <viewController id="UeP-g4-Kmw" customClass="ToDoItemViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WordsItem" id="UeP-g4-Kmw" customClass="WordsItemViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="inm-WW-hMe"/>
                         <viewControllerLayoutGuide type="bottom" id="LP5-s0-7c0"/>
@@ -73,37 +116,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-0d-UpT">
-                                <rect key="frame" x="70" y="49" width="274" height="30"/>
+                                <rect key="frame" x="96" y="72" width="222" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-wB-ELd">
+                                <rect key="frame" x="21" y="23" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="UeP-g4-Kmw" eventType="touchUpInside" id="x6t-ar-Yqd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8x-ZU-aag">
+                                <rect key="frame" x="355" y="23" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="save:" destination="UeP-g4-Kmw" eventType="touchUpInside" id="O4n-5u-qmD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L88-V3-5rd">
+                                <rect key="frame" x="165" y="28" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oUY-0d-UpT" firstAttribute="top" secondItem="inm-WW-hMe" secondAttribute="bottom" constant="29" id="Chd-Wo-B5w"/>
-                            <constraint firstItem="oUY-0d-UpT" firstAttribute="leading" secondItem="kBO-Gc-znz" secondAttribute="leadingMargin" constant="50" id="hHM-b6-7eU"/>
-                            <constraint firstItem="oUY-0d-UpT" firstAttribute="centerX" secondItem="kBO-Gc-znz" secondAttribute="centerX" id="uF2-hp-W9H"/>
+                            <constraint firstItem="oUY-0d-UpT" firstAttribute="centerX" secondItem="kBO-Gc-znz" secondAttribute="centerX" id="BXD-8q-RrU"/>
+                            <constraint firstItem="oUY-0d-UpT" firstAttribute="leading" secondItem="kBO-Gc-znz" secondAttribute="leadingMargin" constant="76" id="Ocb-RP-QSt"/>
+                            <constraint firstItem="LP5-s0-7c0" firstAttribute="top" secondItem="oUY-0d-UpT" secondAttribute="bottom" constant="590" id="tlg-Q7-eDK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ToDo Item" id="lof-Pt-0dr">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3y3-rf-964">
-                            <connections>
-                                <action selector="cancel:" destination="UeP-g4-Kmw" id="th6-LX-tgI"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="idW-H9-PCP">
-                            <connections>
-                                <action selector="save:" destination="UeP-g4-Kmw" id="810-dQ-jJR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="todoField" destination="oUY-0d-UpT" id="Mk8-zI-uhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSs-lO-a7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1599" y="228"/>
+            <point key="canvasLocation" x="1657" y="228"/>
         </scene>
         <!--Page View Controller01-->
         <scene sceneID="5L8-ky-gZ2">
@@ -178,4 +234,7 @@
             <point key="canvasLocation" x="1489" y="1065"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SKE-dN-Mxh"/>
+    </inferredMetricsTieBreakers>
 </document>
