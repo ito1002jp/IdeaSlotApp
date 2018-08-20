@@ -1,5 +1,5 @@
 //
-//  TodoItemViewController.swift
+//  WordsItemViewController.swift
 //  IdeaSlotApp
 //
 //  Created by yuta akazawa on 2018/07/29.
@@ -10,9 +10,9 @@ import UIKit
 import RealmSwift
 
 class WordsItemViewController: UIViewController {
-    @IBOutlet weak var todoField: UITextField!
+    @IBOutlet weak var wordField: UITextField!
 
-    var task:ToDo? = nil
+    var word:Words? = nil
     let realm = try! Realm()
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -20,18 +20,18 @@ class WordsItemViewController: UIViewController {
     }
 
     @IBAction func save(_ sender: UIButton) {
-        if task != nil{
-            editTask()
+        if word != nil{
+            edit()
         }else{
-            createTask()
+            create()
         }
         self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let taskToDo = task{
-            todoField.text = taskToDo.item
+        if let taskToDo = word{
+            wordField.text = taskToDo.word
         }
     }
 
@@ -39,19 +39,21 @@ class WordsItemViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func createTask() {
-        let newTask = ToDo()
-        newTask.item = todoField.text
+    func create() {
+        let newTask = Words()
+        newTask.word = wordField.text
+        newTask.userId = "test-user"
+        newTask.createDate = Date()
         try! realm.write(){
             realm.add(newTask)
         }
     }
     
-    func editTask() {
-        if let task = task{
+    func edit() {
+        if let word = word{
             try! realm.write(){
-                task.item = todoField.text
-                realm.add(task)
+                word.word = wordField.text
+                realm.add(word)
             }
         }
     }

@@ -1,5 +1,5 @@
 //
-//  ContainsViewController.swift
+//  ParentWordsListViewController.swift
 //  IdeaSlotApp
 //
 //  Created by yuta akazawa on 2018/08/15.

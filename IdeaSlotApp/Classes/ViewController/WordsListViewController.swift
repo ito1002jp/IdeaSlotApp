@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WordsListViewController.swift
 //  IdeaSlotApp
 //
 //  Created by yuta akazawa on 2018/07/22.
@@ -14,12 +14,12 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     @IBOutlet weak var tableView: UITableView!
         
     let realm = try? Realm()
-    var todoEntities:Results<ToDo>? = nil
+    var wordEntities:Results<Words>? = nil
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        todoEntities = realm?.objects(ToDo.self)
-        if todoEntities != nil{
+        wordEntities = realm?.objects(Words.self)
+        if wordEntities != nil{
             tableView.reloadData()
         }
     }
@@ -28,7 +28,7 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        if todoEntities != nil{
+        if wordEntities != nil{
             tableView.reloadData()
         }
     }
@@ -38,16 +38,16 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     }
     
     func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let todoEntities = todoEntities{
-            return todoEntities.count
+        if let wordEntities = wordEntities{
+            return wordEntities.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"TodoListItem01")!
-        if let todoEntities = todoEntities{
-            cell.textLabel!.text = todoEntities[indexPath.row].item
+        if let wordEntities = wordEntities{
+            cell.textLabel!.text = wordEntities[indexPath.row].word
         }
         return cell
     }
@@ -56,8 +56,8 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
         if editingStyle == .delete{
             let realm = try! Realm()
             try! realm.write {
-                if let todoEntities = todoEntities{
-                    realm.delete(todoEntities[indexPath.row])
+                if let wordEntities = wordEntities{
+                    realm.delete(wordEntities[indexPath.row])
                 }
             }
             tableView.reloadData()
@@ -67,9 +67,9 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit"{
             let wordsItemViewController = segue.destination as! WordsItemViewController
-            if let todoEntities = todoEntities{
-                let task = todoEntities[tableView.indexPathForSelectedRow!.row]
-                wordsItemViewController.task = task
+            if let wordEntities = wordEntities{
+                let word = wordEntities[tableView.indexPathForSelectedRow!.row]
+                wordsItemViewController.word = word
             }
         }
     }

@@ -12,7 +12,9 @@
 		42B41A28E8AC41FF8364AF9D /* Pods_IdeaSlotAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8061A756E9784DA8B6D3A6F /* Pods_IdeaSlotAppUITests.framework */; };
 		CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */; };
 		CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */; };
-		CE5585832115701600E66A6C /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* ToDo.swift */; };
+		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
+		CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635A212948BC007E4887 /* CategorySeed.swift */; };
+		CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635C21294E99007E4887 /* RealmInitializer.swift */; };
 		CE5E1F3B211FF48700523D96 /* PageMenuTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */; };
 		CE5E1F3D211FFA2C00523D96 /* PagingMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */; };
 		CE5E1F3F211FFE5600523D96 /* PageViewController01.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */; };
@@ -58,7 +60,9 @@
 		CE2697E7210DB23700F59F2B /* MagicalRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MagicalRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemTableViewCell.swift; sourceTree = "<group>"; };
 		CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsItemViewController.swift; sourceTree = "<group>"; };
-		CE5585822115701600E66A6C /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
+		CE5A635A212948BC007E4887 /* CategorySeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeed.swift; sourceTree = "<group>"; };
+		CE5A635C21294E99007E4887 /* RealmInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInitializer.swift; sourceTree = "<group>"; };
 		CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuTabController.swift; sourceTree = "<group>"; };
 		CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PagingMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController01.swift; sourceTree = "<group>"; };
@@ -173,7 +177,9 @@
 		CE78631A2116E54C0053B87B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE5585822115701600E66A6C /* ToDo.swift */,
+				CE5585822115701600E66A6C /* Idea.swift */,
+				CE5A635A212948BC007E4887 /* CategorySeed.swift */,
+				CE5A635C21294E99007E4887 /* RealmInitializer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -487,14 +493,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8B79F9210475FF009BD29F /* WordsListViewController.swift in Sources */,
-				CE5585832115701600E66A6C /* ToDo.swift in Sources */,
+				CE5585832115701600E66A6C /* Idea.swift in Sources */,
 				CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */,
 				CE5E1F41211FFE7B00523D96 /* PageViewController02.swift in Sources */,
 				CE5E1F3B211FF48700523D96 /* PageMenuTabController.swift in Sources */,
 				CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
+				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
 				CE5E1F43211FFE8800523D96 /* PageViewController03.swift in Sources */,
 				CE5E1F3F211FFE5600523D96 /* PageViewController01.swift in Sources */,
+				CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */,
 				CE8FC21021244ED300A628E4 /* ParentWordsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

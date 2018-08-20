@@ -154,7 +154,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="todoField" destination="oUY-0d-UpT" id="Mk8-zI-uhC"/>
+                        <outlet property="wordField" destination="oUY-0d-UpT" id="sSM-NJ-IVv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSs-lO-a7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
