@@ -22,24 +22,26 @@ class User: Base{
     override class func primaryKey() -> String {
         return "userId"
     }
-    override static func indexedProperties() -> [String] {
-        return ["userId"]
-    }
+//    override static func indexedProperties() -> [String] {
+//        return ["userId"]
+//    }
 }
 
 class Words: Base {
     @objc dynamic var wordId: String? = NSUUID().uuidString
     @objc dynamic var word: String? = ""
-    @objc dynamic var category: Category?
+//    @objc dynamic var category: Category?
+    let category = LinkingObjects(fromType: Category.self, property: "words")
+    
     @objc dynamic var userId: String? = ""
     @objc dynamic var ideaFlag: Int = 0
     
     override class func primaryKey() -> String {
         return "wordId"
     }
-    override static func indexedProperties() -> [String] {
-        return ["wordId"]
-    }
+//    override static func indexedProperties() -> [String] {
+//        return ["wordId"]
+//    }
 }
 
 class Category: Base {
@@ -49,7 +51,6 @@ class Category: Base {
     let words = List<Words>()
     let ideas = List<Idea>()
 
-//    let words = LinkingObjects(fromType: Words.self, property: "category")
     override class func primaryKey() -> String {
         return "categoryId"
     }
@@ -59,7 +60,8 @@ class Category: Base {
 class Idea: Base {
     @objc dynamic var ideaId: String? = NSUUID().uuidString
     @objc dynamic var ideaName: String? = ""
-    @objc dynamic var category: Category?
+//    @objc dynamic var category: Category?
+    let category = LinkingObjects(fromType: Category.self, property: "ideas")
     @objc dynamic var userId: String? = ""
     @objc dynamic var wordId_1: String? = ""
     @objc dynamic var operator_1: String? = ""
@@ -68,11 +70,11 @@ class Idea: Base {
     @objc dynamic var wordId_3: String? = ""
     @objc dynamic var operator_3: String? = ""
     @objc dynamic var detail: String? = ""
-    
+
     override class func primaryKey() -> String {
         return "ideaId"
     }
-    override static func indexedProperties() -> [String] {
-        return ["ideaId"]
-    }
+//    override static func indexedProperties() -> [String] {
+//        return ["ideaId"]
+//    }
 }

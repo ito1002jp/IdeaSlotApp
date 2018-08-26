@@ -26,8 +26,12 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.tableView.estimatedRowHeight = 150
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.delegate = self
         self.tableView.dataSource = self
+
         if wordEntities != nil{
             tableView.reloadData()
         }

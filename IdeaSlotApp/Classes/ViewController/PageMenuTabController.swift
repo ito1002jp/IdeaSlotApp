@@ -19,8 +19,8 @@ class PageMenuTabController: UIViewController {
         let pagingMenuController = PagingMenuController(options: options)
         
         //adjust menu height
-//        pagingMenuController.view.frame.origin.y += 20
-//        pagingMenuController.view.frame.size.height -= 20
+        pagingMenuController.view.frame.origin.y += 30
+        pagingMenuController.view.frame.size.height -= 30
         
         addChildViewController(pagingMenuController)
         view.addSubview(pagingMenuController.view)
