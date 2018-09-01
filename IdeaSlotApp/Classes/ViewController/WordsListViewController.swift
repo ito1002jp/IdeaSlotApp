@@ -12,13 +12,13 @@ import RealmSwift
 class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource
 {
     @IBOutlet weak var tableView: UITableView!
-        
-    let realm = try? Realm()
     var wordEntities:Results<Words>? = nil
+
+    let realm = try! Realm()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        wordEntities = realm?.objects(Words.self)
+        wordEntities = realm.objects(Words.self)
         if wordEntities != nil{
             tableView.reloadData()
         }
@@ -58,7 +58,6 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            let realm = try! Realm()
             try! realm.write {
                 if let wordEntities = wordEntities{
                     realm.delete(wordEntities[indexPath.row])
@@ -68,6 +67,7 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
         }
     }
     
+    //segue WordItemViewController (click word cell)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit"{
             let wordsItemViewController = segue.destination as! WordsItemViewController

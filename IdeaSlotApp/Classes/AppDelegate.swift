@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,17 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Realm Migration
         let config = Realm.Configuration(
-            schemaVersion: 7,
+            schemaVersion: 12,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 7) {}
+                if (oldSchemaVersion < 12) {}
         })
         Realm.Configuration.defaultConfiguration = config
-        
         _ = try! Realm()
         
         //Set Up Category
         RealmInitializer.setUp()
+        
+        DropDown.startListeningToKeyboard()
         
         return true
     }

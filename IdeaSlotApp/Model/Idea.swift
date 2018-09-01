@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 class Base: Object{
-    @objc dynamic var createDate = Date()
-    @objc dynamic var updateDate = Date()
+    @objc dynamic var createDate: Date? = nil
+    @objc dynamic var updateDate: Date? = nil
 }
 
 class User: Base{
@@ -30,6 +30,7 @@ class User: Base{
 class Words: Base {
     @objc dynamic var wordId: String? = NSUUID().uuidString
     @objc dynamic var word: String? = ""
+    @objc dynamic var categoryName: String? = ""
 //    @objc dynamic var category: Category?
     let category = LinkingObjects(fromType: Category.self, property: "words")
     
@@ -49,7 +50,9 @@ class Category: Base {
     @objc dynamic var categoryName = ""
 //    @objc dynamic var userId: String? = ""
     let words = List<Words>()
-    let ideas = List<Idea>()
+//    let ideas = List<Idea>()
+//    let words = LinkingObjects(fromType: Words.self, property: "category")
+    let ideas = LinkingObjects(fromType: Idea.self, property: "category")
 
     override class func primaryKey() -> String {
         return "categoryId"
@@ -60,8 +63,8 @@ class Category: Base {
 class Idea: Base {
     @objc dynamic var ideaId: String? = NSUUID().uuidString
     @objc dynamic var ideaName: String? = ""
-//    @objc dynamic var category: Category?
-    let category = LinkingObjects(fromType: Category.self, property: "ideas")
+    @objc dynamic var category: Category?
+//    let category = LinkingObjects(fromType: Category.self, property: "ideas")
     @objc dynamic var userId: String? = ""
     @objc dynamic var wordId_1: String? = ""
     @objc dynamic var operator_1: String? = ""

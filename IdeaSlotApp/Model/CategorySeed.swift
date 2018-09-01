@@ -21,8 +21,7 @@ extension Seed {
             let t = SeedType()
             t.categoryId = val[0] as! String
             t.categoryName = val[1] as! String
-//            t.createDate = (val[2] as? Date)!
-//            t.updateDate = (val[3] as? Date)!
+            t.createDate = (val[2] as! Date)
             return t
         }
     }
@@ -37,11 +36,11 @@ struct CategorySeed: Seed {
 
 struct CategoryData {
     static let data: [[Any]] = [
-        ["1", "Food"],
-        ["2", "Sports"],
-        ["3", "Business"],
-        ["4", "Fashion"],
-        ["5", "Life-Style"],
-        ["6", "Music"]
+        ["1", "Food", Date()],
+        ["2", "Sports", Date()],
+        ["3", "Business", Date()],
+        ["4", "Fashion", Date()],
+        ["5", "Life-Style", Date()],
+        ["6", "Music", Date()]
     ]
 }
