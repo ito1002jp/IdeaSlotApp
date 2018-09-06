@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         centerContainer = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav,rightDrawerViewController:nil)
         
         //オープン方法のモード指定
-        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.bezelPanningCenterView
+        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.all
         
         //クローズ方法のモード指定
         centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.all
