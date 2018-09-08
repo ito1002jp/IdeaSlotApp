@@ -7,6 +7,7 @@ target 'IdeaSlotApp' do
   pod 'RealmSwift'
   pod 'PagingMenuController'
   pod 'DropDown'
+  pod 'SlideMenuControllerSwift'
 
   # Pods for IdeaSlotApp
 

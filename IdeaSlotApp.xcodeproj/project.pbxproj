@@ -16,8 +16,6 @@
 		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
 		CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635A212948BC007E4887 /* CategorySeed.swift */; };
 		CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635C21294E99007E4887 /* RealmInitializer.swift */; };
-		CE5E1F3B211FF48700523D96 /* PageMenuTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */; };
-		CE5E1F3D211FFA2C00523D96 /* PagingMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */; };
 		CE5E1F3F211FFE5600523D96 /* PageViewController01.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */; };
 		CE5E1F41211FFE7B00523D96 /* PageViewController02.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */; };
 		CE5E1F43211FFE8800523D96 /* PageViewController03.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F42211FFE8800523D96 /* PageViewController03.swift */; };
@@ -34,6 +32,8 @@
 		CEA40AED213A407900874065 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA40AEC213A407900874065 /* DropDownButton.swift */; };
 		CEE7C959213271F700B6886A /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE7C958213271F700B6886A /* DropDown.framework */; };
 		CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C95A2132766700B6886A /* CategoryDropDown.swift */; };
+		CEEDE3EB21438FB200D05F61 /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEDE3EA21438FB200D05F61 /* SlideMenuControllerSwift.framework */; };
+		CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		CE5A635A212948BC007E4887 /* CategorySeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeed.swift; sourceTree = "<group>"; };
 		CE5A635C21294E99007E4887 /* RealmInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInitializer.swift; sourceTree = "<group>"; };
-		CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuTabController.swift; sourceTree = "<group>"; };
 		CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PagingMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController01.swift; sourceTree = "<group>"; };
 		CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController02.swift; sourceTree = "<group>"; };
@@ -93,6 +92,8 @@
 		CEE542B9210476DF00CB5E7F /* PageMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PageMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE7C958213271F700B6886A /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE7C95A2132766700B6886A /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
+		CEEDE3EA21438FB200D05F61 /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SlideMenuControllerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
 		D6766FAB780E1DE48F34DA29 /* Pods-IdeaSlotAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotAppUITests/Pods-IdeaSlotAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD742A902FE1F85A8C3E7545 /* Pods-IdeaSlotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp.release.xcconfig"; sourceTree = "<group>"; };
 		FEB136B2DEB1EE49CE134733 /* Pods-IdeaSlotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEDE3EB21438FB200D05F61 /* SlideMenuControllerSwift.framework in Frameworks */,
 				CEE7C959213271F700B6886A /* DropDown.framework in Frameworks */,
-				CE5E1F3D211FFA2C00523D96 /* PagingMenuController.framework in Frameworks */,
 				CE66265D21120405000E73F4 /* RealmSwift.framework in Frameworks */,
 				CE66265B211203FF000E73F4 /* Realm.framework in Frameworks */,
 				04E40C38C434E8DFF5A28DA8 /* Pods_IdeaSlotApp.framework in Frameworks */,
@@ -176,11 +177,11 @@
 			children = (
 				CE8B79F8210475FF009BD29F /* WordsListViewController.swift */,
 				CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */,
-				CE5E1F3A211FF48700523D96 /* PageMenuTabController.swift */,
 				CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */,
 				CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */,
 				CE5E1F42211FFE8800523D96 /* PageViewController03.swift */,
 				CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */,
+				CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -276,6 +277,7 @@
 		F44F1094BD83EC84BD744B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEEDE3EA21438FB200D05F61 /* SlideMenuControllerSwift.framework */,
 				CEE7C958213271F700B6886A /* DropDown.framework */,
 				CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */,
 				CE66265C21120405000E73F4 /* RealmSwift.framework */,
@@ -452,6 +454,7 @@
 				"${BUILT_PRODUCTS_DIR}/PagingMenuController/PagingMenuController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -459,6 +462,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagingMenuController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -512,8 +516,8 @@
 				CE5585832115701600E66A6C /* Idea.swift in Sources */,
 				CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */,
 				CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */,
+				CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */,
 				CE5E1F41211FFE7B00523D96 /* PageViewController02.swift in Sources */,
-				CE5E1F3B211FF48700523D96 /* PageMenuTabController.swift in Sources */,
 				CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
 				CEA40AED213A407900874065 /* DropDownButton.swift in Sources */,
