@@ -14,13 +14,23 @@
 		CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */; };
 		CE4C20FC2132E2250075C0E1 /* CategoryDropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */; };
 		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
+		CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */; };
+		CE5804832144292700BEDA1A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5804822144292700BEDA1A /* MainViewController.swift */; };
+		CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */; };
+		CE58048C214432A100BEDA1A /* ic_notifications_black_24dp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580486214432A100BEDA1A /* ic_notifications_black_24dp@3x.png */; };
+		CE58048D214432A100BEDA1A /* ic_notifications_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580487214432A100BEDA1A /* ic_notifications_black_24dp.png */; };
+		CE58048E214432A100BEDA1A /* ic_menu_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */; };
+		CE58048F214432A100BEDA1A /* ic_notifications_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580489214432A100BEDA1A /* ic_notifications_black_24dp@2x.png */; };
+		CE580490214432A100BEDA1A /* ic_menu_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */; };
 		CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635A212948BC007E4887 /* CategorySeed.swift */; };
 		CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635C21294E99007E4887 /* RealmInitializer.swift */; };
-		CE5E1F3F211FFE5600523D96 /* PageViewController01.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */; };
-		CE5E1F41211FFE7B00523D96 /* PageViewController02.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */; };
-		CE5E1F43211FFE8800523D96 /* PageViewController03.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F42211FFE8800523D96 /* PageViewController03.swift */; };
+		CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */; };
+		CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */; };
+		CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */; };
 		CE66265B211203FF000E73F4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE66265A211203FF000E73F4 /* Realm.framework */; };
 		CE66265D21120405000E73F4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE66265C21120405000E73F4 /* RealmSwift.framework */; };
+		CE7497272143F48100F51E91 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497262143F48100F51E91 /* UIViewController.swift */; };
+		CE7497292143F7D100F51E91 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497282143F7D100F51E91 /* UIApplication.swift */; };
 		CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B79F6210475FF009BD29F /* AppDelegate.swift */; };
 		CE8B79F9210475FF009BD29F /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B79F8210475FF009BD29F /* WordsListViewController.swift */; };
 		CE8B79FC210475FF009BD29F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8B79FA210475FF009BD29F /* Main.storyboard */; };
@@ -66,14 +76,24 @@
 		CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsItemViewController.swift; sourceTree = "<group>"; };
 		CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryDropDown.xib; sourceTree = "<group>"; };
 		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
+		CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		CE5804822144292700BEDA1A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@3x.png"; sourceTree = "<group>"; };
+		CE580486214432A100BEDA1A /* ic_notifications_black_24dp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notifications_black_24dp@3x.png"; sourceTree = "<group>"; };
+		CE580487214432A100BEDA1A /* ic_notifications_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_notifications_black_24dp.png; sourceTree = "<group>"; };
+		CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@2x.png"; sourceTree = "<group>"; };
+		CE580489214432A100BEDA1A /* ic_notifications_black_24dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_notifications_black_24dp@2x.png"; sourceTree = "<group>"; };
+		CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu_black_24dp.png; sourceTree = "<group>"; };
 		CE5A635A212948BC007E4887 /* CategorySeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeed.swift; sourceTree = "<group>"; };
 		CE5A635C21294E99007E4887 /* RealmInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInitializer.swift; sourceTree = "<group>"; };
 		CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PagingMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController01.swift; sourceTree = "<group>"; };
-		CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController02.swift; sourceTree = "<group>"; };
-		CE5E1F42211FFE8800523D96 /* PageViewController03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController03.swift; sourceTree = "<group>"; };
+		CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasListViewController.swift; sourceTree = "<group>"; };
 		CE66265A211203FF000E73F4 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE66265C21120405000E73F4 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7497262143F48100F51E91 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		CE7497282143F7D100F51E91 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		CE8B79F3210475FF009BD29F /* IdeaSlotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdeaSlotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B79F6210475FF009BD29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8B79F8210475FF009BD29F /* WordsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsListViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +170,7 @@
 				CE8B79F6210475FF009BD29F /* AppDelegate.swift */,
 				CE558587211573E000E66A6C /* ViewController */,
 				CE558586211573D600E66A6C /* View */,
+				CE7497252143F44900F51E91 /* Extention */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -165,9 +186,8 @@
 		CE558586211573D600E66A6C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */,
-				CEE7C95A2132766700B6886A /* CategoryDropDown.swift */,
-				CEA40AEC213A407900874065 /* DropDownButton.swift */,
+				CE5804772144207F00BEDA1A /* DropDownButton */,
+				CE5804762144206B00BEDA1A /* TableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,15 +195,56 @@
 		CE558587211573E000E66A6C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE5804822144292700BEDA1A /* MainViewController.swift */,
+				CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */,
+				CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */,
 				CE8B79F8210475FF009BD29F /* WordsListViewController.swift */,
 				CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */,
-				CE5E1F3E211FFE5600523D96 /* PageViewController01.swift */,
-				CE5E1F40211FFE7B00523D96 /* PageViewController02.swift */,
-				CE5E1F42211FFE8800523D96 /* PageViewController03.swift */,
-				CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */,
+				CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */,
+				CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */,
 				CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CE5804762144206B00BEDA1A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */,
+				CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		CE5804772144207F00BEDA1A /* DropDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7C95A2132766700B6886A /* CategoryDropDown.swift */,
+				CEA40AEC213A407900874065 /* DropDownButton.swift */,
+			);
+			path = DropDownButton;
+			sourceTree = "<group>";
+		};
+		CE5804842144326800BEDA1A /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */,
+				CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */,
+				CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */,
+				CE580487214432A100BEDA1A /* ic_notifications_black_24dp.png */,
+				CE580489214432A100BEDA1A /* ic_notifications_black_24dp@2x.png */,
+				CE580486214432A100BEDA1A /* ic_notifications_black_24dp@3x.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
+		CE7497252143F44900F51E91 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				CE7497282143F7D100F51E91 /* UIApplication.swift */,
+				CE7497262143F48100F51E91 /* UIViewController.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 		CE78631A2116E54C0053B87B /* Model */ = {
@@ -199,6 +260,7 @@
 		CE78631B2116E5570053B87B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CE5804842144326800BEDA1A /* icon */,
 				CE8B79FD21047601009BD29F /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -401,9 +463,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */,
 				CE4C20FC2132E2250075C0E1 /* CategoryDropDown.xib in Resources */,
+				CE580490214432A100BEDA1A /* ic_menu_black_24dp.png in Resources */,
 				CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */,
+				CE58048E214432A100BEDA1A /* ic_menu_black_24dp@2x.png in Resources */,
 				CE8B79FE21047601009BD29F /* Assets.xcassets in Resources */,
+				CE58048D214432A100BEDA1A /* ic_notifications_black_24dp.png in Resources */,
+				CE58048F214432A100BEDA1A /* ic_notifications_black_24dp@2x.png in Resources */,
+				CE58048C214432A100BEDA1A /* ic_notifications_black_24dp@3x.png in Resources */,
 				CE8B79FC210475FF009BD29F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,20 +580,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7497292143F7D100F51E91 /* UIApplication.swift in Sources */,
 				CE8B79F9210475FF009BD29F /* WordsListViewController.swift in Sources */,
 				CE5585832115701600E66A6C /* Idea.swift in Sources */,
 				CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */,
+				CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */,
+				CE5804832144292700BEDA1A /* MainViewController.swift in Sources */,
 				CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */,
 				CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */,
-				CE5E1F41211FFE7B00523D96 /* PageViewController02.swift in Sources */,
+				CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */,
 				CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
 				CEA40AED213A407900874065 /* DropDownButton.swift in Sources */,
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
-				CE5E1F43211FFE8800523D96 /* PageViewController03.swift in Sources */,
-				CE5E1F3F211FFE5600523D96 /* PageViewController01.swift in Sources */,
+				CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */,
+				CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */,
 				CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */,
 				CE8FC21021244ED300A628E4 /* ParentWordsListViewController.swift in Sources */,
+				CE7497272143F48100F51E91 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Realm Migration
         let config = Realm.Configuration(
@@ -26,9 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         _ = try! Realm()
         
-        //Set Up Category
         RealmInitializer.setUp()
-        
+        createMenuView()
         DropDown.startListeningToKeyboard()
         
         return true
@@ -53,6 +51,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+    }
+    
+    fileprivate func createMenuView(){
+        // create viewController code...
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu") as! MainViewController
+        let leftMenuViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenu") as! LeftMenuViewController
+        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        let slideMenuController = SlideMenuViewController(mainViewController:nvc, leftMenuViewController:leftMenuViewController)
+        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+
+        UINavigationBar.appearance().tintColor = UIColor.darkGray
+        
+        leftMenuViewController.mainViewController = nvc
+        
+//        slideMenuController.delegate = mainViewController
+        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+        self.window?.rootViewController = slideMenuController
+        self.window?.makeKeyAndVisible()
     }
 }
 

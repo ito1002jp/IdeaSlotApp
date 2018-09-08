@@ -27,7 +27,6 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNavigationController()
 
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -80,13 +79,5 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
         }
     }
     
-    //set up navigation bar(SlideMenuController)
-    func setUpNavigationController(){
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = UIColor(red: 129/255, green: 212/255, blue: 78/255, alpha: 1)
-        navigationController?.navigationBar.tintColor = UIColor.white
-//        addLeftBarButtonWithImage(UIImage(named: "menu")!)
-    }
-        
 }
 

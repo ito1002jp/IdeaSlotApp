@@ -11,25 +11,23 @@ import SlideMenuControllerSwift
 
 class SlideMenuViewController: SlideMenuController {
     
-    override func awakeFromNib(){
-        let mainVC = storyboard?.instantiateViewController(withIdentifier: "ParentWordsView")
-        let leftVC = storyboard?.instantiateViewController(withIdentifier: "PagingMenuVC01")
-        let navigationController = UINavigationController(rootViewController: mainVC!)
-        
-        mainViewController = navigationController
-        leftViewController = leftVC
-        super.awakeFromNib()
-        
-    }
-
     override func viewDidLoad() {
+        setUpSlideMenuOptions()
         super.viewDidLoad()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
-
+    override func isTagetViewController() -> Bool {
+        if let vc = UIApplication.topViewController() {
+            if vc is ParentWordsListViewController ||
+                vc is CategoryListViewController ||
+                vc is IdeasListViewController {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func setUpSlideMenuOptions(){
+        SlideMenuOptions.leftBezelWidth = 300
+    }
 }

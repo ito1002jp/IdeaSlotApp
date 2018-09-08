@@ -1,17 +1,15 @@
 //
-//  ParentWordsListViewController.swift
+//  MainViewController.swift
 //  IdeaSlotApp
 //
-//  Created by yuta akazawa on 2018/08/15.
+//  Created by yuta akazawa on 2018/09/09.
 //  Copyright © 2018年 yuta akazawa. All rights reserved.
 //
 
 import UIKit
 
-class ParentWordsListViewController: UIViewController {
+class MainViewController: UIViewController {
 
-    @IBAction func pressButtn(_ sender: UIButton) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,6 +17,10 @@ class ParentWordsListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
     }
 
     override func didReceiveMemoryWarning() {

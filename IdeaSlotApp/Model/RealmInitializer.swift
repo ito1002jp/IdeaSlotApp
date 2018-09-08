@@ -25,7 +25,6 @@ struct RealmInitializer {
         }
     }
     
-    // Realmファイルを作成する
     private static func insertSeedData<T: Seed>(_ seed: T) where T.SeedType: Category {
         // realm
         let realm = try! Realm()

@@ -1,5 +1,5 @@
 //
-//  PageViewController02.swift
+//  IdeasListViewController.swift
 //  IdeaSlotApp
 //
 //  Created by yuta akazawa on 2018/08/12.
@@ -8,12 +8,15 @@
 
 import UIKit
 
-class PageViewController02: UIViewController {
+class IdeasListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavigationBarItem()
     }
 
     override func didReceiveMemoryWarning() {

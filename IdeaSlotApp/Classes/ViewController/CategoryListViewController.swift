@@ -1,5 +1,5 @@
 //
-//  PageViewController01.swift
+//  CategoryListViewController.swift
 //  IdeaSlotApp
 //
 //  Created by yuta akazawa on 2018/08/12.
@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
-class PageViewController01: UIViewController {
+class CategoryListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavigationBarItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
