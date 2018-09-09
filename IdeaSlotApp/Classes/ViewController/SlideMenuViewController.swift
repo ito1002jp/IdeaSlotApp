@@ -20,7 +20,8 @@ class SlideMenuViewController: SlideMenuController {
         if let vc = UIApplication.topViewController() {
             if vc is ParentWordsListViewController ||
                 vc is CategoryListViewController ||
-                vc is IdeasListViewController {
+                vc is IdeasListViewController ||
+                vc is MainViewController{
                 return true
             }
         }
