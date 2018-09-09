@@ -32,23 +32,25 @@ class WordsItemViewController: UIViewController {
     }
     
     //action cancel button
-    @IBAction func cancel(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func cancel() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     // action save button
-    @IBAction func save(_ sender: UIButton) {
+    @IBAction func save() {
         if word != nil{
             edit()
         }else{
             create()
         }
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigationBarTitle(title: "Input Word")
+        createNavigationBarButtonItem()
         setupCategoryDropDown()
         dropDowns.forEach { $0.dismissMode = .onTap }
         dropDowns.forEach { $0.direction = .any }
@@ -134,5 +136,15 @@ class WordsItemViewController: UIViewController {
     func findCategoryItem(categoryName: String) -> Results<Category> {
         let categoryItem = realm.objects(Category.self).filter("categoryName = %@",categoryName)
         return categoryItem
+    }
+    
+    func createNavigationBarButtonItem(){
+        // cancel button
+        let leftBarbuttonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(WordsItemViewController.cancel))
+        self.navigationItem.leftBarButtonItem = leftBarbuttonItem
+        
+        //save button
+        let rightBarbuttonItem = UIBarButtonItem(title: "save", style: .plain, target: self, action: #selector(WordsItemViewController.save))
+        self.navigationItem.rightBarButtonItem = rightBarbuttonItem
     }
 }

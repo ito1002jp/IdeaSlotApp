@@ -18,6 +18,7 @@ class CategoryListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+        setNavigationBarTitle(title: "Category")
     }
 
     override func didReceiveMemoryWarning() {

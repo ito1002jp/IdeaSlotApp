@@ -19,6 +19,7 @@ class ParentWordsListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+        setNavigationBarTitle(title: "Words")
     }
 
     override func didReceiveMemoryWarning() {

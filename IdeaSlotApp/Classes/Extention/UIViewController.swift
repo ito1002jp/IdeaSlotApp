@@ -25,4 +25,12 @@ extension UIViewController{
         self.slideMenuController()?.removeLeftGestures()
 //        self.slideMenuController()?.removeRightGestures()
     }
+    
+    func setNavigationBarTitle(title: String){
+        let navigationTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        navigationTitle.font = UIFont.systemFont(ofSize: 21)
+        navigationTitle.text = title
+        navigationTitle.textAlignment = .center
+        self.navigationItem.titleView = navigationTitle
+    }
 }
