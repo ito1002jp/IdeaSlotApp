@@ -115,44 +115,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="input word in text field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-mQ-8ej">
-                                <rect key="frame" x="96" y="155" width="170" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-0d-UpT">
-                                <rect key="frame" x="96" y="185" width="222" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUY-0d-UpT">
+                                <rect key="frame" x="96" y="119" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L88-V3-5rd">
-                                <rect key="frame" x="165" y="70" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="categoryButton01" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlX-uG-AfW" customClass="DropDownButton" customModule="IdeaSlotApp" customModuleProvider="target">
-                                <rect key="frame" x="96" y="231" width="154" height="30"/>
-                                <state key="normal" title="choose category"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="categoryButton01" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlX-uG-AfW" customClass="DropDownButton" customModule="IdeaSlotApp" customModuleProvider="target">
+                                <rect key="frame" x="101" y="163" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="select category"/>
                                 <connections>
                                     <action selector="showCategoryButton:" destination="UeP-g4-Kmw" eventType="touchUpInside" id="qc9-Ce-Rlf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="input word in text field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-mQ-8ej">
+                                <rect key="frame" x="96" y="90" width="170" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="L88-V3-5rd" firstAttribute="centerX" secondItem="kBO-Gc-znz" secondAttribute="centerX" id="3bF-cz-cwu"/>
-                            <constraint firstItem="L88-V3-5rd" firstAttribute="trailing" secondItem="SlX-uG-AfW" secondAttribute="trailing" id="5Rc-ms-iXN"/>
-                            <constraint firstItem="L88-V3-5rd" firstAttribute="top" secondItem="inm-WW-hMe" secondAttribute="bottom" constant="50" id="K4u-Pt-EgE"/>
-                            <constraint firstItem="SlX-uG-AfW" firstAttribute="top" secondItem="oUY-0d-UpT" secondAttribute="bottom" constant="16" id="MJI-Ls-4Vp"/>
-                            <constraint firstItem="L88-V3-5rd" firstAttribute="centerX" secondItem="oUY-0d-UpT" secondAttribute="centerX" id="QW4-jC-qdt"/>
-                            <constraint firstItem="oUY-0d-UpT" firstAttribute="top" secondItem="uqf-mQ-8ej" secondAttribute="bottom" constant="9" id="RCd-i6-1Ch"/>
-                            <constraint firstItem="uqf-mQ-8ej" firstAttribute="leading" secondItem="kBO-Gc-znz" secondAttribute="leadingMargin" constant="76" id="VkJ-kF-gJU"/>
-                            <constraint firstItem="uqf-mQ-8ej" firstAttribute="top" secondItem="L88-V3-5rd" secondAttribute="bottom" constant="64" id="YaF-Ve-UPl"/>
-                            <constraint firstItem="uqf-mQ-8ej" firstAttribute="leading" secondItem="oUY-0d-UpT" secondAttribute="leading" id="h9M-Nn-4cq"/>
-                            <constraint firstItem="oUY-0d-UpT" firstAttribute="leading" secondItem="SlX-uG-AfW" secondAttribute="leading" id="sXq-po-6z8"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
