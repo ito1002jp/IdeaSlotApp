@@ -5,8 +5,8 @@ target 'IdeaSlotApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'RealmSwift'
-  pod 'PagingMenuController'
   pod 'DropDown'
+  pod 'AMSlideMenu', '~> 1.5.4'
 
   # Pods for IdeaSlotApp
 
@@ -23,7 +23,7 @@ target 'IdeaSlotApp' do
 end
 
 swift4_names = [
-  'PagingMenuController',
+  'AMSlideMenu',
   'DropDown'
 ]
 
