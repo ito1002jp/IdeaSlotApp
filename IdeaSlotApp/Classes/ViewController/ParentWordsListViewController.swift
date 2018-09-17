@@ -30,8 +30,6 @@ class ParentWordsListViewController: UIViewController {
     }
     
     func setPlusButton(){
-        let plusButtonImage1 = UIImage(named: "icons8-plus-32")
-        let plusButtonImage2 = UIImage(named: "icons8-plus-40")
         let plusButtonImage3 = UIImage(named: "icons8-plus-48")
         let plusButton = UIButton()
         
