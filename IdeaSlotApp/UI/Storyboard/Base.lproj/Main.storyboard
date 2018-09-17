@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,29 +25,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="embed" id="8up-Gl-it5"/>
+                                    <segue destination="BYZ-38-t0r" kind="embed" identifier="" id="8up-Gl-it5"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcP-e8-Rwl">
-                                <rect key="frame" x="297" y="653" width="86" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="pressButtn:" destination="uTt-At-u0v" eventType="touchUpInside" id="Jif-m3-gI3"/>
-                                    <action selector="testButton:" destination="c86-vk-QbB" eventType="touchUpInside" id="f4a-f3-Ihn"/>
-                                    <segue destination="UeP-g4-Kmw" kind="show" id="HLk-yn-peC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8Qf-hO-S02" firstAttribute="top" secondItem="YcP-e8-Rwl" secondAttribute="bottom" constant="35" id="htw-Kv-qXe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YcP-e8-Rwl" secondAttribute="trailing" constant="11" id="xjc-HH-bcZ"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="UeP-g4-Kmw" kind="show" identifier="toWordsItem" id="6g9-Ku-GxA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZC-Bz-5vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="c86-vk-QbB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="325" y="227"/>
         </scene>
@@ -279,6 +266,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HLk-yn-peC"/>
+        <segue reference="6g9-Ku-GxA"/>
     </inferredMetricsTieBreakers>
 </document>

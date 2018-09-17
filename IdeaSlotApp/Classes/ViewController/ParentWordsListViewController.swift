@@ -9,11 +9,10 @@
 import UIKit
 
 class ParentWordsListViewController: UIViewController {
-
-    @IBAction func pressButtn(_ sender: UIButton) {
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setPlusButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,4 +25,23 @@ class ParentWordsListViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @objc func segueToWordsItemViewController(){
+        self.performSegue(withIdentifier: "toWordsItem", sender: nil)
+    }
+    
+    func setPlusButton(){
+        let plusButtonImage1 = UIImage(named: "icons8-plus-32")
+        let plusButtonImage2 = UIImage(named: "icons8-plus-40")
+        let plusButtonImage3 = UIImage(named: "icons8-plus-48")
+        let plusButton = UIButton()
+        
+        plusButton.frame = CGRect(x:325, y:650, width:50, height:50)
+        plusButton.setImage(plusButtonImage3, for: .normal)
+        plusButton.imageView?.contentMode = .scaleAspectFit
+        plusButton.contentHorizontalAlignment = .fill
+        plusButton.contentVerticalAlignment = .fill
+        self.view.addSubview(plusButton)
+        plusButton.addTarget(self, action: #selector(ParentWordsListViewController.segueToWordsItemViewController), for: .touchUpInside)
+
+    }
 }
