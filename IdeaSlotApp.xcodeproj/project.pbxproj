@@ -519,7 +519,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/PagingMenuController/PagingMenuController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
@@ -527,7 +526,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagingMenuController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
