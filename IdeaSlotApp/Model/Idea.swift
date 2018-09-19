@@ -46,7 +46,7 @@ class Words: Base {
 }
 
 class Category: Base {
-    @objc dynamic var categoryId = ""
+    @objc dynamic var categoryId:Int = 0
     @objc dynamic var categoryName = ""
 //    @objc dynamic var userId: String? = ""
     let words = List<Words>()

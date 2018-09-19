@@ -25,7 +25,7 @@ class ParentWordsListViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func segueToWordsItemViewController(){
+    @objc func ToWordsItemViewController(){
         self.performSegue(withIdentifier: "toWordsItem", sender: nil)
     }
     
@@ -41,7 +41,7 @@ class ParentWordsListViewController: UIViewController {
         plusButton.contentHorizontalAlignment = .fill
         plusButton.contentVerticalAlignment = .fill
         self.view.addSubview(plusButton)
-        plusButton.addTarget(self, action: #selector(ParentWordsListViewController.segueToWordsItemViewController), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(ParentWordsListViewController.ToWordsItemViewController), for: .touchUpInside)
 
     }
 }

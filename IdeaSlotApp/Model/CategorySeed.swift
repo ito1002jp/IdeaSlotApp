@@ -19,7 +19,7 @@ extension Seed {
     static func items() -> [SeedType] {
         return values.map { val in
             let t = SeedType()
-            t.categoryId = val[0] as! String
+            t.categoryId = val[0] as! Int
             t.categoryName = val[1] as! String
             t.createDate = (val[2] as! Date)
             return t
@@ -36,11 +36,11 @@ struct CategorySeed: Seed {
 
 struct CategoryData {
     static let data: [[Any]] = [
-        ["1", "Food", Date()],
-        ["2", "Sports", Date()],
-        ["3", "Business", Date()],
-        ["4", "Fashion", Date()],
-        ["5", "Life-Style", Date()],
-        ["6", "Music", Date()]
+        [1, "Food", Date()],
+        [2, "Sports", Date()],
+        [3, "Business", Date()],
+        [4, "Fashion", Date()],
+        [5, "Life-Style", Date()],
+        [6, "Music", Date()]
     ]
 }

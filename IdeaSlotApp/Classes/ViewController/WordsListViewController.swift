@@ -50,7 +50,7 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"TodoListItem01")!
+        let cell = tableView.dequeueReusableCell(withIdentifier:"TodoListItemCell")!
         if let wordEntities = wordEntities{
             cell.textLabel!.text = wordEntities[indexPath.row].word
         }

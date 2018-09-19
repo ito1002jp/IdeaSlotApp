@@ -96,12 +96,6 @@ extension LeftMenuViewController: UITableViewDelegate{
             self.changeViewController(menu)
         }
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.tableView == scrollView{
-            
-        }
-    }
 }
 
 extension LeftMenuViewController : UITableViewDataSource {
@@ -121,6 +115,5 @@ extension LeftMenuViewController : UITableViewDataSource {
             }
         }
         return UITableViewCell()
-    }
-    
+    }    
 }

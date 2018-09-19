@@ -44,6 +44,9 @@
 		CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C95A2132766700B6886A /* CategoryDropDown.swift */; };
 		CEEDE3EB21438FB200D05F61 /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEDE3EA21438FB200D05F61 /* SlideMenuControllerSwift.framework */; };
 		CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */; };
+		CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */; };
+		CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */; };
+		CEEF4A9A21520D28007CFCC1 /* RealmCommonLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A9921520D28007CFCC1 /* RealmCommonLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,9 @@
 		CEE7C95A2132766700B6886A /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
 		CEEDE3EA21438FB200D05F61 /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SlideMenuControllerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
+		CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewController.swift; sourceTree = "<group>"; };
+		CEEF4A9921520D28007CFCC1 /* RealmCommonLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCommonLogic.swift; sourceTree = "<group>"; };
 		D6766FAB780E1DE48F34DA29 /* Pods-IdeaSlotAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotAppUITests/Pods-IdeaSlotAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD742A902FE1F85A8C3E7545 /* Pods-IdeaSlotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp.release.xcconfig"; sourceTree = "<group>"; };
 		FEB136B2DEB1EE49CE134733 /* Pods-IdeaSlotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaSlotApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 				CE8B79F8210475FF009BD29F /* WordsListViewController.swift */,
 				CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */,
 				CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */,
+				CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */,
 				CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */,
 				CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */,
 			);
@@ -212,6 +219,7 @@
 			children = (
 				CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */,
 				CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */,
+				CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				CE5585822115701600E66A6C /* Idea.swift */,
 				CE5A635A212948BC007E4887 /* CategorySeed.swift */,
 				CE5A635C21294E99007E4887 /* RealmInitializer.swift */,
+				CEEF4A9921520D28007CFCC1 /* RealmCommonLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -592,8 +601,11 @@
 				CEA40AED213A407900874065 /* DropDownButton.swift in Sources */,
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
 				CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */,
+				CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */,
+				CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */,
 				CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */,
 				CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */,
+				CEEF4A9A21520D28007CFCC1 /* RealmCommonLogic.swift in Sources */,
 				CE8FC21021244ED300A628E4 /* ParentWordsListViewController.swift in Sources */,
 				CE7497272143F48100F51E91 /* UIViewController.swift in Sources */,
 			);

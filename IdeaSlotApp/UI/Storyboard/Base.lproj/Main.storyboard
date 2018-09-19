@@ -55,7 +55,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ToDoListItem" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoListItem01" id="uAi-4J-lGy" customClass="ToDoListItemTableViewCell" customModule="IdeaSlotApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ToDoListItem" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoListItemCell" id="uAi-4J-lGy" customClass="ToDoListItemTableViewCell" customModule="IdeaSlotApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uAi-4J-lGy" id="79U-RM-y2s">
@@ -216,23 +216,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoryListViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MM-Y8-C3H">
-                                <rect key="frame" x="102.33333333333331" y="358" width="210" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="peg-Nb-f3z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CategoryItemCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryItemCell" id="YrI-4N-e6s" customClass="CategoryTableViewCell" customModule="IdeaSlotApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YrI-4N-e6s" id="s6T-Hp-UMD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JsH-40-bSH" id="uOk-lV-Zup"/>
+                                    <outlet property="delegate" destination="JsH-40-bSH" id="GP1-O2-qPC"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.7247699058219178" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6MM-Y8-C3H" firstAttribute="centerY" secondItem="jzQ-6m-CJs" secondAttribute="centerY" id="2lX-oz-gb0"/>
-                            <constraint firstItem="6MM-Y8-C3H" firstAttribute="centerX" secondItem="jzQ-6m-CJs" secondAttribute="centerX" id="ahE-AS-zFR"/>
+                            <constraint firstItem="peg-Nb-f3z" firstAttribute="top" secondItem="jzQ-6m-CJs" secondAttribute="top" id="Fh0-xD-rBs"/>
+                            <constraint firstAttribute="trailing" secondItem="peg-Nb-f3z" secondAttribute="trailing" id="fl1-8v-JmI"/>
+                            <constraint firstItem="peg-Nb-f3z" firstAttribute="leading" secondItem="jzQ-6m-CJs" secondAttribute="leading" id="odF-vT-Adz"/>
+                            <constraint firstItem="peg-Nb-f3z" firstAttribute="bottom" secondItem="psE-wi-Ig9" secondAttribute="top" id="svX-sR-93v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="peg-Nb-f3z" id="oBA-ZC-5db"/>
+                        <segue destination="XmP-jU-xr8" kind="show" identifier="toCategoryItem" id="z5O-6h-SnP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1i2-wI-p6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="1065"/>
+            <point key="canvasLocation" x="892.75362318840587" y="1064.6739130434783"/>
+        </scene>
+        <!--Category Item View Controller-->
+        <scene sceneID="nKq-7S-PFK">
+            <objects>
+                <viewController storyboardIdentifier="CategoryItem" id="XmP-jU-xr8" customClass="CategoryItemViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nCA-S4-btV"/>
+                        <viewControllerLayoutGuide type="bottom" id="5on-CI-BNX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KkM-xC-V4z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xkf-IS-2EM">
+                                <rect key="frame" x="111" y="132" width="192" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input Category Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVf-bz-NnU">
+                                <rect key="frame" x="111" y="103" width="152" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="Xkf-IS-2EM" id="6Jv-09-LNz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28l-SG-YvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="1744.5652173913045"/>
         </scene>
         <!--Ideas List View Controller-->
         <scene sceneID="03H-lx-Vm7">
@@ -266,6 +321,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6g9-Ku-GxA"/>
+        <segue reference="SKE-dN-Mxh"/>
     </inferredMetricsTieBreakers>
 </document>
