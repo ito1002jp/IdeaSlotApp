@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         _ = try! Realm()
         
-        RealmInitializer.setUp()
+//        RealmInitializer.setUp()
         createMenuView()
         DropDown.startListeningToKeyboard()
         

@@ -17,10 +17,4 @@ class RealmCommonLogic{
         let maxId = categoryMaxId + 1
         return maxId
     }
-    
-    func removeRealmFile(){
-        if let fileURL = Realm.Configuration.defaultConfiguration.fileURL {
-            try! FileManager.default.removeItem(at: fileURL)
-        }
-    }
 }

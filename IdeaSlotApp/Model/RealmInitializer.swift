@@ -14,7 +14,6 @@ struct RealmInitializer {
     static func setUp() {
         // Seed Data
         insertSeedData(CategorySeed())
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     private static func delete<T: Seed>(_ seed: T) where T.SeedType: Category {
@@ -32,6 +31,12 @@ struct RealmInitializer {
             T.items().forEach { val in
                 realm.add(val, update: true)
             }
+        }
+    }
+    
+    func removeRealmFile(){
+        if let fileURL = Realm.Configuration.defaultConfiguration.fileURL {
+            try! FileManager.default.removeItem(at: fileURL)
         }
     }
 }
