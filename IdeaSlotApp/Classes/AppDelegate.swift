@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let userDefaulft = UserDefaults.standard
+        let dict = ["firstLaunch": true]
+        userDefaulft.register(defaults: dict)
+        if userDefaulft.bool(forKey: "firstLaunch") {
+            userDefaulft.set(false, forKey: "firstLaunch")
+            RealmInitializer.setUp()
+        }
         // Realm Migration
         let config = Realm.Configuration(
             schemaVersion: 14,
@@ -24,8 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         Realm.Configuration.defaultConfiguration = config
         _ = try! Realm()
-        
-//        RealmInitializer.setUp()
         createMenuView()
         DropDown.startListeningToKeyboard()
         
