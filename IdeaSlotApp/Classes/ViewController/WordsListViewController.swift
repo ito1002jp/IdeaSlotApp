@@ -14,12 +14,17 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
 {
     @IBOutlet weak var tableView: UITableView!
     var wordEntities:Results<Words>? = nil
+    var category:Category? = nil
+    var categoryEntities:Results<Category>? = nil
 
     let realm = try! Realm()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         wordEntities = realm.objects(Words.self)
+        if category != nil {
+            print(category)
+        }
         if wordEntities != nil{
             tableView.reloadData()
         }
@@ -27,16 +32,11 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.tableView.estimatedRowHeight = 150
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        if wordEntities != nil{
-            tableView.reloadData()
-        }
-    }
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
+}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

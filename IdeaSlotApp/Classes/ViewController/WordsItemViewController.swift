@@ -16,6 +16,7 @@ class WordsItemViewController: UIViewController {
     var word:Words? = nil
     var categoryName:String? = nil
     var categoryItem:Results<Category>? = nil
+    var oldCategoryItem:Results<Category>? = nil
 
     let realm = try! Realm()
     let categoryDropDown = DropDown()
@@ -73,18 +74,20 @@ class WordsItemViewController: UIViewController {
         self.categoryName = self.categoryButton.currentTitle
         self.categoryItem = findCategoryItem(categoryName: categoryName!)
         
-        let category = Category(value: [
-            "categoryId": categoryItem?.first?.categoryId,
-                                            "categoryName": categoryItem?.first?.categoryName])
         let wordItem: [String: Any] = ["word": wordField.text!,
                                        "userId": "test-user",
                                        "createDate": Date(),
+                                       "categoryId": categoryItem!.first!.categoryId,
                                        "categoryName": categoryName!]
         let newWord = Words(value: wordItem)
+        let category = Category(value: [
+            "categoryId": categoryItem!.first!.categoryId,
+            "categoryName": categoryItem!.first!.categoryName])
         //insert
         try! realm.write(){
             realm.add(newWord)
             category.words.append(newWord)
+            realm.create(Category.self, value: category, update: true)
         }
     }
     
@@ -92,21 +95,29 @@ class WordsItemViewController: UIViewController {
     func edit() {
         self.categoryName = self.categoryButton.currentTitle
         self.categoryItem = findCategoryItem(categoryName: categoryName!)
+        self.oldCategoryItem = findCategoryItem(categoryName: word!.categoryName!)
 
         if word != nil{
             let category = Category(value: [
-                "categoryId": categoryItem?.first?.categoryId,
-                "categoryName": categoryItem?.first?.categoryName])
+                "categoryId": categoryItem!.first!.categoryId,
+                "categoryName": categoryItem!.first!.categoryName])
+            let removeWordItem = Array(oldCategoryItem!).first!
+            let removeWordItemIndex = removeWordItem.words.index(matching: "wordId == %@", word!.wordId!)
+            let oldCategory = Category(value: removeWordItem)
             let wordItem: [String: Any] = ["wordId": word!.wordId!,
                                            "word": wordField.text!,
                                            "userId": "test-user",
-                                           "createDate": Date(),
+                                           "updateDate": Date(),
+                                           "categoryId": categoryItem!.first!.categoryId,
                                            "categoryName": categoryName!]
             let editWord = Words(value: wordItem)
             //update
             try! realm.write(){
                 realm.add(editWord, update: true)
+                oldCategory.words.remove(at: removeWordItemIndex!)
+                realm.create(Category.self, value: oldCategory, update: true)
                 category.words.append(editWord)
+                realm.create(Category.self, value: category, update: true)
             }
         }
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AJ1-1R-Gbl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AJ1-1R-Gbl">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -230,8 +230,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="JsH-40-bSH" id="uOk-lV-Zup"/>
-                                    <outlet property="delegate" destination="JsH-40-bSH" id="GP1-O2-qPC"/>
+                                    <outlet property="dataSource" destination="JsH-40-bSH" id="zZ6-Vi-8nq"/>
+                                    <outlet property="delegate" destination="JsH-40-bSH" id="gB0-4n-buX"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -246,6 +246,7 @@
                     <connections>
                         <outlet property="tableView" destination="peg-Nb-f3z" id="oBA-ZC-5db"/>
                         <segue destination="XmP-jU-xr8" kind="show" identifier="toCategoryItem" id="z5O-6h-SnP"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toWordList" id="yhS-fg-hC8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1i2-wI-p6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,7 +303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IdeasListViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ja-4i-Gpd">
-                                <rect key="frame" x="116.66666666666669" y="358" width="181" height="21"/>
+                                <rect key="frame" x="116.66666666666669" y="357.66666666666669" width="181" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -322,5 +323,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="SKE-dN-Mxh"/>
+        <segue reference="yhS-fg-hC8"/>
     </inferredMetricsTieBreakers>
 </document>

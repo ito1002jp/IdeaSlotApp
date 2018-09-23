@@ -13,14 +13,14 @@ import SlideMenuControllerSwift
 class CategoryListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var categiryEntities: Results<Category>? = nil
+    var categoryEntities: Results<Category>? = nil
+    var wordsListViewController: UIViewController!
+
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if categiryEntities != nil{
-            tableView.reloadData()
-        }
+        categoryEntities = realm.objects(Category.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,8 +28,8 @@ class CategoryListViewController: UIViewController {
         self.setNavigationBarItem()
         setNavigationBarTitle(title: "Category")
         createNavigationBarButtonItem()
-        categiryEntities = realm.objects(Category.self)
-        if categiryEntities != nil{
+        categoryEntities = realm.objects(Category.self)
+        if categoryEntities != nil{
             tableView.reloadData()
         }
     }
@@ -49,18 +49,28 @@ class CategoryListViewController: UIViewController {
         let rightBarbuttonItem = UIBarButtonItem(title: "New", style: .plain, target: self, action: #selector(CategoryListViewController.ToCategoryItemViewController))
         self.navigationItem.rightBarButtonItem = rightBarbuttonItem
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWordList"{
+            let wordListViewController = segue.destination as! WordsListViewController
+            if categoryEntities != nil{
+                let category = categoryEntities![tableView.indexPathForSelectedRow!.row]
+                wordListViewController.category = category
+            }
+        }
+    }
 }
 
 extension CategoryListViewController: UITableViewDelegate{
-    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(categiryEntities?[indexPath.row].categoryName as! String)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "toWordList", sender: nil)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
-
 }
 
 extension CategoryListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let categoryEntity = categiryEntities{
+        if let categoryEntity = categoryEntities{
             return categoryEntity.count
         }
         return 0
@@ -68,7 +78,7 @@ extension CategoryListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"CategoryItemCell")!
-        if let categoryEntity = categiryEntities{
+        if let categoryEntity = categoryEntities{
             cell.textLabel!.text = categoryEntity[indexPath.row].categoryName
         }
         return cell

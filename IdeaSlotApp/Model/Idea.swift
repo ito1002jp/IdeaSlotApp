@@ -30,6 +30,7 @@ class User: Base{
 class Words: Base {
     @objc dynamic var wordId: String? = NSUUID().uuidString
     @objc dynamic var word: String? = ""
+    @objc dynamic var categoryId: Int = 0
     @objc dynamic var categoryName: String? = ""
 //    @objc dynamic var category: Category?
     let category = LinkingObjects(fromType: Category.self, property: "words")
