@@ -21,12 +21,13 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        wordEntities = realm.objects(Words.self)
         if category != nil {
-            print(category)
-        }
-        if wordEntities != nil{
-            tableView.reloadData()
+            wordEntities = realm.objects(Words.self).filter("categoryId == %@", category!.categoryId)
+        }else{
+            wordEntities = realm.objects(Words.self)
+            if wordEntities != nil{
+                tableView.reloadData()
+            }
         }
     }
     
