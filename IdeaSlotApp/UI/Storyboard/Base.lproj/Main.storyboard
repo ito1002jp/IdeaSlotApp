@@ -299,11 +299,11 @@
                         <viewControllerLayoutGuide type="bottom" id="E4v-bx-yj9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jyq-db-WgW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IdeasListViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ja-4i-Gpd">
-                                <rect key="frame" x="116.66666666666669" y="357.66666666666669" width="181" height="21"/>
+                                <rect key="frame" x="116.66666666666669" y="343.66666666666669" width="181" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -320,9 +320,36 @@
             </objects>
             <point key="canvasLocation" x="1489" y="1065"/>
         </scene>
+        <!--Parent Idea List View Controller-->
+        <scene sceneID="HNe-rn-XbC">
+            <objects>
+                <viewController storyboardIdentifier="ParentIdeas" id="d2e-fw-xCJ" customClass="ParentIdeaListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e6B-KI-lts"/>
+                        <viewControllerLayoutGuide type="bottom" id="wrk-t3-FqC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gjP-AS-ZHy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GI7-TH-05Y">
+                                <rect key="frame" x="0.0" y="28" width="414" height="708"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="VJQ-YZ-oO3" kind="embed" id="UdL-cH-Mbs"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bD-pE-Jgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2201.449275362319" y="1064.6739130434783"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SKE-dN-Mxh"/>
-        <segue reference="yhS-fg-hC8"/>
+        <segue reference="6g9-Ku-GxA"/>
+        <segue reference="8up-Gl-it5"/>
     </inferredMetricsTieBreakers>
 </document>

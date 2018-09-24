@@ -13,6 +13,7 @@
 		CE069470214F61B900D1DCEF /* icons8-plus-40.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946D214F61B800D1DCEF /* icons8-plus-40.png */; };
 		CE069471214F61B900D1DCEF /* icons8-plus-48.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946E214F61B800D1DCEF /* icons8-plus-48.png */; };
 		CE069472214F61B900D1DCEF /* icons8-plus-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946F214F61B900D1DCEF /* icons8-plus-32.png */; };
+		CE0D11A921592A3E006DDE37 /* ParentIdeaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D11A821592A3E006DDE37 /* ParentIdeaListViewController.swift */; };
 		CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */; };
 		CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */; };
 		CE4C20FC2132E2250075C0E1 /* CategoryDropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */; };
@@ -76,6 +77,7 @@
 		CE06946D214F61B800D1DCEF /* icons8-plus-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-40.png"; sourceTree = "<group>"; };
 		CE06946E214F61B800D1DCEF /* icons8-plus-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-48.png"; sourceTree = "<group>"; };
 		CE06946F214F61B900D1DCEF /* icons8-plus-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-32.png"; sourceTree = "<group>"; };
+		CE0D11A821592A3E006DDE37 /* ParentIdeaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentIdeaListViewController.swift; sourceTree = "<group>"; };
 		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE2697E7210DB23700F59F2B /* MagicalRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MagicalRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */,
 				CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */,
 				CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */,
+				CE0D11A821592A3E006DDE37 /* ParentIdeaListViewController.swift */,
 				CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */,
 				CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */,
 			);
@@ -600,6 +603,7 @@
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
 				CEA40AED213A407900874065 /* DropDownButton.swift in Sources */,
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
+				CE0D11A921592A3E006DDE37 /* ParentIdeaListViewController.swift in Sources */,
 				CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */,
 				CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */,
 				CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */,
