@@ -42,7 +42,7 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let wordsListViewController = storyboard.instantiateViewController(withIdentifier: "ParentWordsView")as! ParentWordsListViewController
         let categoryListViewController = storyboard.instantiateViewController(withIdentifier: "CategoryList")as! CategoryListViewController
-        let ideasListViewController = storyboard.instantiateViewController(withIdentifier: "IdeasList")as! IdeasListViewController
+        let ideasListViewController = storyboard.instantiateViewController(withIdentifier: "ParentIdeasView")as! ParentIdeaListViewController
         self.wordsListViewController = UINavigationController(rootViewController: wordsListViewController)
         self.categoryListViewController = UINavigationController(rootViewController: categoryListViewController)
         self.ideasListViewController = UINavigationController(rootViewController: ideasListViewController)

@@ -323,7 +323,7 @@
         <!--Parent Idea List View Controller-->
         <scene sceneID="HNe-rn-XbC">
             <objects>
-                <viewController storyboardIdentifier="ParentIdeas" id="d2e-fw-xCJ" customClass="ParentIdeaListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ParentIdeasView" id="d2e-fw-xCJ" customClass="ParentIdeaListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e6B-KI-lts"/>
                         <viewControllerLayoutGuide type="bottom" id="wrk-t3-FqC"/>

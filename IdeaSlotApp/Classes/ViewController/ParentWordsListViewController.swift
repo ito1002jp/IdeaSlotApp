@@ -42,6 +42,5 @@ class ParentWordsListViewController: UIViewController {
         plusButton.contentVerticalAlignment = .fill
         self.view.addSubview(plusButton)
         plusButton.addTarget(self, action: #selector(ParentWordsListViewController.ToWordsItemViewController), for: .touchUpInside)
-
     }
 }
