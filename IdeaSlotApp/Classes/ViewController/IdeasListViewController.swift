@@ -16,8 +16,6 @@ class IdeasListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.setNavigationBarItem()
-//        setNavigationBarTitle(title: "Ideas")
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,4 +23,23 @@ class IdeasListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+}
+
+extension IdeasListViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+    
+}
+
+extension IdeasListViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IdeaItemCell")!
+        return cell
+    }
 }
