@@ -40,6 +40,7 @@
 		CE8B7A0C21047601009BD29F /* IdeaSlotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A0B21047601009BD29F /* IdeaSlotAppTests.swift */; };
 		CE8B7A1721047601009BD29F /* IdeaSlotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */; };
 		CE8FC21021244ED300A628E4 /* ParentWordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */; };
+		CE988D41215D1919000B1345 /* IdeasItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D40215D1919000B1345 /* IdeasItemViewController.swift */; };
 		CEA40AED213A407900874065 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA40AEC213A407900874065 /* DropDownButton.swift */; };
 		CEE7C959213271F700B6886A /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE7C958213271F700B6886A /* DropDown.framework */; };
 		CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C95A2132766700B6886A /* CategoryDropDown.swift */; };
@@ -113,6 +114,7 @@
 		CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaSlotAppUITests.swift; sourceTree = "<group>"; };
 		CE8B7A1821047601009BD29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentWordsListViewController.swift; sourceTree = "<group>"; };
+		CE988D40215D1919000B1345 /* IdeasItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasItemViewController.swift; sourceTree = "<group>"; };
 		CEA40AEC213A407900874065 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		CEE542B9210476DF00CB5E7F /* PageMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PageMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE7C958213271F700B6886A /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +215,7 @@
 				CE0D11A821592A3E006DDE37 /* ParentIdeaListViewController.swift */,
 				CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */,
 				CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */,
+				CE988D40215D1919000B1345 /* IdeasItemViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				CE8B79F9210475FF009BD29F /* WordsListViewController.swift in Sources */,
 				CE5585832115701600E66A6C /* Idea.swift in Sources */,
 				CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */,
+				CE988D41215D1919000B1345 /* IdeasItemViewController.swift in Sources */,
 				CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */,
 				CE5804832144292700BEDA1A /* MainViewController.swift in Sources */,
 				CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */,

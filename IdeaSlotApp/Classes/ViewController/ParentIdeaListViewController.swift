@@ -25,6 +25,10 @@ class ParentIdeaListViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @objc func ToIdeasItemViewController(){
+        self.performSegue(withIdentifier: "ToIdeasItem", sender: nil)
+    }
+
     func setPlusButton(){
         let plusButtonImage = UIImage(named: "icons8-plus-48")
         let plusButton = UIButton()
@@ -34,6 +38,6 @@ class ParentIdeaListViewController: UIViewController {
         plusButton.contentHorizontalAlignment = .fill
         plusButton.contentVerticalAlignment = .fill
         self.view.addSubview(plusButton)
-//        plusButton.addTarget(self, action: #selector(ParentWordsListViewController.ToWordsItemViewController), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(ParentIdeaListViewController.ToIdeasItemViewController), for: .touchUpInside)
     }
 }
