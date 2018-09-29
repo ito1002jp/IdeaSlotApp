@@ -131,24 +131,6 @@ class WordsItemViewController: UIViewController {
         }
     }
     
-    //return category name list
-    func arrayCategoryList() -> Array<String> {
-        var CategoryNameList: [String] = []
-        let CategoryList = realm.objects(Category.self)
-
-        //create ArrayList only categoryName
-        for Category in CategoryList{
-            CategoryNameList.append(Category.categoryName)
-        }
-        return CategoryNameList
-    }
-    
-    //return one item Category filter by categoryName
-    func findCategoryItem(categoryName: String) -> Results<Category> {
-        let categoryItem = realm.objects(Category.self).filter("categoryName = %@",categoryName)
-        return categoryItem
-    }
-    
     func createNavigationBarButtonItem(){
         // cancel button
         let leftBarbuttonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(WordsItemViewController.cancel))

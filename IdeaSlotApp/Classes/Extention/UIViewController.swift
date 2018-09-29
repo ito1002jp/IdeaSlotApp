@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 extension UIViewController{
     
@@ -33,4 +34,25 @@ extension UIViewController{
         navigationTitle.textAlignment = .center
         self.navigationItem.titleView = navigationTitle
     }
+    
+    //return category name list
+    func arrayCategoryList() -> Array<String> {
+        let realm = try!Realm()
+        var CategoryNameList: [String] = []
+        let CategoryList = realm.objects(Category.self)
+        
+        //create ArrayList only categoryName
+        for Category in CategoryList{
+            CategoryNameList.append(Category.categoryName)
+        }
+        return CategoryNameList
+    }
+    
+    //return one item Category filter by categoryName
+    func findCategoryItem(categoryName: String) -> Results<Category> {
+        let realm = try!Realm()
+        let categoryItem = realm.objects(Category.self).filter("categoryName = %@",categoryName)
+        return categoryItem
+    }
+    
 }
