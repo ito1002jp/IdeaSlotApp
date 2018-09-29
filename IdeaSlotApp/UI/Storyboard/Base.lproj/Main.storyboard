@@ -288,7 +288,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28l-SG-YvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="911.59420289855075" y="1744.5652173913045"/>
+            <point key="canvasLocation" x="893" y="1778"/>
+        </scene>
+        <!--Idea Detail View Controller-->
+        <scene sceneID="qVS-p9-xpr">
+            <objects>
+                <viewController storyboardIdentifier="IdeaDetail" id="WN8-F4-Cnb" customClass="IdeaDetailViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m6U-nw-NV7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lhw-pJ-a9N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hu0-yY-6jh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IdeaDetailViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBA-IM-7la">
+                                <rect key="frame" x="117" y="344" width="180" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Px3-f5-o7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544.9275362318842" y="1777.9891304347827"/>
         </scene>
         <!--Ideas Item View Controller-->
         <scene sceneID="tsY-UH-VxY">
@@ -301,21 +328,12 @@
                     <view key="view" contentMode="scaleToFill" id="kJN-Hu-dOV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IdeasItemViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcF-eW-AG8">
-                                <rect key="frame" x="114" y="358" width="187" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.33250599009999998" green="0.34912570329999998" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORA-Kp-SmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="1749"/>
+            <point key="canvasLocation" x="2201" y="1778"/>
         </scene>
         <!--Ideas List View Controller-->
         <scene sceneID="03H-lx-Vm7">
@@ -356,10 +374,13 @@
                             <constraint firstAttribute="trailing" secondItem="aBD-GG-x5L" secondAttribute="trailing" id="d2W-kl-Aet"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="WN8-F4-Cnb" kind="show" identifier="ToIdeaDetail" id="XjW-a2-zvh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fX-kT-DSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8115942028987" y="1065.4891304347827"/>
+            <point key="canvasLocation" x="1545" y="1053"/>
         </scene>
         <!--Parent Idea List View Controller-->
         <scene sceneID="HNe-rn-XbC">
