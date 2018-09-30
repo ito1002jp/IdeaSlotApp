@@ -32,7 +32,7 @@ class ParentIdeaListViewController: UIViewController {
     func setPlusButton(){
         let plusButtonImage = UIImage(named: "icons8-plus-48")
         let plusButton = UIButton()
-        plusButton.frame = CGRect(x:325, y:650, width:50, height:50)
+        plusButton.frame = CGRect(x:300, y:600, width:50, height:50)
         plusButton.setImage(plusButtonImage, for: .normal)
         plusButton.imageView?.contentMode = .scaleAspectFit
         plusButton.contentHorizontalAlignment = .fill
