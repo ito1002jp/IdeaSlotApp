@@ -13,13 +13,11 @@
 		CE069470214F61B900D1DCEF /* icons8-plus-40.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946D214F61B800D1DCEF /* icons8-plus-40.png */; };
 		CE069471214F61B900D1DCEF /* icons8-plus-48.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946E214F61B800D1DCEF /* icons8-plus-48.png */; };
 		CE069472214F61B900D1DCEF /* icons8-plus-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946F214F61B900D1DCEF /* icons8-plus-32.png */; };
-		CE0D11A921592A3E006DDE37 /* ParentIdeaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D11A821592A3E006DDE37 /* ParentIdeaListViewController.swift */; };
 		CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */; };
 		CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */; };
 		CE4C20FC2132E2250075C0E1 /* CategoryDropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */; };
 		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
 		CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */; };
-		CE5804832144292700BEDA1A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5804822144292700BEDA1A /* MainViewController.swift */; };
 		CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */; };
 		CE58048E214432A100BEDA1A /* ic_menu_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */; };
 		CE580490214432A100BEDA1A /* ic_menu_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */; };
@@ -39,8 +37,7 @@
 		CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */; };
 		CE8B7A0C21047601009BD29F /* IdeaSlotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A0B21047601009BD29F /* IdeaSlotAppTests.swift */; };
 		CE8B7A1721047601009BD29F /* IdeaSlotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */; };
-		CE8FC21021244ED300A628E4 /* ParentWordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */; };
-		CE988D41215D1919000B1345 /* IdeasItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D40215D1919000B1345 /* IdeasItemViewController.swift */; };
+		CE988D41215D1919000B1345 /* IdeasSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */; };
 		CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */; };
 		CEA40AED213A407900874065 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA40AEC213A407900874065 /* DropDownButton.swift */; };
 		CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */; };
@@ -80,7 +77,6 @@
 		CE06946D214F61B800D1DCEF /* icons8-plus-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-40.png"; sourceTree = "<group>"; };
 		CE06946E214F61B800D1DCEF /* icons8-plus-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-48.png"; sourceTree = "<group>"; };
 		CE06946F214F61B900D1DCEF /* icons8-plus-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-32.png"; sourceTree = "<group>"; };
-		CE0D11A821592A3E006DDE37 /* ParentIdeaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentIdeaListViewController.swift; sourceTree = "<group>"; };
 		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE2697E7210DB23700F59F2B /* MagicalRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MagicalRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,7 +84,6 @@
 		CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryDropDown.xib; sourceTree = "<group>"; };
 		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		CE5804822144292700BEDA1A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@3x.png"; sourceTree = "<group>"; };
 		CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@2x.png"; sourceTree = "<group>"; };
 		CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu_black_24dp.png; sourceTree = "<group>"; };
@@ -115,8 +110,7 @@
 		CE8B7A1221047601009BD29F /* IdeaSlotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdeaSlotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaSlotAppUITests.swift; sourceTree = "<group>"; };
 		CE8B7A1821047601009BD29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentWordsListViewController.swift; sourceTree = "<group>"; };
-		CE988D40215D1919000B1345 /* IdeasItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasItemViewController.swift; sourceTree = "<group>"; };
+		CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasSlotViewController.swift; sourceTree = "<group>"; };
 		CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaTableViewCell.swift; sourceTree = "<group>"; };
 		CEA40AEC213A407900874065 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDetailViewController.swift; sourceTree = "<group>"; };
@@ -209,16 +203,13 @@
 		CE558587211573E000E66A6C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CE5804822144292700BEDA1A /* MainViewController.swift */,
 				CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */,
-				CE8FC20F21244ED300A628E4 /* ParentWordsListViewController.swift */,
 				CE8B79F8210475FF009BD29F /* WordsListViewController.swift */,
 				CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */,
 				CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */,
 				CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */,
-				CE0D11A821592A3E006DDE37 /* ParentIdeaListViewController.swift */,
 				CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */,
-				CE988D40215D1919000B1345 /* IdeasItemViewController.swift */,
+				CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */,
 				CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */,
 				CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */,
 			);
@@ -603,9 +594,8 @@
 				CE8B79F9210475FF009BD29F /* WordsListViewController.swift in Sources */,
 				CE5585832115701600E66A6C /* Idea.swift in Sources */,
 				CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */,
-				CE988D41215D1919000B1345 /* IdeasItemViewController.swift in Sources */,
+				CE988D41215D1919000B1345 /* IdeasSlotViewController.swift in Sources */,
 				CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */,
-				CE5804832144292700BEDA1A /* MainViewController.swift in Sources */,
 				CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */,
 				CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */,
 				CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */,
@@ -614,7 +604,6 @@
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
 				CEA40AED213A407900874065 /* DropDownButton.swift in Sources */,
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
-				CE0D11A921592A3E006DDE37 /* ParentIdeaListViewController.swift in Sources */,
 				CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */,
 				CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */,
 				CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */,
@@ -622,7 +611,6 @@
 				CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */,
 				CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */,
 				CEEF4A9A21520D28007CFCC1 /* RealmCommonLogic.swift in Sources */,
-				CE8FC21021244ED300A628E4 /* ParentWordsListViewController.swift in Sources */,
 				CE7497272143F48100F51E91 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // create viewController code...
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu") as! MainViewController
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "WordsList") as! WordsListViewController
         let leftMenuViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenu") as! LeftMenuViewController
         let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
         let slideMenuController = SlideMenuViewController(mainViewController:nvc, leftMenuViewController:leftMenuViewController)
@@ -72,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         leftMenuViewController.mainViewController = nvc
         
-//        slideMenuController.delegate = mainViewController
         self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
         self.window?.rootViewController = slideMenuController
         self.window?.makeKeyAndVisible()

@@ -33,7 +33,9 @@ class WordsListViewController: UIViewController ,UITableViewDelegate ,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 150
+        self.setNavigationBarItem()
+        setNavigationBarTitle(title: "Words")
+//        tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.delegate = self
         tableView.dataSource = self

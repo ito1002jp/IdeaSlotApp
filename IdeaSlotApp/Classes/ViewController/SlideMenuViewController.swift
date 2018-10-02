@@ -18,10 +18,10 @@ class SlideMenuViewController: SlideMenuController {
     
     override func isTagetViewController() -> Bool {
         if let vc = UIApplication.topViewController() {
-            if vc is ParentWordsListViewController ||
+            if vc is WordsListViewController ||
                 vc is CategoryListViewController ||
-                vc is ParentIdeaListViewController ||
-                vc is MainViewController{
+                vc is IdeasListViewController ||
+                vc is IdeasSlotViewController{
                 return true
             }
         }

@@ -1,5 +1,5 @@
 //
-//  IdeasItemViewController.swift
+//  IdeasSlotViewController.swift
 //  IdeaSlotApp
 //
 //  Created by yuta akazawa on 2018/09/27.
@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import DropDown
 
-class IdeasItemViewController: UIViewController {
+class IdeasSlotViewController: UIViewController {
 
     var pickerview01 = UIPickerView()
     var pickerview02 = UIPickerView()
@@ -40,7 +40,7 @@ class IdeasItemViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setNavigationBarTitle(title: "Input Idea")
+        setNavigationBarTitle(title: "Idea Slot")
         pickerList01 = arrayWordList(categoryId: categoryId)
         setPickerView(pickerview: pickerview01, tag: 1)
         pickerList02 = arrayWordList(categoryId: categoryId)
@@ -83,7 +83,7 @@ class IdeasItemViewController: UIViewController {
 
 }
 
-extension IdeasItemViewController: UIPickerViewDelegate{
+extension IdeasSlotViewController: UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(pickerView)
@@ -91,7 +91,7 @@ extension IdeasItemViewController: UIPickerViewDelegate{
     
 }
 
-extension IdeasItemViewController: UIPickerViewDataSource{
+extension IdeasSlotViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

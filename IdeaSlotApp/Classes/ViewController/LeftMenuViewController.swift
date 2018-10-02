@@ -9,10 +9,10 @@
 import UIKit
 
 enum LeftMenu :Int{
-    case main = 0
-    case words
+    case words = 0
     case category
     case ideas
+    case slot
 }
 
 protocol LeftMenuProtocol : class {
@@ -22,12 +22,12 @@ protocol LeftMenuProtocol : class {
 class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Main", "Words", "Category", "Ideas"]
+    var menus = ["Words", "Category", "Ideas", "Idea Slot"]
     var wordsListViewController: UIViewController!
     var categoryListViewController: UIViewController!
     var ideasListViewController: UIViewController!
+    var ideasSlotViewController: UIViewController!
     var mainViewController: UIViewController!
-    
 //    var imageHeaderView: ImageHeaderView!
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,12 +40,14 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let wordsListViewController = storyboard.instantiateViewController(withIdentifier: "ParentWordsView")as! ParentWordsListViewController
+        let wordsListViewController = storyboard.instantiateViewController(withIdentifier: "WordsList")as! WordsListViewController
         let categoryListViewController = storyboard.instantiateViewController(withIdentifier: "CategoryList")as! CategoryListViewController
-        let ideasListViewController = storyboard.instantiateViewController(withIdentifier: "ParentIdeasView")as! ParentIdeaListViewController
+        let ideasListViewController = storyboard.instantiateViewController(withIdentifier: "IdeasList")as! IdeasListViewController
+        let ideasSlotViewController = storyboard.instantiateViewController(withIdentifier: "IdeasSlot")as! IdeasSlotViewController
         self.wordsListViewController = UINavigationController(rootViewController: wordsListViewController)
         self.categoryListViewController = UINavigationController(rootViewController: categoryListViewController)
         self.ideasListViewController = UINavigationController(rootViewController: ideasListViewController)
+        self.ideasSlotViewController = UINavigationController(rootViewController: ideasSlotViewController)
         
         self.tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.identifier)
         //        self.imageHeaderView = ImageHeaderView.
@@ -68,14 +70,14 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
-        case .main:
-            self.slideMenuController()?.changeMainViewController(mainViewController, close: true)
         case .words:
             self.slideMenuController()?.changeMainViewController(wordsListViewController, close: true)
         case .category:
             self.slideMenuController()?.changeMainViewController(categoryListViewController, close: true)
         case .ideas:
             self.slideMenuController()?.changeMainViewController(ideasListViewController, close: true)
+        case .slot:
+            self.slideMenuController()?.changeMainViewController(ideasSlotViewController, close: true)
         }
     }
 }
@@ -84,7 +86,7 @@ extension LeftMenuViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: indexPath.row){
             switch menu{
-            case .main, .words, .category, .ideas:
+            case .words, .category, .ideas, .slot:
                 return BaseTableViewCell.height()
             }
         }
@@ -108,7 +110,7 @@ extension LeftMenuViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .main, .words, .category, .ideas:
+            case .words, .category, .ideas, .slot:
                 let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menus[indexPath.row])
                 return cell
