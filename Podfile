@@ -4,9 +4,9 @@
 target 'IdeaSlotApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'RealmSwift'
-  pod 'DropDown'
-  pod 'SlideMenuControllerSwift'
+  #pod 'RealmSwift'
+  #pod 'DropDown'
+  #pod 'SlideMenuControllerSwift'
 
   # Pods for IdeaSlotApp
 
@@ -35,7 +35,7 @@ post_install do |installer|
       end
       else
       target.build_configurations.each do |config|
-        config.build_settings['SWIFT_VERSION'] = '4.0'
+        config.build_settings['SWIFT_VERSION'] = '4.2'
         config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
       end
     end

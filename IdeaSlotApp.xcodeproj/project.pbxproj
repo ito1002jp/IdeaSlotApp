@@ -26,8 +26,6 @@
 		CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */; };
 		CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */; };
 		CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */; };
-		CE66265B211203FF000E73F4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE66265A211203FF000E73F4 /* Realm.framework */; };
-		CE66265D21120405000E73F4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE66265C21120405000E73F4 /* RealmSwift.framework */; };
 		CE7497272143F48100F51E91 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497262143F48100F51E91 /* UIViewController.swift */; };
 		CE7497292143F7D100F51E91 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497282143F7D100F51E91 /* UIApplication.swift */; };
 		CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B79F6210475FF009BD29F /* AppDelegate.swift */; };
@@ -41,9 +39,11 @@
 		CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */; };
 		CEA40AED213A407900874065 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA40AEC213A407900874065 /* DropDownButton.swift */; };
 		CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */; };
-		CEE7C959213271F700B6886A /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE7C958213271F700B6886A /* DropDown.framework */; };
+		CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA72180BAE300BBD07F /* DropDown.framework */; };
+		CEE38EAC2180BAE300BBD07F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA82180BAE300BBD07F /* Realm.framework */; };
+		CEE38EAD2180BAE300BBD07F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA92180BAE300BBD07F /* RealmSwift.framework */; };
+		CEE38EAE2180BAE300BBD07F /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */; };
 		CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C95A2132766700B6886A /* CategoryDropDown.swift */; };
-		CEEDE3EB21438FB200D05F61 /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEDE3EA21438FB200D05F61 /* SlideMenuControllerSwift.framework */; };
 		CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */; };
 		CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */; };
 		CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */; };
@@ -114,6 +114,10 @@
 		CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaTableViewCell.swift; sourceTree = "<group>"; };
 		CEA40AEC213A407900874065 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDetailViewController.swift; sourceTree = "<group>"; };
+		CEE38EA72180BAE300BBD07F /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = Carthage/Build/iOS/DropDown.framework; sourceTree = "<group>"; };
+		CEE38EA82180BAE300BBD07F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		CEE38EA92180BAE300BBD07F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
 		CEE542B9210476DF00CB5E7F /* PageMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PageMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE7C958213271F700B6886A /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE7C95A2132766700B6886A /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
@@ -132,10 +136,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEDE3EB21438FB200D05F61 /* SlideMenuControllerSwift.framework in Frameworks */,
-				CEE7C959213271F700B6886A /* DropDown.framework in Frameworks */,
-				CE66265D21120405000E73F4 /* RealmSwift.framework in Frameworks */,
-				CE66265B211203FF000E73F4 /* Realm.framework in Frameworks */,
+				CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */,
+				CEE38EAC2180BAE300BBD07F /* Realm.framework in Frameworks */,
+				CEE38EAD2180BAE300BBD07F /* RealmSwift.framework in Frameworks */,
+				CEE38EAE2180BAE300BBD07F /* SlideMenuControllerSwift.framework in Frameworks */,
 				04E40C38C434E8DFF5A28DA8 /* Pods_IdeaSlotApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +357,10 @@
 			children = (
 				CEEDE3EA21438FB200D05F61 /* SlideMenuControllerSwift.framework */,
 				CEE7C958213271F700B6886A /* DropDown.framework */,
+				CEE38EA72180BAE300BBD07F /* DropDown.framework */,
+				CEE38EA82180BAE300BBD07F /* Realm.framework */,
+				CEE38EA92180BAE300BBD07F /* RealmSwift.framework */,
+				CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */,
 				CE5E1F3C211FFA2C00523D96 /* PagingMenuController.framework */,
 				CE66265C21120405000E73F4 /* RealmSwift.framework */,
 				CE66265A211203FF000E73F4 /* Realm.framework */,
@@ -377,7 +385,7 @@
 				CE8B79EF210475FF009BD29F /* Sources */,
 				CE8B79F0210475FF009BD29F /* Frameworks */,
 				CE8B79F1210475FF009BD29F /* Resources */,
-				86670C5C78E4D201E329BAEB /* [CP] Embed Pods Frameworks */,
+				CEE38EAF2180BB0900BBD07F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -523,30 +531,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		86670C5C78E4D201E329BAEB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IdeaSlotApp/Pods-IdeaSlotApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9BBA414AE026AB0C0ACD60FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,6 +566,27 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CEE38EAF2180BB0900BBD07F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SlideMenuControllerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DropDown.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -787,6 +792,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = IdeaSlotApp/Others/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -810,6 +819,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = IdeaSlotApp/Others/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
