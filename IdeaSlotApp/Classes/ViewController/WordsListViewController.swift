@@ -18,7 +18,6 @@ class WordsListViewController: UIViewController{
 
     let realm = try! Realm()
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if category != nil {
@@ -44,24 +43,6 @@ class WordsListViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-}
-
-extension WordsListViewController: UITableViewDelegate{
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected cell")
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            try! realm.write {
-                if let wordEntities = wordEntities{
-                    realm.delete(wordEntities[indexPath.row])
-                }
-            }
-            tableView.reloadData()
-        }
-    }
     
     func saveWord(Id: String, text: String, category: String){
         let wordItem = wordEntities?.filter("wordId == %@", Id)
@@ -79,14 +60,14 @@ extension WordsListViewController: UITableViewDelegate{
     func insertWrd(text: String, categoryName: String){
         let categoryItem = findCategoryItem(categoryName: categoryName)
         let item: [String: Any] = ["word": text,
-//                                       "userId": "test-user",
+                                   //                                       "userId": "test-user",
             "categoryId": categoryItem.first!.categoryId,
-                                       "categoryName": categoryName]
+            "categoryName": categoryName]
         let newWord = Words(value: item)
         let category = Category(value: [
             "categoryId": categoryItem.first!.categoryId,
             "categoryName": categoryItem.first!.categoryName])
-
+        
         try! realm.write(){
             realm.add(newWord)
             category.words.append(newWord)
@@ -106,13 +87,13 @@ extension WordsListViewController: UITableViewDelegate{
         let removeWordItemIndex = removeWordItem.words.index(matching: "wordId == %@", wordItem.wordId!)
         let oldCategory = Category(value: removeWordItem)
         let item: [String: Any] = ["wordId": wordItem.wordId!,
-                                       "word": text,
-//                                       "userId": "test-user",
-                                       "updateDate": Date(),
-                                       "categoryId": categoryItem.first!.categoryId,
-                                       "categoryName": categoryItem.first!.categoryName]
+                                   "word": text,
+                                   //                                       "userId": "test-user",
+            "updateDate": Date(),
+            "categoryId": categoryItem.first!.categoryId,
+            "categoryName": categoryItem.first!.categoryName]
         let editWord = Words(value: item)
-
+        
         try! realm.write(){
             realm.add(editWord, update: true)
             category.words.append(editWord)
@@ -121,6 +102,25 @@ extension WordsListViewController: UITableViewDelegate{
                 oldCategory.words.remove(at: removeWordItemIndex!)
                 realm.create(Category.self, value: oldCategory, update: true)
             }
+        }
+    }
+
+}
+
+extension WordsListViewController: UITableViewDelegate{
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("selected cell")
+//    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            try! realm.write {
+                if let wordEntities = wordEntities{
+                    realm.delete(wordEntities[indexPath.row])
+                }
+            }
+            tableView.reloadData()
         }
     }
 }
@@ -158,8 +158,6 @@ extension WordsListViewController: UITableViewDataSource{
 extension WordsListViewController: InputTextTableCellDelegate{
     //textfield has finished to edit
     func textFieldDidEndEditing(cell: WordTableViewCell, value: String) -> () {
-        print("finished edit")
-        
         if value != cell.beforeWord || cell.categoryName != cell.beforecategoryName {
             saveWord(Id: cell.wordId!, text: value, category: cell.categoryName!)
         }

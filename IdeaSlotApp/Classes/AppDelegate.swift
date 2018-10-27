@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let leftMenuViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenu") as! LeftMenuViewController
         let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
         let slideMenuController = SlideMenuViewController(mainViewController:nvc, leftMenuViewController:leftMenuViewController)
-        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+//        slideMenuController.automaticallyAdjustsScrollViewInsets = true
 
         UINavigationBar.appearance().tintColor = UIColor.darkGray
         
