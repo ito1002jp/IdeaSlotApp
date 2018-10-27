@@ -14,7 +14,6 @@ class CategoryListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var categoryEntities: Results<Category>? = nil
-    var wordsListViewController: UIViewController!
 
     let realm = try! Realm()
     
@@ -27,7 +26,7 @@ class CategoryListViewController: UIViewController {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
         setNavigationBarTitle(title: "Category")
-        createNavigationBarButtonItem()
+//        createNavigationBarButtonItem()
         categoryEntities = realm.objects(Category.self)
         if categoryEntities != nil{
             tableView.reloadData()
@@ -43,20 +42,12 @@ class CategoryListViewController: UIViewController {
         self.performSegue(withIdentifier: "toCategoryItem", sender: nil)
     }
 
-    
-    func createNavigationBarButtonItem(){        
-        //new button
-        let rightBarbuttonItem = UIBarButtonItem(title: "New", style: .plain, target: self, action: #selector(CategoryListViewController.ToCategoryItemViewController))
-        self.navigationItem.rightBarButtonItem = rightBarbuttonItem
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toWordList"{
             let wordListViewController = segue.destination as! WordsListViewController
-            if categoryEntities != nil{
-                let category = categoryEntities![tableView.indexPathForSelectedRow!.row]
-                wordListViewController.category = category
-            }
+            let category = categoryEntities![tableView.indexPathForSelectedRow!.row]
+            wordListViewController.category = category
+            print(category)
         }
     }
 }

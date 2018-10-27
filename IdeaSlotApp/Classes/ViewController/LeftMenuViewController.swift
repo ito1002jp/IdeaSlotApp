@@ -111,7 +111,7 @@ extension LeftMenuViewController : UITableViewDataSource {
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
             case .words, .category, .ideas, .slot:
-                let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
+                let cell = BaseTableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menus[indexPath.row])
                 return cell
             }

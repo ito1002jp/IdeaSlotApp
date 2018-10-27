@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 class Base: Object{
-    @objc dynamic var createDate: Date? = nil
-    @objc dynamic var updateDate: Date? = nil
+    @objc dynamic var createDate = Date()
+    @objc dynamic var updateDate = Date()
 }
 
 class User: Base{

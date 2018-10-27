@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let userDefaulft = UserDefaults.standard
         let dict = ["firstLaunch": true]
         userDefaulft.register(defaults: dict)
@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // Realm Migration
         let config = Realm.Configuration(
-            schemaVersion: 16,
+            schemaVersion: 17,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 16) {}
+                if (oldSchemaVersion < 17) {}
         })
         Realm.Configuration.defaultConfiguration = config
         _ = try! Realm()

@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import DropDown
 
 extension UIViewController{
     
@@ -53,6 +54,14 @@ extension UIViewController{
         let realm = try!Realm()
         let categoryItem = realm.objects(Category.self).filter("categoryName = %@",categoryName)
         return categoryItem
+    }
+    
+    func setCateoryDropDown(button:UIButton, dropdown:DropDown){
+        dropdown.anchorView = button
+        dropdown.dataSource = arrayCategoryList()
+        dropdown.selectionAction = {(index, item) in
+            button.setTitle(item, for: .normal)
+        }
     }
     
 }

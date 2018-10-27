@@ -10,9 +10,8 @@
 		CE069470214F61B900D1DCEF /* icons8-plus-40.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946D214F61B800D1DCEF /* icons8-plus-40.png */; };
 		CE069471214F61B900D1DCEF /* icons8-plus-48.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946E214F61B800D1DCEF /* icons8-plus-48.png */; };
 		CE069472214F61B900D1DCEF /* icons8-plus-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946F214F61B900D1DCEF /* icons8-plus-32.png */; };
-		CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */; };
+		CE2697EE210DB7FD00F59F2B /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* WordTableViewCell.swift */; };
 		CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */; };
-		CE4C20FC2132E2250075C0E1 /* CategoryDropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */; };
 		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
 		CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */; };
 		CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */; };
@@ -34,13 +33,11 @@
 		CE8B7A1721047601009BD29F /* IdeaSlotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */; };
 		CE988D41215D1919000B1345 /* IdeasSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */; };
 		CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */; };
-		CEA40AED213A407900874065 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA40AEC213A407900874065 /* DropDownButton.swift */; };
 		CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */; };
 		CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA72180BAE300BBD07F /* DropDown.framework */; };
 		CEE38EAC2180BAE300BBD07F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA82180BAE300BBD07F /* Realm.framework */; };
 		CEE38EAD2180BAE300BBD07F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA92180BAE300BBD07F /* RealmSwift.framework */; };
 		CEE38EAE2180BAE300BBD07F /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */; };
-		CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7C95A2132766700B6886A /* CategoryDropDown.swift */; };
 		CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */; };
 		CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */; };
 		CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */; };
@@ -69,9 +66,8 @@
 		CE06946E214F61B800D1DCEF /* icons8-plus-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-48.png"; sourceTree = "<group>"; };
 		CE06946F214F61B900D1DCEF /* icons8-plus-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-32.png"; sourceTree = "<group>"; };
 		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemTableViewCell.swift; sourceTree = "<group>"; };
+		CE2697ED210DB7FD00F59F2B /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsItemViewController.swift; sourceTree = "<group>"; };
-		CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryDropDown.xib; sourceTree = "<group>"; };
 		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@3x.png"; sourceTree = "<group>"; };
@@ -99,13 +95,11 @@
 		CE8B7A1821047601009BD29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasSlotViewController.swift; sourceTree = "<group>"; };
 		CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaTableViewCell.swift; sourceTree = "<group>"; };
-		CEA40AEC213A407900874065 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDetailViewController.swift; sourceTree = "<group>"; };
 		CEE38EA72180BAE300BBD07F /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = Carthage/Build/iOS/DropDown.framework; sourceTree = "<group>"; };
 		CEE38EA82180BAE300BBD07F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		CEE38EA92180BAE300BBD07F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
-		CEE7C95A2132766700B6886A /* CategoryDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDropDown.swift; sourceTree = "<group>"; };
 		CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
 		CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +157,6 @@
 		CE558586211573D600E66A6C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE5804772144207F00BEDA1A /* DropDownButton */,
 				CE5804762144206B00BEDA1A /* TableViewCell */,
 			);
 			path = View;
@@ -189,20 +182,11 @@
 			isa = PBXGroup;
 			children = (
 				CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */,
-				CE2697ED210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift */,
+				CE2697ED210DB7FD00F59F2B /* WordTableViewCell.swift */,
 				CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */,
 				CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */,
 			);
 			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		CE5804772144207F00BEDA1A /* DropDownButton */ = {
-			isa = PBXGroup;
-			children = (
-				CEE7C95A2132766700B6886A /* CategoryDropDown.swift */,
-				CEA40AEC213A407900874065 /* DropDownButton.swift */,
-			);
-			path = DropDownButton;
 			sourceTree = "<group>";
 		};
 		CE5804842144326800BEDA1A /* icon */ = {
@@ -260,7 +244,6 @@
 			children = (
 				CE8B79FA210475FF009BD29F /* Main.storyboard */,
 				CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */,
-				CE4C20FB2132E2250075C0E1 /* CategoryDropDown.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -437,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */,
-				CE4C20FC2132E2250075C0E1 /* CategoryDropDown.xib in Resources */,
 				CE580490214432A100BEDA1A /* ic_menu_black_24dp.png in Resources */,
 				CE069471214F61B900D1DCEF /* icons8-plus-48.png in Resources */,
 				CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */,
@@ -536,13 +518,11 @@
 				CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */,
 				CE988D41215D1919000B1345 /* IdeasSlotViewController.swift in Sources */,
 				CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */,
-				CEE7C95B2132766700B6886A /* CategoryDropDown.swift in Sources */,
 				CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */,
 				CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */,
 				CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */,
-				CE2697EE210DB7FD00F59F2B /* ToDoListItemTableViewCell.swift in Sources */,
+				CE2697EE210DB7FD00F59F2B /* WordTableViewCell.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
-				CEA40AED213A407900874065 /* DropDownButton.swift in Sources */,
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
 				CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */,
 				CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */,
@@ -741,7 +721,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -766,7 +746,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
