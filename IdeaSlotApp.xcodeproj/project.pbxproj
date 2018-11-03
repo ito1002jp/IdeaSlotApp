@@ -12,6 +12,7 @@
 		CE069472214F61B900D1DCEF /* icons8-plus-32.png in Resources */ = {isa = PBXBuildFile; fileRef = CE06946F214F61B900D1DCEF /* icons8-plus-32.png */; };
 		CE2697EE210DB7FD00F59F2B /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697ED210DB7FD00F59F2B /* WordTableViewCell.swift */; };
 		CE2697F0210DBCA300F59F2B /* WordsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */; };
+		CE4B2BE2218D627F009A94B2 /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */; };
 		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
 		CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */; };
 		CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */; };
@@ -37,7 +38,6 @@
 		CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA72180BAE300BBD07F /* DropDown.framework */; };
 		CEE38EAC2180BAE300BBD07F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA82180BAE300BBD07F /* Realm.framework */; };
 		CEE38EAD2180BAE300BBD07F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA92180BAE300BBD07F /* RealmSwift.framework */; };
-		CEE38EAE2180BAE300BBD07F /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */; };
 		CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */; };
 		CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */; };
 		CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */; };
@@ -68,6 +68,7 @@
 		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE2697ED210DB7FD00F59F2B /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		CE2697EF210DBCA300F59F2B /* WordsItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsItemViewController.swift; sourceTree = "<group>"; };
+		CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
 		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@3x.png"; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		CEE38EA72180BAE300BBD07F /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = Carthage/Build/iOS/DropDown.framework; sourceTree = "<group>"; };
 		CEE38EA82180BAE300BBD07F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		CEE38EA92180BAE300BBD07F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
 		CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
 		CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewController.swift; sourceTree = "<group>"; };
@@ -111,10 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4B2BE2218D627F009A94B2 /* SlideMenuControllerSwift.framework in Frameworks */,
 				CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */,
 				CEE38EAC2180BAE300BBD07F /* Realm.framework in Frameworks */,
 				CEE38EAD2180BAE300BBD07F /* RealmSwift.framework in Frameworks */,
-				CEE38EAE2180BAE300BBD07F /* SlideMenuControllerSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,10 +302,10 @@
 		F44F1094BD83EC84BD744B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */,
 				CEE38EA72180BAE300BBD07F /* DropDown.framework */,
 				CEE38EA82180BAE300BBD07F /* Realm.framework */,
 				CEE38EA92180BAE300BBD07F /* RealmSwift.framework */,
-				CEE38EAA2180BAE300BBD07F /* SlideMenuControllerSwift.framework */,
 				CE2697E5210DB23200F59F2B /* CoreData.framework */,
 			);
 			name = Frameworks;

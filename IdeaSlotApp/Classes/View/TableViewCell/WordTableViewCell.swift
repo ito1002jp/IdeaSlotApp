@@ -33,7 +33,10 @@ class WordTableViewCell: UITableViewCell{
         super.awakeFromNib()
         textfield.placeholder = "+"
         textfield.delegate = self
+//        textfield.textColor = UIColor.white
+        
         categorybutton.setTitle("[select category]", for: .normal)
+//        categorybutton.backgroundColor = UIColor.blue
         setDropDown(button: categorybutton, dropdown: dropdown)
     }
 

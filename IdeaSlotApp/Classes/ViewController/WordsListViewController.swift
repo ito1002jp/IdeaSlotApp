@@ -18,19 +18,6 @@ class WordsListViewController: UIViewController{
 
     let realm = try! Realm()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if category != nil {
-            wordEntities = realm.objects(Words.self).filter("categoryId == %@", category!.categoryId)
-        }else{
-            wordEntities = realm.objects(Words.self)
-        }
-        
-        if wordEntities != nil{
-            tableView.reloadData()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -38,6 +25,19 @@ class WordsListViewController: UIViewController{
         setNavigationBarItem()
         setNavigationBarTitle(title: "Words")
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if category != nil {
+            wordEntities = realm.objects(Words.self).filter("categoryId == %@", category!.categoryId).sorted(byKeyPath: "updateDate", ascending: false)
+        }else{
+            wordEntities = realm.objects(Words.self).sorted(byKeyPath: "updateDate", ascending: false)
+        }
+        
+        if wordEntities != nil{
+            tableView.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,7 +110,6 @@ class WordsListViewController: UIViewController{
 extension WordsListViewController: UITableViewDelegate{
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("selected cell")
 //    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -131,7 +130,7 @@ extension WordsListViewController: UITableViewDataSource{
         if let wordEntities = wordEntities{
             return wordEntities.count
         }
-        return 1
+        return 0
     }
     
     //display cell details
@@ -152,6 +151,36 @@ extension WordsListViewController: UITableViewDataSource{
             }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerview = UIView()
+        headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+        
+//        let textfield = UITextField()
+//        textfield.frame = CGRect(x:5, y:5, width: self.view.frame.size.width / 2, height:40)
+//        textfield.backgroundColor = UIColor.white
+//        textfield.placeholder = " + "
+//
+//        let button = UIButton()
+//        button.frame = CGRect(x:self.view.frame.size.width / 2, y:5, width:self.view.frame.size.width / 2, height:40)
+//        button.backgroundColor = UIColor.green
+//        button.setTitle("[button]", for: .normal)
+//
+//        view.addSubview(textfield)
+//        view.addSubview(button)
+
+        let searchbar = UISearchBar()
+        searchbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+        searchbar.placeholder = "検索"
+        headerview.addSubview(searchbar)
+        
+        return headerview
+//        return searchbar
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
+        return 45
     }
 }
 
