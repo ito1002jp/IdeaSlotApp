@@ -26,17 +26,16 @@ class WordTableViewCell: UITableViewCell{
     
     let dropdown = DropDown()
     
-    @IBAction func showDropDown(_ sender: Any) {
+    @IBAction func showDropdown(_ sender: Any) {
         dropdown.show()
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         textfield.placeholder = "+"
         textfield.delegate = self
-//        textfield.textColor = UIColor.white
         
-        categorybutton.setTitle("[select category]", for: .normal)
-//        categorybutton.backgroundColor = UIColor.blue
+        categorybutton.setTitle("No Category", for: .normal)
         setDropDown(button: categorybutton, dropdown: dropdown)
     }
 
@@ -63,7 +62,9 @@ extension WordTableViewCell: UITextFieldDelegate{
     }
     
     internal func textFieldDidEndEditing(_ textField: UITextField) {
-        self.delegate.textFieldDidEndEditing(cell: self, value: textField.text!)
+        if !textField.text!.isEmpty{
+            self.delegate.textFieldDidEndEditing(cell: self, value: textField.text!)
+        }
     }
     
 }

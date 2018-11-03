@@ -24,47 +24,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FPP-67-Ope">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WordItem" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordItemCell" id="uAi-4J-lGy" customClass="WordTableViewCell" customModule="IdeaSlotApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uAi-4J-lGy" id="79U-RM-y2s">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpg-Of-U9a">
-                                                    <rect key="frame" x="20" y="6" width="206" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-Vc-OpY">
-                                                    <rect key="frame" x="260" y="6" width="134" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="134" id="pyO-iI-d1S"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="showDropDown:" destination="uAi-4J-lGy" eventType="touchUpInside" id="1u2-Vm-d7d"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="pVv-Vc-OpY" firstAttribute="leading" secondItem="vpg-Of-U9a" secondAttribute="trailing" constant="34" id="8Gg-oH-tIY"/>
-                                                <constraint firstItem="vpg-Of-U9a" firstAttribute="bottom" secondItem="pVv-Vc-OpY" secondAttribute="bottom" id="IAr-Cg-z9y"/>
-                                                <constraint firstItem="vpg-Of-U9a" firstAttribute="leading" secondItem="79U-RM-y2s" secondAttribute="leadingMargin" id="JWj-DI-JAD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vpg-Of-U9a" secondAttribute="bottom" constant="-3" id="NTH-Ap-SKy"/>
-                                                <constraint firstItem="vpg-Of-U9a" firstAttribute="centerY" secondItem="79U-RM-y2s" secondAttribute="centerY" id="Zma-Za-4a4"/>
-                                                <constraint firstItem="pVv-Vc-OpY" firstAttribute="trailing" secondItem="79U-RM-y2s" secondAttribute="trailingMargin" id="fDK-e3-PqF"/>
-                                                <constraint firstItem="vpg-Of-U9a" firstAttribute="top" secondItem="pVv-Vc-OpY" secondAttribute="top" id="qg6-U0-SHD"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="categorybutton" destination="pVv-Vc-OpY" id="NOR-PZ-1Ia"/>
-                                            <outlet property="textfield" destination="vpg-Of-U9a" id="FCP-mP-n60"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="4Zp-vF-ujW"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xWL-QK-qxm"/>

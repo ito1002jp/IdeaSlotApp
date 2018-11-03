@@ -15,6 +15,7 @@ class WordsListViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var wordEntities:Results<Words>? = nil
     var category:Category? = nil
+    var searchResults:[String] = []
 
     let realm = try! Realm()
     
@@ -25,6 +26,7 @@ class WordsListViewController: UIViewController{
         setNavigationBarItem()
         setNavigationBarTitle(title: "Words")
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UINib(nibName: "WordTableViewCell", bundle: nil), forCellReuseIdentifier: "WordItemCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,19 +47,25 @@ class WordsListViewController: UIViewController{
     }
     
     func saveWord(Id: String, text: String, category: String){
-        let wordItem = wordEntities?.filter("wordId == %@", Id)
-        if wordItem == nil{
+        var wordItem:Results<Words>? = nil
+        var item:Words? = nil
+        if !category.isEmpty{
+            wordItem = wordEntities?.filter("wordId == %@", Id)
+            item = wordItem?.first
+        }
+        
+        if item == nil{
             //insert
-            insertWrd(text: text, categoryName: category)
+            insertWord(text: text, categoryName: category)
         }else{
             //update
-            let item = wordItem?.first
             updateWord(text: text, categoryName: category, wordItem: item!)
         }
+        tableView.reloadData()
     }
     
     //insert new word
-    func insertWrd(text: String, categoryName: String){
+    func insertWord(text: String, categoryName: String){
         let categoryItem = findCategoryItem(categoryName: categoryName)
         let item: [String: Any] = ["word": text,
                                    //                                       "userId": "test-user",
@@ -119,8 +127,8 @@ extension WordsListViewController: UITableViewDelegate{
                     realm.delete(wordEntities[indexPath.row])
                 }
             }
-            tableView.reloadData()
         }
+        tableView.reloadData()
     }
 }
 
@@ -155,40 +163,41 @@ extension WordsListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerview = UIView()
-        headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-        
-//        let textfield = UITextField()
-//        textfield.frame = CGRect(x:5, y:5, width: self.view.frame.size.width / 2, height:40)
-//        textfield.backgroundColor = UIColor.white
-//        textfield.placeholder = " + "
-//
-//        let button = UIButton()
-//        button.frame = CGRect(x:self.view.frame.size.width / 2, y:5, width:self.view.frame.size.width / 2, height:40)
-//        button.backgroundColor = UIColor.green
-//        button.setTitle("[button]", for: .normal)
-//
-//        view.addSubview(textfield)
-//        view.addSubview(button)
+        headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
 
         let searchbar = UISearchBar()
         searchbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
         searchbar.placeholder = "検索"
         headerview.addSubview(searchbar)
         
+        let cell = tableView.dequeueReusableCell(withIdentifier:"WordItemCell") as! WordTableViewCell
+        cell.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
+        cell.delegate = self
+        cell.dropdown.dataSource = arrayCategoryList()
+        headerview.addSubview(cell)
+
         return headerview
-//        return searchbar
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return 45
+        return 100
     }
 }
 
 extension WordsListViewController: InputTextTableCellDelegate{
     //textfield has finished to edit
     func textFieldDidEndEditing(cell: WordTableViewCell, value: String) -> () {
-        if value != cell.beforeWord || cell.categoryName != cell.beforecategoryName {
-            saveWord(Id: cell.wordId!, text: value, category: cell.categoryName!)
+        if !cell.categoryName!.isEmpty{
+            if value != cell.beforeWord || cell.categoryName != cell.beforecategoryName {
+                saveWord(Id: cell.wordId!, text: value, category: cell.categoryName!)
+            }
+        }else{
+            print("no save")
         }
     }
 }
+
+//extension WordsListViewController: UISearchResultsUpdating{
+//    func updateSearchResults(for searchController: UISearchController) {
+//    }
+//}
