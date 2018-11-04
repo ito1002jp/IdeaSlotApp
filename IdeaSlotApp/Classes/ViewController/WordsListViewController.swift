@@ -39,6 +39,7 @@ class WordsListViewController: UIViewController{
         
         if wordEntities != nil{
             tableView.reloadData()
+            tableView.reloadSections(NSIndexSet(index: tableView.sectionIndexMinimumDisplayRowCount) as IndexSet, with: .none)
         }
     }
     
@@ -150,7 +151,6 @@ class WordsListViewController: UIViewController{
             }
         }
     }
-
 }
 
 //TableView Delegate
@@ -163,18 +163,24 @@ extension WordsListViewController: UITableViewDelegate{
         if editingStyle == .delete{
             try! realm.write {
                 if let wordEntities = wordEntities{
+                    print("indexPath.row: ",indexPath.row)
                     realm.delete(wordEntities[indexPath.row])
                 }
             }
         }
-        tableView.reloadData()
         tableView.reloadSections(NSIndexSet(index: tableView.sectionIndexMinimumDisplayRowCount) as IndexSet, with: .none)
+        print(tableView.sectionIndexMinimumDisplayRowCount)
+        print(tableView.headerView(forSection: 0))
+        tableView.reloadData()
+
+//        viewWillAppear(true)
     }
     
     //display tableview header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerview = UIView()
         headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
+        headerview.backgroundColor = UIColor.white
         
         let searchbar = UISearchBar()
         searchbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
