@@ -15,7 +15,7 @@ class WordsListViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var wordEntities:Results<Words>? = nil
     var category:Category? = nil
-    var searchResults:[String] = []
+    var searchResults:Results<Words>? = nil
 
     let realm = try! Realm()
     
@@ -49,11 +49,14 @@ class WordsListViewController: UIViewController{
     func saveWord(Id: String, text: String, category: String){
         var wordItem:Results<Words>? = nil
         var item:Words? = nil
+        
+        //No Category
         if !category.isEmpty{
             wordItem = wordEntities?.filter("wordId == %@", Id)
             item = wordItem?.first
         }
         
+        //add Category
         if item == nil{
             //insert
             insertWord(text: text, categoryName: category)
@@ -66,55 +69,91 @@ class WordsListViewController: UIViewController{
     
     //insert new word
     func insertWord(text: String, categoryName: String){
-        let categoryItem = findCategoryItem(categoryName: categoryName)
-        let item: [String: Any] = ["word": text,
-                                   //                                       "userId": "test-user",
-            "categoryId": categoryItem.first!.categoryId,
-            "categoryName": categoryName]
+        var categoryItem:Results<Category>? = nil
+        var category:Category? = nil
+        let item: [String: Any]
+
+        if !categoryName.isEmpty{
+            categoryItem = findCategoryItem(categoryName: categoryName)
+            category = Category(value: [
+                "categoryId": categoryItem!.first!.categoryId,
+                "categoryName": categoryItem!.first!.categoryName])
+            item = ["word": text,
+                    //                                       "userId": "test-user",
+                "categoryId": categoryItem!.first!.categoryId,
+                "categoryName": categoryName]
+        }else{
+            item = ["word": text,
+                    "categoryId": 0,
+                    "categoryName": "No Category"]
+        }
+        
         let newWord = Words(value: item)
-        let category = Category(value: [
-            "categoryId": categoryItem.first!.categoryId,
-            "categoryName": categoryItem.first!.categoryName])
         
         try! realm.write(){
             realm.add(newWord)
-            category.words.append(newWord)
-            realm.create(Category.self, value: category, update: true)
+            if category != nil{
+                category?.words.append(newWord)
+                realm.create(Category.self, value: category!, update: true)
+            }
         }
     }
     
     //update word
     func updateWord(text: String, categoryName: String, wordItem: Words){
-        let categoryItem = findCategoryItem(categoryName: categoryName)
-        let oldCategoryItem = findCategoryItem(categoryName: wordItem.categoryName!)
-        let category = Category(value: [
-            "categoryId": categoryItem.first!.categoryId,
-            "categoryName": categoryItem.first!.categoryName])
+        var categoryItem:Results<Category>? = nil
+        var category:Category? = nil
+        let item: [String: Any]
         
-        let removeWordItem = Array(oldCategoryItem).first!
-        let removeWordItemIndex = removeWordItem.words.index(matching: "wordId == %@", wordItem.wordId!)
-        let oldCategory = Category(value: removeWordItem)
-        let item: [String: Any] = ["wordId": wordItem.wordId!,
-                                   "word": text,
-                                   //                                       "userId": "test-user",
+        categoryItem = findCategoryItem(categoryName: categoryName)
+        if categoryItem?.count != 0{
+            category = Category(value: [
+                "categoryId": categoryItem!.first!.categoryId,
+                "categoryName": categoryItem!.first!.categoryName])
+            item = ["wordId": wordItem.wordId!,
+            "word": text,
+            //                                       "userId": "test-user",
             "updateDate": Date(),
-            "categoryId": categoryItem.first!.categoryId,
-            "categoryName": categoryItem.first!.categoryName]
-        let editWord = Words(value: item)
+            "categoryId": categoryItem!.first!.categoryId,
+            "categoryName": categoryItem!.first!.categoryName]
+        }else{
+            item = ["wordId": wordItem.wordId!,
+                    "word": text,
+                    //                                       "userId": "test-user",
+                "categoryName": "No Category",
+                "updateDate": Date()]
+        }
         
+        var oldCategoryItem:Results<Category>? = nil
+        var removeWordItem:Category? = nil
+        var removeWordItemIndex:Int? = nil
+        var oldCategory:Category? = nil
+        
+        if wordItem.categoryId != 0{
+            oldCategoryItem = findCategoryItem(categoryName: wordItem.categoryName!)
+            removeWordItem = Array(oldCategoryItem!).first
+            removeWordItemIndex = removeWordItem!.words.index(matching: "wordId == %@", wordItem.wordId!)
+            oldCategory = Category(value: removeWordItem!)
+        }
+        
+
+        let editWord = Words(value: item)
         try! realm.write(){
             realm.add(editWord, update: true)
-            category.words.append(editWord)
-            realm.create(Category.self, value: category, update: true)
+            if category != nil{
+                category!.words.append(editWord)
+                realm.create(Category.self, value: category!, update: true)
+            }
             if removeWordItemIndex != nil{
-                oldCategory.words.remove(at: removeWordItemIndex!)
-                realm.create(Category.self, value: oldCategory, update: true)
+                oldCategory!.words.remove(at: removeWordItemIndex!)
+                realm.create(Category.self, value: oldCategory!, update: true)
             }
         }
     }
 
 }
 
+//TableView Delegate
 extension WordsListViewController: UITableViewDelegate{
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -129,9 +168,36 @@ extension WordsListViewController: UITableViewDelegate{
             }
         }
         tableView.reloadData()
+        tableView.reloadSections(NSIndexSet(index: tableView.sectionIndexMinimumDisplayRowCount) as IndexSet, with: .none)
     }
+    
+    //display tableview header
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerview = UIView()
+        headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
+        
+        let searchbar = UISearchBar()
+        searchbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+        searchbar.placeholder = "検索"
+        headerview.addSubview(searchbar)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier:"WordItemCell") as! WordTableViewCell
+        cell.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
+        cell.delegate = self
+        cell.dropdown.dataSource = arrayCategoryList()
+        headerview.addSubview(cell)
+        
+        return headerview
+    }
+    
+    //tableview header height size
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
+        return 100
+    }
+
 }
 
+//TableView DataSource
 extension WordsListViewController: UITableViewDataSource{
     //display cell count
     func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -160,43 +226,19 @@ extension WordsListViewController: UITableViewDataSource{
         }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerview = UIView()
-        headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
-
-        let searchbar = UISearchBar()
-        searchbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-        searchbar.placeholder = "検索"
-        headerview.addSubview(searchbar)
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier:"WordItemCell") as! WordTableViewCell
-        cell.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
-        cell.delegate = self
-        cell.dropdown.dataSource = arrayCategoryList()
-        headerview.addSubview(cell)
-
-        return headerview
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return 100
-    }
 }
 
+//Textfield Delegate(extension WordTableViewCell)
 extension WordsListViewController: InputTextTableCellDelegate{
     //textfield has finished to edit
     func textFieldDidEndEditing(cell: WordTableViewCell, value: String) -> () {
-        if !cell.categoryName!.isEmpty{
-            if value != cell.beforeWord || cell.categoryName != cell.beforecategoryName {
-                saveWord(Id: cell.wordId!, text: value, category: cell.categoryName!)
-            }
-        }else{
-            print("no save")
+        if value != cell.beforeWord || cell.categoryName != cell.beforecategoryName {
+            saveWord(Id: cell.wordId!, text: value, category: cell.categoryName!)
         }
     }
 }
 
+//SearchController SearchResultUpdating
 //extension WordsListViewController: UISearchResultsUpdating{
 //    func updateSearchResults(for searchController: UISearchController) {
 //    }
