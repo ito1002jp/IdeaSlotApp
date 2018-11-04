@@ -15,7 +15,9 @@ class WordsListViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var wordEntities:Results<Words>? = nil
     var category:Category? = nil
-    var searchResults:Results<Words>? = nil
+    var searchController = UISearchController()
+    var filteredWords = [Words]()
+    var wordList = [Words]()
 
     let realm = try! Realm()
     
@@ -31,6 +33,8 @@ class WordsListViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchController.dismiss(animated: false, completion: nil)
+        
         if category != nil {
             wordEntities = realm.objects(Words.self).filter("categoryId == %@", category!.categoryId).sorted(byKeyPath: "updateDate", ascending: false)
         }else{
@@ -38,6 +42,10 @@ class WordsListViewController: UIViewController{
         }
         
         if wordEntities != nil{
+            let wordArray = Array(wordEntities!)
+            wordList = wordArray.map({$0 as Words})
+            
+            wordList = Array(wordEntities!)
             tableView.reloadData()
             tableView.reloadSections(NSIndexSet(index: tableView.sectionIndexMinimumDisplayRowCount) as IndexSet, with: .none)
         }
@@ -151,14 +159,16 @@ class WordsListViewController: UIViewController{
             }
         }
     }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
 }
 
 //TableView Delegate
 extension WordsListViewController: UITableViewDelegate{
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    }
-    
+    //editingStyle
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             try! realm.write {
@@ -169,28 +179,37 @@ extension WordsListViewController: UITableViewDelegate{
             }
         }
         tableView.reloadSections(NSIndexSet(index: tableView.sectionIndexMinimumDisplayRowCount) as IndexSet, with: .none)
-        print(tableView.sectionIndexMinimumDisplayRowCount)
-        print(tableView.headerView(forSection: 0))
         tableView.reloadData()
-
-//        viewWillAppear(true)
     }
     
     //display tableview header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerview = UIView()
-        headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
         headerview.backgroundColor = UIColor.white
-        
-        let searchbar = UISearchBar()
-        searchbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-        searchbar.placeholder = "検索"
-        headerview.addSubview(searchbar)
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier:"WordItemCell") as! WordTableViewCell
-        cell.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
         cell.delegate = self
         cell.dropdown.dataSource = arrayCategoryList()
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        self.definesPresentationContext = true
+        
+        if #available(iOS 11.0, *) {
+            headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
+            cell.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
+            self.navigationItem.searchController = searchController
+        } else {
+            headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
+            cell.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
+            searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+            headerview.addSubview(searchController.searchBar)
+        }
+        
         headerview.addSubview(cell)
         
         return headerview
@@ -198,17 +217,24 @@ extension WordsListViewController: UITableViewDelegate{
     
     //tableview header height size
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return 100
+        if #available(iOS 11.0, *) {
+            return 45
+        }else{
+            return 100
+        }
     }
-
 }
 
 //TableView DataSource
 extension WordsListViewController: UITableViewDataSource{
     //display cell count
     func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let wordEntities = wordEntities{
-            return wordEntities.count
+        if isFiltering() {
+            return filteredWords.count
+        } else {
+            if let wordEntities = wordEntities{
+                return wordEntities.count
+            }
         }
         return 0
     }
@@ -218,18 +244,40 @@ extension WordsListViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier:"WordItemCell") as! WordTableViewCell
         cell.delegate = self
         cell.dropdown.dataSource = arrayCategoryList()
-
-        if let wordEntities = wordEntities{
-            cell.textfield.text = wordEntities[indexPath.row].word
-            cell.wordId = wordEntities[indexPath.row].wordId
-            cell.beforeWord = wordEntities[indexPath.row].word
-
-            if wordEntities[indexPath.row].categoryName != nil{
-                cell.categorybutton.setTitle(wordEntities[indexPath.row].categoryName, for: .normal)
-                cell.categoryName = wordEntities[indexPath.row].categoryName
-                cell.beforecategoryName = wordEntities[indexPath.row].categoryName
-            }
+        
+        let words: Words
+        
+        if isFiltering(){
+            words = filteredWords[indexPath.row]
+        }else{
+            words = wordEntities![indexPath.row]
         }
+        
+        cell.textfield.text = words.word
+        cell.wordId = words.wordId
+        cell.beforeWord = words.word
+        cell.categorybutton.setTitle(words.categoryName, for: .normal)
+        cell.categoryName = words.categoryName
+        cell.beforecategoryName = words.categoryName
+
+        
+//        if isFiltering() {
+//            cell.textfield.text = searchResults[indexPath.row].word
+//            cell.wordId = searchResults[indexPath.row].wordId
+//            cell.beforeWord = searchResults[indexPath.row].word
+//            cell.categorybutton.setTitle(searchResults[indexPath.row].categoryName, for: .normal)
+//            cell.categoryName = searchResults[indexPath.row].categoryName
+//            cell.beforecategoryName = searchResults[indexPath.row].categoryName
+//        }else{
+//            if let wordEntities = wordEntities{
+//                cell.textfield.text = wordEntities[indexPath.row].word
+//                cell.wordId = wordEntities[indexPath.row].wordId
+//                cell.beforeWord = wordEntities[indexPath.row].word
+//                cell.categorybutton.setTitle(wordEntities[indexPath.row].categoryName, for: .normal)
+//                cell.categoryName = wordEntities[indexPath.row].categoryName
+//                cell.beforecategoryName = wordEntities[indexPath.row].categoryName
+//            }
+//        }
         return cell
     }
 }
@@ -245,7 +293,25 @@ extension WordsListViewController: InputTextTableCellDelegate{
 }
 
 //SearchController SearchResultUpdating
-//extension WordsListViewController: UISearchResultsUpdating{
-//    func updateSearchResults(for searchController: UISearchController) {
-//    }
-//}
+extension WordsListViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        
+        filteredWords = wordList.filter({( words : Words) -> Bool in
+            return words.word!.lowercased().contains(searchText.lowercased())
+        })
+        print(searchText)
+        print(wordList)
+        print(filteredWords)
+        
+        tableView.reloadData()
+    }
+}
