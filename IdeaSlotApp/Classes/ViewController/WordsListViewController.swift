@@ -14,7 +14,7 @@ class WordsListViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var wordEntities:Results<Words>? = nil
     var category:Category? = nil
-    var searchController = UISearchController()
+    var searchController:UISearchController!
     var filteredWords = [Words]()
     var wordList = [Words]()
 
@@ -22,11 +22,13 @@ class WordsListViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         setNavigationBarItem()
         setNavigationBarTitle(title: "Words")
+        setSearchController()
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,11 +46,6 @@ class WordsListViewController: UIViewController{
             tableView.reloadData()
         }
     }
-    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//        self.navigationItem.searchController = nil
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -159,8 +156,22 @@ class WordsListViewController: UIViewController{
         }
     }
     
-    func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+    func setSearchController(){
+        print("setSearchBar")
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = searchController
+        }else{
+            tableView.tableHeaderView = searchController.searchBar
+        }
+
+        self.definesPresentationContext = true
     }
 }
 
@@ -176,7 +187,6 @@ extension WordsListViewController: UITableViewDelegate{
                 }
             }
         }
-        tableView.reloadSections(NSIndexSet(index: tableView.sectionIndexMinimumDisplayRowCount) as IndexSet, with: .none)
         tableView.reloadData()
     }
     
@@ -190,23 +200,14 @@ extension WordsListViewController: UITableViewDelegate{
         item.delegate = self
         item.dropdown.dataSource = arrayCategoryList()
         
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.sizeToFit()
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        self.definesPresentationContext = true
-        
         if #available(iOS 11.0, *) {
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
             item.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
-            self.navigationItem.searchController = searchController
         } else {
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
             item.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
-            searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-            headerview.addSubview(searchController.searchBar)
+//            searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+//            headerview.addSubview(searchController.searchBar)
         }
         headerview.addSubview(item)
         
@@ -277,16 +278,22 @@ extension WordsListViewController: InputTextDelegate{
 //SearchController SearchResultUpdating
 extension WordsListViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
+        let searchtext = searchController.searchBar.text!
         filteredWords = wordList.filter({( words : Words) -> Bool in
-            return words.word!.lowercased().contains(searchController.searchBar.text!.lowercased())
+            return words.word!.lowercased().contains(searchtext.lowercased())
         })
-        print(wordList)
         print(filteredWords)
-        print(searchController.searchBar.text!)
+        print(searchtext)
+        tableView.reloadData()
     }
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
 }
