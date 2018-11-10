@@ -1,28 +1,27 @@
 //
-//  WordTableViewCell.swift
+//  WordItemView.swift
 //  IdeaSlotApp
 //
-//  Created by yuta akazawa on 2018/07/29.
+//  Created by yuta akazawa on 2018/11/10.
 //  Copyright © 2018年 yuta akazawa. All rights reserved.
 //
 
 import UIKit
 import DropDown
 
-protocol InputTextTableCellDelegate {
-    func textFieldDidEndEditing(cell: WordTableViewCell, value: String) -> ()
+protocol InputTextDelegate {
+    func textFieldDidEndEditing(item: WordItemView, value: String) ->()
 }
 
-class WordTableViewCell: UITableViewCell{
-
+class WordItemView: UIView {
+    
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var categorybutton: UIButton!
-    var delegate: InputTextTableCellDelegate! = nil
+    var delegate:InputTextDelegate! = nil
     var categoryName: String? = ""
     var wordId: String? = ""
     var beforeWord: String? =  ""
     var beforecategoryName: String? = ""
-    var wordListViewController: WordsListViewController?
     
     let dropdown = DropDown()
     
@@ -34,13 +33,16 @@ class WordTableViewCell: UITableViewCell{
         super.awakeFromNib()
         textfield.placeholder = "+"
         textfield.delegate = self
-        
         categorybutton.setTitle("No Category", for: .normal)
         setDropDown(button: categorybutton, dropdown: dropdown)
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     func setDropDown(button:UIButton, dropdown:DropDown){
@@ -55,7 +57,7 @@ class WordTableViewCell: UITableViewCell{
     }
 }
 
-extension WordTableViewCell: UITextFieldDelegate{
+extension WordItemView: UITextFieldDelegate{
     internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -63,8 +65,7 @@ extension WordTableViewCell: UITextFieldDelegate{
     
     internal func textFieldDidEndEditing(_ textField: UITextField) {
         if !textField.text!.isEmpty{
-            self.delegate.textFieldDidEndEditing(cell: self, value: textField.text!)
+            self.delegate.textFieldDidEndEditing(item: self, value: textField.text!)
         }
     }
-    
 }

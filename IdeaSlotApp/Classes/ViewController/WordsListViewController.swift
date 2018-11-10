@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import SlideMenuControllerSwift
 
 class WordsListViewController: UIViewController{
     
@@ -28,7 +27,6 @@ class WordsListViewController: UIViewController{
         setNavigationBarItem()
         setNavigationBarTitle(title: "Words")
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(UINib(nibName: "WordTableViewCell", bundle: nil), forCellReuseIdentifier: "WordItemCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,14 +40,15 @@ class WordsListViewController: UIViewController{
         }
         
         if wordEntities != nil{
-            let wordArray = Array(wordEntities!)
-            wordList = wordArray.map({$0 as Words})
-            
             wordList = Array(wordEntities!)
             tableView.reloadData()
-            tableView.reloadSections(NSIndexSet(index: tableView.sectionIndexMinimumDisplayRowCount) as IndexSet, with: .none)
         }
     }
+    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        self.navigationItem.searchController = nil
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -173,7 +172,6 @@ extension WordsListViewController: UITableViewDelegate{
         if editingStyle == .delete{
             try! realm.write {
                 if let wordEntities = wordEntities{
-                    print("indexPath.row: ",indexPath.row)
                     realm.delete(wordEntities[indexPath.row])
                 }
             }
@@ -187,9 +185,10 @@ extension WordsListViewController: UITableViewDelegate{
         let headerview = UIView()
         headerview.backgroundColor = UIColor.white
 
-        let cell = tableView.dequeueReusableCell(withIdentifier:"WordItemCell") as! WordTableViewCell
-        cell.delegate = self
-        cell.dropdown.dataSource = arrayCategoryList()
+        var item = WordItemView()
+        item = Bundle.main.loadNibNamed("WordItemView", owner: self, options: nil)!.first! as! WordItemView
+        item.delegate = self
+        item.dropdown.dataSource = arrayCategoryList()
         
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -201,16 +200,15 @@ extension WordsListViewController: UITableViewDelegate{
         
         if #available(iOS 11.0, *) {
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
-            cell.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
+            item.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
             self.navigationItem.searchController = searchController
         } else {
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
-            cell.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
+            item.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
             searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
             headerview.addSubview(searchController.searchBar)
         }
-        
-        headerview.addSubview(cell)
+        headerview.addSubview(item)
         
         return headerview
     }
@@ -241,53 +239,37 @@ extension WordsListViewController: UITableViewDataSource{
     
     //display cell details
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"WordItemCell") as! WordTableViewCell
-        cell.delegate = self
-        cell.dropdown.dataSource = arrayCategoryList()
-        
         let words: Words
-        
+        let cell = UITableViewCell()
+        var itemView = WordItemView()
+        itemView = Bundle.main.loadNibNamed("WordItemView", owner: self, options: nil)!.first! as! WordItemView
+
         if isFiltering(){
             words = filteredWords[indexPath.row]
         }else{
             words = wordEntities![indexPath.row]
         }
         
-        cell.textfield.text = words.word
-        cell.wordId = words.wordId
-        cell.beforeWord = words.word
-        cell.categorybutton.setTitle(words.categoryName, for: .normal)
-        cell.categoryName = words.categoryName
-        cell.beforecategoryName = words.categoryName
+        itemView.delegate = self
+        itemView.dropdown.dataSource = arrayCategoryList()
+        itemView.textfield.text = words.word
+        itemView.wordId = words.wordId
+        itemView.beforeWord = words.word
+        itemView.categorybutton.setTitle(words.categoryName, for: .normal)
+        itemView.categoryName = words.categoryName
+        itemView.beforecategoryName = words.categoryName
+        cell.contentView.addSubview(itemView)
 
-        
-//        if isFiltering() {
-//            cell.textfield.text = searchResults[indexPath.row].word
-//            cell.wordId = searchResults[indexPath.row].wordId
-//            cell.beforeWord = searchResults[indexPath.row].word
-//            cell.categorybutton.setTitle(searchResults[indexPath.row].categoryName, for: .normal)
-//            cell.categoryName = searchResults[indexPath.row].categoryName
-//            cell.beforecategoryName = searchResults[indexPath.row].categoryName
-//        }else{
-//            if let wordEntities = wordEntities{
-//                cell.textfield.text = wordEntities[indexPath.row].word
-//                cell.wordId = wordEntities[indexPath.row].wordId
-//                cell.beforeWord = wordEntities[indexPath.row].word
-//                cell.categorybutton.setTitle(wordEntities[indexPath.row].categoryName, for: .normal)
-//                cell.categoryName = wordEntities[indexPath.row].categoryName
-//                cell.beforecategoryName = wordEntities[indexPath.row].categoryName
-//            }
-//        }
         return cell
     }
 }
 
 //Textfield Delegate(extension WordTableViewCell)
-extension WordsListViewController: InputTextTableCellDelegate{
+extension WordsListViewController: InputTextDelegate{
     //textfield has finished to edit
-    func textFieldDidEndEditing(cell: WordTableViewCell, value: String) -> () {
-        if value != cell.beforeWord || cell.categoryName != cell.beforecategoryName {
-            saveWord(Id: cell.wordId!, text: value, category: cell.categoryName!)
+    func textFieldDidEndEditing(item: WordItemView, value: String) -> () {
+        if value != item.beforeWord || item.categoryName != item.beforecategoryName {
+            saveWord(Id: item.wordId!, text: value, category: item.categoryName!)
         }
     }
 }
@@ -295,23 +277,16 @@ extension WordsListViewController: InputTextTableCellDelegate{
 //SearchController SearchResultUpdating
 extension WordsListViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        filteredWords = wordList.filter({( words : Words) -> Bool in
+            return words.word!.lowercased().contains(searchController.searchBar.text!.lowercased())
+        })
+        print(wordList)
+        print(filteredWords)
+        print(searchController.searchBar.text!)
     }
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        
-        filteredWords = wordList.filter({( words : Words) -> Bool in
-            return words.word!.lowercased().contains(searchText.lowercased())
-        })
-        print(searchText)
-        print(wordList)
-        print(filteredWords)
-        
-        tableView.reloadData()
     }
 }
