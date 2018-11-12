@@ -28,6 +28,7 @@ class WordsListViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorInset = .zero
         tableView.tableFooterView = UIView()
     }
     
@@ -41,10 +42,7 @@ class WordsListViewController: UIViewController{
             wordEntities = realm.objects(Words.self).sorted(byKeyPath: "updateDate", ascending: false)
         }
         
-        if wordEntities != nil{
-            wordList = Array(wordEntities!)
             tableView.reloadData()
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,7 +59,6 @@ class WordsListViewController: UIViewController{
             item = wordItem?.first
         }
         
-        //add Category
         if item == nil{
             //insert
             insertWord(text: text, categoryName: category)
@@ -156,6 +153,7 @@ class WordsListViewController: UIViewController{
         }
     }
     
+    //set up searchcontroller
     func setSearchController(){
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -164,12 +162,13 @@ class WordsListViewController: UIViewController{
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.tintColor = UIColor.AppColor.navigationTitle
+    
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
         }else{
             tableView.tableHeaderView = searchController.searchBar
         }
-
         self.definesPresentationContext = true
     }
 }
@@ -277,6 +276,11 @@ extension WordsListViewController: InputTextDelegate{
 //SearchController SearchResultUpdating
 extension WordsListViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
+        wordList = Array(wordEntities!)
+
+        let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = .white
+
         let searchtext = searchController.searchBar.text!
         filteredWords = wordList.filter({( words : Words) -> Bool in
             return words.word!.lowercased().contains(searchtext.lowercased())
