@@ -21,6 +21,6 @@ extension UIColor{
         //left menu
         static let backgroundLeftmenu = #colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1)
         static let separatorColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+        static let leftmenuCellColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
     }
 }

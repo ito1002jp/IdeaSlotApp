@@ -28,7 +28,6 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     var ideasListViewController: UIViewController!
     var ideasSlotViewController: UIViewController!
     var mainViewController: UIViewController!
-//    var imageHeaderView: ImageHeaderView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,7 +36,8 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.AppColor.backgroundLeftmenu
-        self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+        self.tableView.separatorColor = UIColor.AppColor.separatorColor
+        self.tableView.separatorInset = .zero
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let wordsListViewController = storyboard.instantiateViewController(withIdentifier: "WordsList")as! WordsListViewController
@@ -50,8 +50,6 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         self.ideasSlotViewController = UINavigationController(rootViewController: ideasSlotViewController)
         
         self.tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: BaseTableViewCell.identifier)
-        //        self.imageHeaderView = ImageHeaderView.
-        //        self.view.addSubview(self.imageHeaderView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,7 +58,6 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        self.imageHeaderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160)
         self.view.layoutIfNeeded()
     }
     
