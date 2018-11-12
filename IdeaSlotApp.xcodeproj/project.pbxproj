@@ -32,6 +32,7 @@
 		CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */; };
 		CE8B7A0C21047601009BD29F /* IdeaSlotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A0B21047601009BD29F /* IdeaSlotAppTests.swift */; };
 		CE8B7A1721047601009BD29F /* IdeaSlotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */; };
+		CE918FE521995B99001C6B95 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE918FE421995B99001C6B95 /* UIColor.swift */; };
 		CE988D41215D1919000B1345 /* IdeasSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */; };
 		CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */; };
 		CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */; };
@@ -94,6 +95,7 @@
 		CE8B7A1221047601009BD29F /* IdeaSlotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdeaSlotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B7A1621047601009BD29F /* IdeaSlotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaSlotAppUITests.swift; sourceTree = "<group>"; };
 		CE8B7A1821047601009BD29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE918FE421995B99001C6B95 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasSlotViewController.swift; sourceTree = "<group>"; };
 		CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaTableViewCell.swift; sourceTree = "<group>"; };
 		CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDetailViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		CE7497252143F44900F51E91 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
+				CE918FE421995B99001C6B95 /* UIColor.swift */,
 				CE7497282143F7D100F51E91 /* UIApplication.swift */,
 				CE7497262143F48100F51E91 /* UIViewController.swift */,
 			);
@@ -522,6 +525,7 @@
 				CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */,
 				CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
+				CE918FE521995B99001C6B95 /* UIColor.swift in Sources */,
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
 				CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */,
 				CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */,

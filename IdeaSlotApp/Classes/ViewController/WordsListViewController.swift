@@ -157,7 +157,6 @@ class WordsListViewController: UIViewController{
     }
     
     func setSearchController(){
-        print("setSearchBar")
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
@@ -193,7 +192,7 @@ extension WordsListViewController: UITableViewDelegate{
     //display tableview header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerview = UIView()
-        headerview.backgroundColor = UIColor.white
+        headerview.backgroundColor = UIColor.AppColor.backgroundHeader
 
         var item = WordItemView()
         item = Bundle.main.loadNibNamed("WordItemView", owner: self, options: nil)!.first! as! WordItemView
@@ -282,8 +281,6 @@ extension WordsListViewController: UISearchResultsUpdating{
         filteredWords = wordList.filter({( words : Words) -> Bool in
             return words.word!.lowercased().contains(searchtext.lowercased())
         })
-        print(filteredWords)
-        print(searchtext)
         tableView.reloadData()
     }
     

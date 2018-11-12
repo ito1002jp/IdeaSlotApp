@@ -31,9 +31,7 @@ class WordItemView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        textfield.placeholder = "+"
-        textfield.delegate = self
-        categorybutton.setTitle("No Category", for: .normal)
+        setWordItem()
         setDropDown(button: categorybutton, dropdown: dropdown)
     }
     
@@ -54,6 +52,16 @@ class WordItemView: UIView {
                 self.textFieldDidEndEditing(self.textfield)
             }
         }
+    }
+    
+    func setWordItem(){
+        textfield.placeholder = "+"
+        textfield.delegate = self
+        categorybutton.setTitle("No Category", for: .normal)
+        categorybutton.backgroundColor = UIColor.AppColor.buttonColor
+        categorybutton.tintColor = UIColor.AppColor.textColor
+        categorybutton.layer.cornerRadius = 5.0
+        categorybutton.layer.masksToBounds = true
     }
 }
 
