@@ -34,7 +34,6 @@ class WordsListViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        searchController.dismiss(animated: false, completion: nil)
         
         if category != nil {
             wordEntities = realm.objects(Words.self).filter("categoryId == %@", category!.categoryId).sorted(byKeyPath: "updateDate", ascending: false)
@@ -163,11 +162,11 @@ class WordsListViewController: UIViewController{
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.tintColor = UIColor.AppColor.navigationTitle
-    
+
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
         }else{
-            tableView.tableHeaderView = searchController.searchBar
+            self.navigationItem.titleView = searchController.searchBar
         }
         self.definesPresentationContext = true
     }
@@ -202,8 +201,10 @@ extension WordsListViewController: UITableViewDelegate{
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
             item.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
         } else {
-            headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
-            item.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
+//            headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
+//            item.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
+            headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
+            item.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
 //            searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
 //            headerview.addSubview(searchController.searchBar)
         }

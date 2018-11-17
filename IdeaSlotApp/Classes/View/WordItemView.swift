@@ -59,7 +59,7 @@ class WordItemView: UIView {
         textfield.delegate = self
         categorybutton.setTitle("No Category", for: .normal)
         categorybutton.backgroundColor = UIColor.AppColor.buttonColor
-        categorybutton.tintColor = UIColor.AppColor.textColor
+        categorybutton.tintColor = UIColor.AppColor.buttonTextColor
         categorybutton.layer.cornerRadius = 5.0
         categorybutton.layer.masksToBounds = true
     }

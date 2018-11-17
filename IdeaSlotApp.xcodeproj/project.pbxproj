@@ -41,7 +41,6 @@
 		CEE38EAD2180BAE300BBD07F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA92180BAE300BBD07F /* RealmSwift.framework */; };
 		CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */; };
 		CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */; };
-		CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */; };
 		CEEF4A9A21520D28007CFCC1 /* RealmCommonLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF4A9921520D28007CFCC1 /* RealmCommonLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +103,6 @@
 		CEE38EA92180BAE300BBD07F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		CEEDE3EC2143929C00D05F61 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
 		CEEF4A95215204F5007CFCC1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewController.swift; sourceTree = "<group>"; };
 		CEEF4A9921520D28007CFCC1 /* RealmCommonLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCommonLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +169,6 @@
 				CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */,
 				CE8B79F8210475FF009BD29F /* WordsListViewController.swift */,
 				CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */,
-				CEEF4A97215207C5007CFCC1 /* CategoryItemViewController.swift */,
 				CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */,
 				CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */,
 				CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */,
@@ -529,7 +526,6 @@
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
 				CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */,
 				CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */,
-				CEEF4A98215207C5007CFCC1 /* CategoryItemViewController.swift in Sources */,
 				CEEF4A96215204F5007CFCC1 /* CategoryTableViewCell.swift in Sources */,
 				CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */,
 				CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */,
