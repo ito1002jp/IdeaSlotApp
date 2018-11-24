@@ -34,14 +34,12 @@ class WordsListViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         if category != nil {
             wordEntities = realm.objects(Words.self).filter("categoryId == %@", category!.categoryId).sorted(byKeyPath: "updateDate", ascending: false)
         }else{
             wordEntities = realm.objects(Words.self).sorted(byKeyPath: "updateDate", ascending: false)
         }
-        
-            tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,53 +68,50 @@ class WordsListViewController: UIViewController{
     
     //insert new word
     func insertWord(text: String, categoryName: String){
-        var categoryItem:Results<Category>? = nil
-        var category:Category? = nil
-        let item: [String: Any]
+        var categoryItem:Category? = nil
+        var category:Array<Category>? = nil
+        var item: [String: Any]? = nil
 
         if !categoryName.isEmpty{
-            categoryItem = findCategoryItem(categoryName: categoryName)
-            category = Category(value: [
-                "categoryId": categoryItem!.first!.categoryId,
-                "categoryName": categoryItem!.first!.categoryName])
-            item = ["word": text,
-                    //                                       "userId": "test-user",
-                "categoryId": categoryItem!.first!.categoryId,
-                "categoryName": categoryName]
+            category = Array(findCategoryItem(categoryName: categoryName))
+            if category!.count > 0{
+                categoryItem = category?.first
+                item = ["word": text,
+                        //                                       "userId": "test-user",
+                    "categoryId": categoryItem!.categoryId,
+                    "categoryName": categoryName]
+            }
         }else{
             item = ["word": text,
                     "categoryId": 0,
                     "categoryName": "No Category"]
         }
         
-        let newWord = Words(value: item)
+        let newWord = Words(value: item!)
         
         try! realm.write(){
             realm.add(newWord)
-            if category != nil{
-                category?.words.append(newWord)
-                realm.create(Category.self, value: category!, update: true)
+            if categoryItem != nil{
+                categoryItem?.words.append(newWord)
             }
         }
     }
     
     //update word
     func updateWord(text: String, categoryName: String, wordItem: Words){
-        var categoryItem:Results<Category>? = nil
-        var category:Category? = nil
+        var category:Array<Category>? = nil
+        var categoryItem:Category? = nil
         let item: [String: Any]
         
-        categoryItem = findCategoryItem(categoryName: categoryName)
-        if categoryItem?.count != 0{
-            category = Category(value: [
-                "categoryId": categoryItem!.first!.categoryId,
-                "categoryName": categoryItem!.first!.categoryName])
+        category = Array(findCategoryItem(categoryName: categoryName))
+        if category!.count > 0{
+            categoryItem = category?.first
             item = ["wordId": wordItem.wordId!,
             "word": text,
             //                                       "userId": "test-user",
             "updateDate": Date(),
-            "categoryId": categoryItem!.first!.categoryId,
-            "categoryName": categoryItem!.first!.categoryName]
+            "categoryId": category!.first!.categoryId,
+            "categoryName": category!.first!.categoryName]
         }else{
             item = ["wordId": wordItem.wordId!,
                     "word": text,
@@ -141,13 +136,11 @@ class WordsListViewController: UIViewController{
         let editWord = Words(value: item)
         try! realm.write(){
             realm.add(editWord, update: true)
-            if category != nil{
-                category!.words.append(editWord)
-                realm.create(Category.self, value: category!, update: true)
+            if categoryItem != nil{
+                categoryItem!.words.append(editWord)
             }
             if removeWordItemIndex != nil{
                 oldCategory!.words.remove(at: removeWordItemIndex!)
-                realm.create(Category.self, value: oldCategory!, update: true)
             }
         }
     }
