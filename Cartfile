@@ -1,4 +1,4 @@
 github "dekatotoro/SlideMenuControllerSwift"
-github "xmartlabs/Eureka" ~> 4.3
+github "SwipeCellKit/SwipeCellKit"
 github "realm/realm-cocoa"
 github "AssistoLab/DropDown"

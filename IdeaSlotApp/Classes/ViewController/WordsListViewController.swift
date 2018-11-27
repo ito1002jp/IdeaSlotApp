@@ -29,6 +29,7 @@ class WordsListViewController: UIViewController{
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = .zero
+        tableView.allowsSelection = false
         tableView.tableFooterView = UIView()
     }
     
@@ -165,7 +166,9 @@ class WordsListViewController: UIViewController{
     }
 }
 
-//TableView Delegate
+/**
+ TableView Delegate
+ **/
 extension WordsListViewController: UITableViewDelegate{
     
     //editingStyle
@@ -179,8 +182,10 @@ extension WordsListViewController: UITableViewDelegate{
         }
         tableView.reloadData()
     }
-    
-    //display tableview header
+ 
+    /**
+     display tableview header
+     **/
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerview = UIView()
         headerview.backgroundColor = UIColor.AppColor.backgroundHeader
@@ -189,6 +194,9 @@ extension WordsListViewController: UITableViewDelegate{
         item = Bundle.main.loadNibNamed("WordItemView", owner: self, options: nil)!.first! as! WordItemView
         item.delegate = self
         item.dropdown.dataSource = arrayCategoryList()
+        if category != nil{
+            item.categorybutton.setTitle(category?.categoryName, for: .normal)
+        }
         
         if #available(iOS 11.0, *) {
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
@@ -206,7 +214,9 @@ extension WordsListViewController: UITableViewDelegate{
         return headerview
     }
     
-    //tableview header height size
+    /**
+     tableview header height size
+     **/
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
         if #available(iOS 11.0, *) {
             return 45
@@ -216,7 +226,9 @@ extension WordsListViewController: UITableViewDelegate{
     }
 }
 
-//TableView DataSource
+/**
+ TableView DataSource
+ **/
 extension WordsListViewController: UITableViewDataSource{
     //display cell count
     func  tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -257,7 +269,9 @@ extension WordsListViewController: UITableViewDataSource{
     }
 }
 
-//Textfield Delegate(extension WordTableViewCell)
+/**
+ Textfield Delegate(extension WordTableViewCell)
+ **/
 extension WordsListViewController: InputTextDelegate{
     //textfield has finished to edit
     func textFieldDidEndEditing(item: WordItemView, value: String) -> () {
@@ -267,7 +281,9 @@ extension WordsListViewController: InputTextDelegate{
     }
 }
 
-//SearchController SearchResultUpdating
+/**
+ SearchController SearchResultUpdating
+ **/
 extension WordsListViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         wordList = Array(wordEntities!)
