@@ -94,7 +94,7 @@
         <!--Category List View Controller-->
         <scene sceneID="tO4-Mo-H2v">
             <objects>
-                <viewController storyboardIdentifier="CategoryList" id="JsH-40-bSH" customClass="CategoryListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryList" automaticallyAdjustsScrollViewInsets="NO" id="JsH-40-bSH" customClass="CategoryListViewController" customModule="IdeaSlotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wjc-JF-jeS"/>
                         <viewControllerLayoutGuide type="bottom" id="psE-wi-Ig9"/>
@@ -132,7 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="peg-Nb-f3z" id="oBA-ZC-5db"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toWordList" id="yhS-fg-hC8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toWordList" id="ax7-p6-pa1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1i2-wI-p6x" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if (oldSchemaVersion < 17) {}
         })
         Realm.Configuration.defaultConfiguration = config
-        _ = try! Realm()
         createMenuView()
         DropDown.startListeningToKeyboard()
         

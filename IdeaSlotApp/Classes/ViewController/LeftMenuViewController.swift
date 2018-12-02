@@ -10,7 +10,7 @@ import UIKit
 
 enum LeftMenu :Int{
     case words = 0
-    case category
+    case categories
     case ideas
     case slot
 }
@@ -22,7 +22,7 @@ protocol LeftMenuProtocol : class {
 class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Word List", "Category List", "Idea List", "Idea Slot"]
+    var menus = ["Words", "Categories", "Ideas", "Idea Slot"]
     var wordsListViewController: UIViewController!
     var categoryListViewController: UIViewController!
     var ideasListViewController: UIViewController!
@@ -69,7 +69,7 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         switch menu {
         case .words:
             self.slideMenuController()?.changeMainViewController(wordsListViewController, close: true)
-        case .category:
+        case .categories:
             self.slideMenuController()?.changeMainViewController(categoryListViewController, close: true)
         case .ideas:
             self.slideMenuController()?.changeMainViewController(ideasListViewController, close: true)
@@ -83,7 +83,7 @@ extension LeftMenuViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: indexPath.row){
             switch menu{
-            case .words, .category, .ideas, .slot:
+            case .words, .categories, .ideas, .slot:
                 return BaseTableViewCell.height()
             }
         }
@@ -107,7 +107,7 @@ extension LeftMenuViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .words, .category, .ideas, .slot:
+            case .words, .categories, .ideas, .slot:
                 let cell = BaseTableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menus[indexPath.row])
                 return cell
