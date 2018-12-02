@@ -1,15 +1,17 @@
 //
-//  BaseTableViewCell.swift
-//  SlideMenuControllerSwift
+//  CategoryItemCell.swift
+//  IdeaSlotApp
 //
-//  Created by Yuji Hato on 1/22/15.
-//  Copyright (c) 2015 Yuji Hato. All rights reserved.
+//  Created by yuta akazawa on 2018/12/02.
+//  Copyright © 2018年 yuta akazawa. All rights reserved.
 //
+
 import UIKit
 
-open class BaseTableViewCell : UITableViewCell {
+open class CategoryItemCell : UITableViewCell {
+    
     class var identifier: String { return String(describing: type(of: self)) }
-
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -34,6 +36,7 @@ open class BaseTableViewCell : UITableViewCell {
         self.backgroundColor = UIColor.AppColor.leftmenuCellColor
         self.textLabel?.font = UIFont.italicSystemFont(ofSize: 18)
         self.textLabel?.textColor = UIColor.AppColor.textColor
+        self.accessoryType = .disclosureIndicator
         if let menuText = data as? String {
             self.textLabel?.text = menuText
         }
@@ -50,5 +53,6 @@ open class BaseTableViewCell : UITableViewCell {
     // ignore the default handling
     override open func setSelected(_ selected: Bool, animated: Bool) {
     }
-  
+    
 }
+

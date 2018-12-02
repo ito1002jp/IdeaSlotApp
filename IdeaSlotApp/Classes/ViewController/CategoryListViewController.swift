@@ -13,7 +13,7 @@ import SlideMenuControllerSwift
 class CategoryListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var categoryEntities: Results<Category>? = nil
+    var categoriesEntities: Results<Category>? = nil
 
     let realm = try! Realm()
     
@@ -22,19 +22,19 @@ class CategoryListViewController: UIViewController {
         super.viewDidLoad()
         self.setNavigationBarItem()
         setNavigationBarTitle(title: "Category")
+        
+        tableView.register(UINib(nibName: "CategoryItemCell", bundle: nil),forCellReuseIdentifier:"CategoryItem")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorInset = .zero
-        tableView.register(UINib(nibName: "CategoryItemCell", bundle: nil),forCellReuseIdentifier:"CategoryItem")
         tableView.tableFooterView = UIView()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("will appear")
         super.viewWillAppear(animated)
-        categoryEntities = realm.objects(Category.self)
+        categoriesEntities = realm.objects(Category.self)
         tableView.reloadData()
     }
 
@@ -52,18 +52,14 @@ class CategoryListViewController: UIViewController {
         print("prepare")
         switch segue.identifier {
         case "toWordList":
-            print("identifier toWordList")
+            print("identifier",segue.identifier)
             let wordListViewController = segue.destination as! WordsListViewController
-            let category = categoryEntities![tableView.indexPathForSelectedRow!.row]
+            let _ = wordListViewController.view
+            let category = categoriesEntities![tableView.indexPathForSelectedRow!.row]
             wordListViewController.category = category
         default:
             break
         }
-    }
-    
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        tableView.isEditing = editing 
     }
 }
 
@@ -74,10 +70,13 @@ extension CategoryListViewController: UITableViewDelegate{
     //did select cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tapped cell")
-//        self.performSegue(withIdentifier: "toWordList", sender: nil)
+        performSegue(withIdentifier: "toWordList", sender: nil)
+//        let toWordList = WordsListViewController()
+//        toWordList.modalTransitionStyle = .crossDissolve
+//        navigationController?.pushViewController(toWordList, animated: true)
     }
     
-    //can edit table cell
+    //can swipe table cell
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -91,7 +90,7 @@ extension CategoryListViewController: UITableViewDelegate{
         return [editAction]
     }
     
-    @available(iOS 11.0, *)
+    //@available(iOS 11.0, *)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         print("trailingSwipeActionsConfigurationForRowAt")
         let editAction = UIContextualAction.init(style: UIContextualAction.Style.normal, title: "edit", handler: { (action, view, completion) in
@@ -117,7 +116,7 @@ extension CategoryListViewController: UITableViewDelegate{
  **/
 extension CategoryListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let categoryEntity = categoryEntities{
+        if let categoryEntity = categoriesEntities{
             return categoryEntity.count
         }
         return 0
@@ -127,7 +126,7 @@ extension CategoryListViewController: UITableViewDataSource{
         
         let categories:Category
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryItem",for: indexPath) as! CategoryTableViewCell
-        categories = categoryEntities![indexPath.row]
+        categories = categoriesEntities![indexPath.row]
         
         cell.categoryTitle.text = categories.categoryName
         cell.categoryTitle.numberOfLines = 0

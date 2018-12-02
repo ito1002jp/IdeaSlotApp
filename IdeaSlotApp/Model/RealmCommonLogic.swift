@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmCommonLogic{
     let realm = try! Realm()
-    var categoryMaxId: Int { return (try! realm.objects(Category.self).sorted(byKeyPath: "categoryId", ascending: true).last?.categoryId)!}
+    var categoryMaxId: Int { return (realm.objects(Category.self).sorted(byKeyPath: "categoryId", ascending: true).last?.categoryId)!}
     
     func getCategoryMaxId() -> Int {
         let maxId = categoryMaxId + 1

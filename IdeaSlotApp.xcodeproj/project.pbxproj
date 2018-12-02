@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0E5F7F21B4230800F97E59 /* CategoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0E5F7E21B4230800F97E59 /* CategoryItemCell.swift */; };
 		CE4454B821A90BA500E8E46A /* CategoryItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4454B721A90BA500E8E46A /* CategoryItemView.xib */; };
 		CE4454BA21A90BCE00E8E46A /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4454B921A90BCE00E8E46A /* CategoryItemView.swift */; };
 		CE4454BC21A90F3C00E8E46A /* noun_Arrow_18953.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4454BB21A90F3C00E8E46A /* noun_Arrow_18953.png */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0E5F7E21B4230800F97E59 /* CategoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemCell.swift; sourceTree = "<group>"; };
 		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE4454B721A90BA500E8E46A /* CategoryItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemView.xib; sourceTree = "<group>"; };
 		CE4454B921A90BCE00E8E46A /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */,
 				CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */,
 				CE82D30A21A98082003BE0B0 /* CategoryTableViewCell.swift */,
+				CE0E5F7E21B4230800F97E59 /* CategoryItemCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */,
 				CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */,
 				CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */,
+				CE0E5F7F21B4230800F97E59 /* CategoryItemCell.swift in Sources */,
 				CE8B79F7210475FF009BD29F /* AppDelegate.swift in Sources */,
 				CE918FE521995B99001C6B95 /* UIColor.swift in Sources */,
 				CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */,
