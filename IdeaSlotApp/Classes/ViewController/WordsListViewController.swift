@@ -22,7 +22,9 @@ class WordsListViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBarItem()
+        if category == nil{
+            setNavigationBarItem()
+        }
         setNavigationBarTitle(title: "Words")
         setSearchController()
         tableView.delegate = self

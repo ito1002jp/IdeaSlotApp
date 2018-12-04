@@ -18,7 +18,6 @@ class CategoryListViewController: UIViewController {
     let realm = try! Realm()
     
     override func viewDidLoad() {
-        print("did load")
         super.viewDidLoad()
         self.setNavigationBarItem()
         setNavigationBarTitle(title: "Category")
@@ -32,14 +31,12 @@ class CategoryListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("will appear")
         super.viewWillAppear(animated)
         categoryEntities = realm.objects(Category.self)
         tableView.reloadData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        print("will disappear")
         super.viewWillDisappear(animated)
         dismiss(animated: animated, completion: nil)
     }
@@ -49,10 +46,8 @@ class CategoryListViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare")
         switch segue.identifier {
         case "toWordList":
-            print("identifier toWordList")
             let wordListViewController = segue.destination as! WordsListViewController
             let category = categoryEntities![tableView.indexPathForSelectedRow!.row]
             wordListViewController.category = category
@@ -61,10 +56,6 @@ class CategoryListViewController: UIViewController {
         }
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        tableView.isEditing = editing 
-    }
 }
 
 /**
@@ -73,8 +64,7 @@ class CategoryListViewController: UIViewController {
 extension CategoryListViewController: UITableViewDelegate{
     //did select cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped cell")
-//        self.performSegue(withIdentifier: "toWordList", sender: nil)
+        self.performSegue(withIdentifier: "toWordList", sender: nil)
     }
     
     //can edit table cell
@@ -93,7 +83,6 @@ extension CategoryListViewController: UITableViewDelegate{
     
     @available(iOS 11.0, *)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        print("trailingSwipeActionsConfigurationForRowAt")
         let editAction = UIContextualAction.init(style: UIContextualAction.Style.normal, title: "edit", handler: { (action, view, completion) in
             //TODO: Edit
             self.editForCell()
