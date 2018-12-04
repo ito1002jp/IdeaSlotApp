@@ -24,6 +24,8 @@ class WordsListViewController: UIViewController{
         super.viewDidLoad()
         if category == nil{
             setNavigationBarItem()
+        }else{
+            customBackButton()
         }
         setNavigationBarTitle(title: "Words")
         setSearchController()

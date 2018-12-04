@@ -32,6 +32,25 @@ extension UIViewController{
         self.navigationItem.titleView = navigationTitle
     }
     
+    func customBackButton(){
+        self.slideMenuController()?.removeLeftGestures()
+
+        let button: UIButton = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        button.setImage(UIImage(named: "noun_back_1704429"), for: .normal)
+        button.addTarget(self, action: #selector(toBack), for: .touchUpInside)
+        let backButton = UIBarButtonItem(customView:button)
+        let currWidth = backButton.customView?.widthAnchor.constraint(equalToConstant: 25)
+        currWidth?.isActive = true
+        let currHeight = backButton.customView?.heightAnchor.constraint(equalToConstant: 25)
+        currHeight?.isActive = true
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func toBack(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     //return category name list
     func arrayCategoryList() -> Array<String> {
         let realm = try!Realm()

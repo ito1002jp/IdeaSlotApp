@@ -21,6 +21,7 @@
 		CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */; };
 		CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */; };
 		CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */; };
+		CE6BD87321B6BD67003CCF67 /* noun_back_1704429.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BD87021B6BD67003CCF67 /* noun_back_1704429.png */; };
 		CE7497272143F48100F51E91 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497262143F48100F51E91 /* UIViewController.swift */; };
 		CE7497292143F7D100F51E91 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497282143F7D100F51E91 /* UIApplication.swift */; };
 		CE78EABA219698C600493969 /* WordItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE78EAB9219698C600493969 /* WordItemView.xib */; };
@@ -78,6 +79,7 @@
 		CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasListViewController.swift; sourceTree = "<group>"; };
+		CE6BD87021B6BD67003CCF67 /* noun_back_1704429.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_back_1704429.png; sourceTree = "<group>"; };
 		CE7497262143F48100F51E91 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CE7497282143F7D100F51E91 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		CE78EAB9219698C600493969 /* WordItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordItemView.xib; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		CE5804842144326800BEDA1A /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				CE6BD87021B6BD67003CCF67 /* noun_back_1704429.png */,
 				CE4454BB21A90F3C00E8E46A /* noun_Arrow_18953.png */,
 				CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */,
 				CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */,
@@ -431,6 +434,7 @@
 				CE82D30921A97FA2003BE0B0 /* CategoryItemCell.xib in Resources */,
 				CE58048E214432A100BEDA1A /* ic_menu_black_24dp@2x.png in Resources */,
 				CE8B79FE21047601009BD29F /* Assets.xcassets in Resources */,
+				CE6BD87321B6BD67003CCF67 /* noun_back_1704429.png in Resources */,
 				CE8B79FC210475FF009BD29F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
