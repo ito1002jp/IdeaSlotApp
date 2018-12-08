@@ -12,7 +12,7 @@ class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var includeWordsCount: UILabel!
     @IBOutlet weak var categoryTitle: UILabel!
-    let nextImage = UIImage(named: "noun_Arrow_18953")
+    let nextImage = UIImage(named: "Into")
     
 
     override func awakeFromNib() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
 class WordsListViewController: UIViewController{
     
@@ -17,7 +18,7 @@ class WordsListViewController: UIViewController{
     var searchController:UISearchController!
     var filteredWords = [Words]()
     var wordList = [Words]()
-
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -76,7 +77,7 @@ class WordsListViewController: UIViewController{
         var categoryItem:Category? = nil
         var category:Array<Category>? = nil
         var item: [String: Any]? = nil
-
+        
         if !categoryName.isEmpty{
             category = Array(findCategoryItem(categoryName: categoryName))
             if category!.count > 0{
@@ -112,11 +113,11 @@ class WordsListViewController: UIViewController{
         if category!.count > 0{
             categoryItem = category?.first
             item = ["wordId": wordItem.wordId!,
-            "word": text,
-            //                                       "userId": "test-user",
-            "updateDate": Date(),
-            "categoryId": category!.first!.categoryId,
-            "categoryName": category!.first!.categoryName]
+                    "word": text,
+                    //                                       "userId": "test-user",
+                "updateDate": Date(),
+                "categoryId": category!.first!.categoryId,
+                "categoryName": category!.first!.categoryName]
         }else{
             item = ["wordId": wordItem.wordId!,
                     "word": text,
@@ -137,7 +138,7 @@ class WordsListViewController: UIViewController{
             oldCategory = Category(value: removeWordItem!)
         }
         
-
+        
         let editWord = Words(value: item)
         try! realm.write(){
             realm.add(editWord, update: true)
@@ -150,6 +151,17 @@ class WordsListViewController: UIViewController{
         }
     }
     
+    //delete word
+    func deleteWord(_ tableView: UITableView, forRowAt indexPath: IndexPath){
+        try! realm.write {
+            if let wordEntities = wordEntities{
+                realm.delete(wordEntities[indexPath.row])
+            }
+        }
+        tableView.reloadData()
+    }
+
+    
     //set up searchcontroller
     func setSearchController(){
         searchController = UISearchController(searchResultsController: nil)
@@ -160,7 +172,7 @@ class WordsListViewController: UIViewController{
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.tintColor = UIColor.AppColor.navigationTitle
-
+        
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
         }else{
@@ -168,6 +180,7 @@ class WordsListViewController: UIViewController{
         }
         self.definesPresentationContext = true
     }
+    
 }
 
 /**
@@ -175,25 +188,13 @@ class WordsListViewController: UIViewController{
  **/
 extension WordsListViewController: UITableViewDelegate{
     
-    //editingStyle
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            try! realm.write {
-                if let wordEntities = wordEntities{
-                    realm.delete(wordEntities[indexPath.row])
-                }
-            }
-        }
-        tableView.reloadData()
-    }
- 
     /**
      display tableview header
      **/
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerview = UIView()
         headerview.backgroundColor = UIColor.AppColor.backgroundHeader
-
+        
         var item = WordItemView()
         item = Bundle.main.loadNibNamed("WordItemView", owner: self, options: nil)!.first! as! WordItemView
         item.delegate = self
@@ -206,12 +207,12 @@ extension WordsListViewController: UITableViewDelegate{
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
             item.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
         } else {
-//            headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
-//            item.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
+            //            headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100)
+            //            item.frame = CGRect(x:0, y:55, width:self.view.frame.size.width, height:44)
             headerview.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 45)
             item.frame = CGRect(x:0, y:0, width:self.view.frame.size.width, height:44)
-//            searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-//            headerview.addSubview(searchController.searchBar)
+            //            searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+            //            headerview.addSubview(searchController.searchBar)
         }
         headerview.addSubview(item)
         
@@ -246,13 +247,19 @@ extension WordsListViewController: UITableViewDataSource{
         return 0
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
+    
     //display cell details
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let words: Words
-        let cell = UITableViewCell()
+        let cell = SwipeTableViewCell()
+        cell.delegate = self
+        
         var itemView = WordItemView()
         itemView = Bundle.main.loadNibNamed("WordItemView", owner: self, options: nil)!.first! as! WordItemView
-
+        
         if isFiltering(){
             words = filteredWords[indexPath.row]
         }else{
@@ -268,7 +275,7 @@ extension WordsListViewController: UITableViewDataSource{
         itemView.categoryName = words.categoryName
         itemView.beforecategoryName = words.categoryName
         cell.contentView.addSubview(itemView)
-
+        
         return cell
     }
 }
@@ -291,10 +298,10 @@ extension WordsListViewController: InputTextDelegate{
 extension WordsListViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         wordList = Array(wordEntities!)
-
+        
         let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = .white
-
+        
         let searchtext = searchController.searchBar.text!
         filteredWords = wordList.filter({( words : Words) -> Bool in
             return words.word!.lowercased().contains(searchtext.lowercased())
@@ -309,6 +316,24 @@ extension WordsListViewController: UISearchResultsUpdating{
     
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+}
+
+/**
+ SwipeCellKit SwipeTableViewCellDelegate
+ **/
+extension WordsListViewController:SwipeTableViewCellDelegate{
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            self.deleteWord(tableView, forRowAt: indexPath)
+        }
+        deleteAction.image = UIImage(named: "Trash-white")
+        deleteAction.backgroundColor = UIColor.AppColor.deleteBackGroundColor
+
+        return [deleteAction]
     }
     
 }

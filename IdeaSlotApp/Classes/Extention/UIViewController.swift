@@ -13,7 +13,7 @@ import DropDown
 extension UIViewController{
     
     func setNavigationBarItem() {
-        self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp")!)
+        self.addLeftBarButtonWithImage(UIImage(named: "Menu")!)
         self.slideMenuController()?.removeLeftGestures()
         self.slideMenuController()?.addLeftGestures()
     }
@@ -37,7 +37,7 @@ extension UIViewController{
 
         let button: UIButton = UIButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        button.setImage(UIImage(named: "noun_back_1704429"), for: .normal)
+        button.setImage(UIImage(named: "Back"), for: .normal)
         button.addTarget(self, action: #selector(toBack), for: .touchUpInside)
         let backButton = UIBarButtonItem(customView:button)
         let currWidth = backButton.customView?.widthAnchor.constraint(equalToConstant: 25)

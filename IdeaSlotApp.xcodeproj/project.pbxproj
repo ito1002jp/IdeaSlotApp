@@ -7,21 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE43D50021BB9C540089764A /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43D4FF21BB9C540089764A /* SwipeCellKit.framework */; };
 		CE4454B821A90BA500E8E46A /* CategoryItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4454B721A90BA500E8E46A /* CategoryItemView.xib */; };
 		CE4454BA21A90BCE00E8E46A /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4454B921A90BCE00E8E46A /* CategoryItemView.swift */; };
-		CE4454BC21A90F3C00E8E46A /* noun_Arrow_18953.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4454BB21A90F3C00E8E46A /* noun_Arrow_18953.png */; };
 		CE4B2BE2218D627F009A94B2 /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */; };
 		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
 		CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */; };
-		CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */; };
-		CE58048E214432A100BEDA1A /* ic_menu_black_24dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */; };
-		CE580490214432A100BEDA1A /* ic_menu_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */; };
 		CE5A635B212948BC007E4887 /* CategorySeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635A212948BC007E4887 /* CategorySeed.swift */; };
 		CE5A635D21294E99007E4887 /* RealmInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A635C21294E99007E4887 /* RealmInitializer.swift */; };
 		CE5E1F3F211FFE5600523D96 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */; };
 		CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */; };
 		CE5E1F43211FFE8800523D96 /* IdeasListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */; };
-		CE6BD87321B6BD67003CCF67 /* noun_back_1704429.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BD87021B6BD67003CCF67 /* noun_back_1704429.png */; };
 		CE7497272143F48100F51E91 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497262143F48100F51E91 /* UIViewController.swift */; };
 		CE7497292143F7D100F51E91 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7497282143F7D100F51E91 /* UIApplication.swift */; };
 		CE78EABA219698C600493969 /* WordItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE78EAB9219698C600493969 /* WordItemView.xib */; };
@@ -65,21 +61,17 @@
 
 /* Begin PBXFileReference section */
 		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE43D4FF21BB9C540089764A /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeCellKit.framework; path = Carthage/Build/iOS/SwipeCellKit.framework; sourceTree = "<group>"; };
 		CE4454B721A90BA500E8E46A /* CategoryItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemView.xib; sourceTree = "<group>"; };
 		CE4454B921A90BCE00E8E46A /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
-		CE4454BB21A90F3C00E8E46A /* noun_Arrow_18953.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_Arrow_18953.png; sourceTree = "<group>"; };
 		CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
 		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@3x.png"; sourceTree = "<group>"; };
-		CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu_black_24dp@2x.png"; sourceTree = "<group>"; };
-		CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu_black_24dp.png; sourceTree = "<group>"; };
 		CE5A635A212948BC007E4887 /* CategorySeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeed.swift; sourceTree = "<group>"; };
 		CE5A635C21294E99007E4887 /* RealmInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInitializer.swift; sourceTree = "<group>"; };
 		CE5E1F3E211FFE5600523D96 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		CE5E1F40211FFE7B00523D96 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		CE5E1F42211FFE8800523D96 /* IdeasListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasListViewController.swift; sourceTree = "<group>"; };
-		CE6BD87021B6BD67003CCF67 /* noun_back_1704429.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_back_1704429.png; sourceTree = "<group>"; };
 		CE7497262143F48100F51E91 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CE7497282143F7D100F51E91 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		CE78EAB9219698C600493969 /* WordItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordItemView.xib; sourceTree = "<group>"; };
@@ -115,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43D50021BB9C540089764A /* SwipeCellKit.framework in Frameworks */,
 				CE4B2BE2218D627F009A94B2 /* SlideMenuControllerSwift.framework in Frameworks */,
 				CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */,
 				CEE38EAC2180BAE300BBD07F /* Realm.framework in Frameworks */,
@@ -192,18 +185,6 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		CE5804842144326800BEDA1A /* icon */ = {
-			isa = PBXGroup;
-			children = (
-				CE6BD87021B6BD67003CCF67 /* noun_back_1704429.png */,
-				CE4454BB21A90F3C00E8E46A /* noun_Arrow_18953.png */,
-				CE58048A214432A100BEDA1A /* ic_menu_black_24dp.png */,
-				CE580488214432A100BEDA1A /* ic_menu_black_24dp@2x.png */,
-				CE580485214432A100BEDA1A /* ic_menu_black_24dp@3x.png */,
-			);
-			path = icon;
-			sourceTree = "<group>";
-		};
 		CE7497252143F44900F51E91 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +209,6 @@
 		CE78631B2116E5570053B87B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				CE5804842144326800BEDA1A /* icon */,
 				CE8B79FD21047601009BD29F /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -308,6 +288,7 @@
 		F44F1094BD83EC84BD744B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE43D4FF21BB9C540089764A /* SwipeCellKit.framework */,
 				CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */,
 				CEE38EA72180BAE300BBD07F /* DropDown.framework */,
 				CEE38EA82180BAE300BBD07F /* Realm.framework */,
@@ -426,15 +407,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4454B821A90BA500E8E46A /* CategoryItemView.xib in Resources */,
-				CE58048B214432A100BEDA1A /* ic_menu_black_24dp@3x.png in Resources */,
-				CE4454BC21A90F3C00E8E46A /* noun_Arrow_18953.png in Resources */,
 				CE78EABA219698C600493969 /* WordItemView.xib in Resources */,
-				CE580490214432A100BEDA1A /* ic_menu_black_24dp.png in Resources */,
 				CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */,
 				CE82D30921A97FA2003BE0B0 /* CategoryItemCell.xib in Resources */,
-				CE58048E214432A100BEDA1A /* ic_menu_black_24dp@2x.png in Resources */,
 				CE8B79FE21047601009BD29F /* Assets.xcassets in Resources */,
-				CE6BD87321B6BD67003CCF67 /* noun_back_1704429.png in Resources */,
 				CE8B79FC210475FF009BD29F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +480,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SlideMenuControllerSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DropDown.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwipeCellKit.framework",
 			);
 			outputFileListPaths = (
 			);
