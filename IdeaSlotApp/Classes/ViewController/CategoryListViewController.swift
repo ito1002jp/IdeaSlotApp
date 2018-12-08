@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-import SlideMenuControllerSwift
+import SwipeCellKit
 
 class CategoryListViewController: UIViewController {
     
@@ -67,38 +67,36 @@ extension CategoryListViewController: UITableViewDelegate{
         self.performSegue(withIdentifier: "toWordList", sender: nil)
     }
     
-    //can edit table cell
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+//    //can edit table cell
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    //edit action when swipe cell
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let editAction: UITableViewRowAction = UITableViewRowAction(style: .default, title: "edit") { (action, index) -> Void in
+//            self.editForCell()
+//        };
+//        editAction.backgroundColor = UIColor.gray
+//        return [editAction]
+//    }
     
-    //edit action when swipe cell
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let editAction: UITableViewRowAction = UITableViewRowAction(style: .default, title: "edit") { (action, index) -> Void in
-            self.editForCell()
-        };
-        editAction.backgroundColor = UIColor.gray
-        return [editAction]
-    }
-    
-    @available(iOS 11.0, *)
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction.init(style: UIContextualAction.Style.normal, title: "edit", handler: { (action, view, completion) in
-            //TODO: Edit
-            self.editForCell()
-        })
-        editAction.backgroundColor = UIColor.gray
-        
-        let config = UISwipeActionsConfiguration(actions: [editAction])
-        config.performsFirstActionWithFullSwipe = false
-        return config
-    }
+//    @available(iOS 11.0, *)
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let editAction = UIContextualAction.init(style: UIContextualAction.Style.normal, title: "edit", handler: { (action, view, completion) in
+//            //TODO: Edit
+//            self.editForCell()
+//        })
+//        editAction.backgroundColor = UIColor.gray
+//
+//        let config = UISwipeActionsConfiguration(actions: [editAction])
+//        config.performsFirstActionWithFullSwipe = false
+//        return config
+//    }
     
     func editForCell(){
         print("edit for cell")
     }
-    
-    
 }
 
 /**
@@ -116,6 +114,7 @@ extension CategoryListViewController: UITableViewDataSource{
         
         let categories:Category
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryItem",for: indexPath) as! CategoryTableViewCell
+        cell.delegate = self
         categories = categoryEntities![indexPath.row]
         
         cell.categoryTitle.text = categories.categoryName
@@ -128,5 +127,26 @@ extension CategoryListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
+    }
+}
+
+extension CategoryListViewController:SwipeTableViewCellDelegate{
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let editAction = SwipeAction(style: .default, title: "Edit") { action, indexPath in
+            print("swipe cell")
+        }
+        editAction.transitionDelegate = ScaleTransition.default
+        editAction.image = UIImage(named: "Edit")
+        editAction.backgroundColor = UIColor.AppColor.editBackGroundColor
+        
+        return [editAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.transitionStyle = .reveal
+        return options
     }
 }

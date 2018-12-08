@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE43D50021BB9C540089764A /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43D4FF21BB9C540089764A /* SwipeCellKit.framework */; };
-		CE4454B821A90BA500E8E46A /* CategoryItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4454B721A90BA500E8E46A /* CategoryItemView.xib */; };
-		CE4454BA21A90BCE00E8E46A /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4454B921A90BCE00E8E46A /* CategoryItemView.swift */; };
 		CE4B2BE2218D627F009A94B2 /* SlideMenuControllerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */; };
 		CE5585832115701600E66A6C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5585822115701600E66A6C /* Idea.swift */; };
 		CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */; };
@@ -60,10 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE2697E5210DB23200F59F2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE43D4FF21BB9C540089764A /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeCellKit.framework; path = Carthage/Build/iOS/SwipeCellKit.framework; sourceTree = "<group>"; };
-		CE4454B721A90BA500E8E46A /* CategoryItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemView.xib; sourceTree = "<group>"; };
-		CE4454B921A90BCE00E8E46A /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
 		CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SlideMenuControllerSwift.framework; path = Carthage/Build/iOS/SlideMenuControllerSwift.framework; sourceTree = "<group>"; };
 		CE5585822115701600E66A6C /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		CE58047A214420C700BEDA1A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,7 +151,6 @@
 			children = (
 				CE5804762144206B00BEDA1A /* TableViewCell */,
 				CE78EABB21969B0800493969 /* WordItemView.swift */,
-				CE4454B921A90BCE00E8E46A /* CategoryItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,7 +222,6 @@
 				CE8B79FA210475FF009BD29F /* Main.storyboard */,
 				CE8B79FF21047601009BD29F /* LaunchScreen.storyboard */,
 				CE78EAB9219698C600493969 /* WordItemView.xib */,
-				CE4454B721A90BA500E8E46A /* CategoryItemView.xib */,
 				CE82D30821A97FA2003BE0B0 /* CategoryItemCell.xib */,
 			);
 			path = Storyboard;
@@ -293,7 +286,6 @@
 				CEE38EA72180BAE300BBD07F /* DropDown.framework */,
 				CEE38EA82180BAE300BBD07F /* Realm.framework */,
 				CEE38EA92180BAE300BBD07F /* RealmSwift.framework */,
-				CE2697E5210DB23200F59F2B /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -406,7 +398,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4454B821A90BA500E8E46A /* CategoryItemView.xib in Resources */,
 				CE78EABA219698C600493969 /* WordItemView.xib in Resources */,
 				CE8B7A0121047601009BD29F /* LaunchScreen.storyboard in Resources */,
 				CE82D30921A97FA2003BE0B0 /* CategoryItemCell.xib in Resources */,
@@ -502,7 +493,6 @@
 				CE5585832115701600E66A6C /* Idea.swift in Sources */,
 				CE988D41215D1919000B1345 /* IdeasSlotViewController.swift in Sources */,
 				CE58047D214420C700BEDA1A /* BaseTableViewCell.swift in Sources */,
-				CE4454BA21A90BCE00E8E46A /* CategoryItemView.swift in Sources */,
 				CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */,
 				CEEDE3ED2143929C00D05F61 /* SlideMenuViewController.swift in Sources */,
 				CE5E1F41211FFE7B00523D96 /* CategoryListViewController.swift in Sources */,

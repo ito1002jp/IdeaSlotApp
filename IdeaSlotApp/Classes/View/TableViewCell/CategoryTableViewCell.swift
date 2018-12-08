@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class CategoryTableViewCell: UITableViewCell {
+class CategoryTableViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var includeWordsCount: UILabel!
     @IBOutlet weak var categoryTitle: UILabel!

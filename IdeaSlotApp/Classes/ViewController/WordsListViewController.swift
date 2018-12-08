@@ -327,13 +327,21 @@ extension WordsListViewController:SwipeTableViewCellDelegate{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+        let deleteAction = SwipeAction(style: .default, title: "Delete") { action, indexPath in
             self.deleteWord(tableView, forRowAt: indexPath)
         }
-        deleteAction.image = UIImage(named: "Trash-white")
+        deleteAction.image = UIImage(named: "Trash")
         deleteAction.backgroundColor = UIColor.AppColor.deleteBackGroundColor
 
         return [deleteAction]
     }
     
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive(automaticallyDelete: false)
+        options.expansionDelegate = ScaleAndAlphaExpansion.default
+        options.transitionStyle = .reveal
+        
+        return options
+    }
 }
