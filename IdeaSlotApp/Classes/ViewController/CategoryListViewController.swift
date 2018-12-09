@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 import SwipeCellKit
+import SwiftEntryKit
+import QuickLayout
 
 class CategoryListViewController: UIViewController {
     

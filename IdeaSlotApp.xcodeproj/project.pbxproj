@@ -33,6 +33,8 @@
 		CE988D41215D1919000B1345 /* IdeasSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */; };
 		CE988D43215D1F97000B1345 /* IdeaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */; };
 		CED3DB1F215F5939008B6A0D /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */; };
+		CEDB941721BCF39600099D1B /* SwiftEntryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB941521BCF39500099D1B /* SwiftEntryKit.framework */; };
+		CEDB941821BCF39600099D1B /* QuickLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDB941621BCF39600099D1B /* QuickLayout.framework */; };
 		CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA72180BAE300BBD07F /* DropDown.framework */; };
 		CEE38EAC2180BAE300BBD07F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA82180BAE300BBD07F /* Realm.framework */; };
 		CEE38EAD2180BAE300BBD07F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE38EA92180BAE300BBD07F /* RealmSwift.framework */; };
@@ -90,6 +92,8 @@
 		CE988D40215D1919000B1345 /* IdeasSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasSlotViewController.swift; sourceTree = "<group>"; };
 		CE988D42215D1F97000B1345 /* IdeaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaTableViewCell.swift; sourceTree = "<group>"; };
 		CED3DB1E215F5939008B6A0D /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDetailViewController.swift; sourceTree = "<group>"; };
+		CEDB941521BCF39500099D1B /* SwiftEntryKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftEntryKit.framework; path = Carthage/Build/iOS/SwiftEntryKit.framework; sourceTree = "<group>"; };
+		CEDB941621BCF39600099D1B /* QuickLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLayout.framework; path = Carthage/Build/iOS/QuickLayout.framework; sourceTree = "<group>"; };
 		CEE38EA72180BAE300BBD07F /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = Carthage/Build/iOS/DropDown.framework; sourceTree = "<group>"; };
 		CEE38EA82180BAE300BBD07F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		CEE38EA92180BAE300BBD07F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDB941721BCF39600099D1B /* SwiftEntryKit.framework in Frameworks */,
+				CEDB941821BCF39600099D1B /* QuickLayout.framework in Frameworks */,
 				CE43D50021BB9C540089764A /* SwipeCellKit.framework in Frameworks */,
 				CE4B2BE2218D627F009A94B2 /* SlideMenuControllerSwift.framework in Frameworks */,
 				CEE38EAB2180BAE300BBD07F /* DropDown.framework in Frameworks */,
@@ -281,6 +287,8 @@
 		F44F1094BD83EC84BD744B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB941621BCF39600099D1B /* QuickLayout.framework */,
+				CEDB941521BCF39500099D1B /* SwiftEntryKit.framework */,
 				CE43D4FF21BB9C540089764A /* SwipeCellKit.framework */,
 				CE4B2BE1218D627F009A94B2 /* SlideMenuControllerSwift.framework */,
 				CEE38EA72180BAE300BBD07F /* DropDown.framework */,
@@ -472,6 +480,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SlideMenuControllerSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DropDown.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwipeCellKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftEntryKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/QuickLayout.framework",
 			);
 			outputFileListPaths = (
 			);

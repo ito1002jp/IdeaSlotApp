@@ -2,3 +2,4 @@ github "dekatotoro/SlideMenuControllerSwift"
 github "SwipeCellKit/SwipeCellKit"
 github "realm/realm-cocoa"
 github "AssistoLab/DropDown"
+github "huri000/SwiftEntryKit" == 0.8.6
