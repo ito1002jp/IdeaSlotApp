@@ -85,18 +85,19 @@ class CategoryListViewController: UIViewController {
         let buttonTextStyle = EKProperty.LabelStyle(font: UIFont.systemFont(ofSize: 11.0), color: UIColor.AppColor.buttonTextColor)
         let buttonLabel = EKProperty.LabelContent(text: "Continue", style: buttonTextStyle)
         
-        let textField = EKProperty.TextFieldContent.init(placeholder: EKProperty.LabelContent(text: "Category", style:style), textStyle: textStyle)
+        var textField = EKProperty.TextFieldContent.init(placeholder: EKProperty.LabelContent(text: "Category", style:style), textStyle: textStyle)
+        
         let button = EKProperty.ButtonContent(label: buttonLabel, backgroundColor: UIColor.darkGray, highlightedBackgroundColor: UIColor.darkGray.withAlphaComponent(0.8)){
             SwiftEntryKit.dismiss()
         }
         
-        let contentView = EKFormMessageView(with: title, textFieldsContent: [textField], buttonContent: button)
+        let contentView = EKFormMessageView.init(with: title, textFieldsContent: [textField], buttonContent: button)
         attributes.lifecycleEvents.didAppear = {
             contentView.becomeFirstResponder(with: 0)
         }
+
         let action = {
-            print("form text",textField)
-            print("content view",contentView)
+            print("form text",textField.textContent)
 //            self.registCategory(categoryName: textField.textContent.description)
         }
         
