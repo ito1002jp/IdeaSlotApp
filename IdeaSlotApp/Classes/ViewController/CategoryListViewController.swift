@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 import SwiftEntryKit
-import QuickLayout
+//import QuickLayout
 
 class CategoryListViewController: UIViewController {
     
@@ -58,6 +58,57 @@ class CategoryListViewController: UIViewController {
         }
     }
     
+    //set up regist form()
+    func setFromView(){
+        var attributes = EKAttributes.float
+        attributes.position = .center
+        attributes.name = "Category Form"
+        attributes.windowLevel = .normal
+        attributes.displayDuration = .infinity
+        
+        //From Color
+        attributes.entryBackground = .color(color: .white)
+        attributes.screenBackground = .color(color: UIColor(white: 0.5, alpha: 0.5))
+        
+        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        
+        //Form Entry
+        let titleText = "Regist Category"
+        let titleFont = UIFont.systemFont(ofSize: 25)
+
+        let title = EKProperty.LabelContent(text: titleText, style: .init(font: titleFont, color: UIColor.AppColor.textColor))
+        let style = EKProperty.LabelStyle(font: UIFont.systemFont(ofSize: 20.0), color: UIColor.AppColor.textColor)
+        let textStyle = EKProperty.LabelStyle(font: UIFont.systemFont(ofSize: 20.0), color: UIColor.AppColor.textColor)
+        let buttonTextStyle = EKProperty.LabelStyle(font: UIFont.systemFont(ofSize: 11.0), color: UIColor.AppColor.buttonTextColor)
+        let buttonLabel = EKProperty.LabelContent(text: "Continue", style: buttonTextStyle)
+        
+        let textField = EKProperty.TextFieldContent.init(placeholder: EKProperty.LabelContent(text: "Category", style:style), textStyle: textStyle)
+        let button = EKProperty.ButtonContent(label: buttonLabel, backgroundColor: UIColor.darkGray, highlightedBackgroundColor: UIColor.darkGray.withAlphaComponent(0.8)){
+            SwiftEntryKit.dismiss()
+        }
+        
+        let contentView = EKFormMessageView(with: title, textFieldsContent: [textField], buttonContent: button)
+        attributes.lifecycleEvents.didAppear = {
+            contentView.becomeFirstResponder(with: 0)
+        }
+        let action = {
+            print("form text",textField)
+            print("content view",contentView)
+//            self.registCategory(categoryName: textField.textContent.description)
+        }
+        
+        attributes.entryInteraction.customTapActions.append(action)
+        
+        SwiftEntryKit.display(entry: contentView, using: attributes)
+    }
+    
+    //regist category
+    func registCategory(categoryName:String){
+        print("put form button :",categoryName)
+    }
 }
 
 /**
@@ -67,37 +118,6 @@ extension CategoryListViewController: UITableViewDelegate{
     //did select cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toWordList", sender: nil)
-    }
-    
-//    //can edit table cell
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    //edit action when swipe cell
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        let editAction: UITableViewRowAction = UITableViewRowAction(style: .default, title: "edit") { (action, index) -> Void in
-//            self.editForCell()
-//        };
-//        editAction.backgroundColor = UIColor.gray
-//        return [editAction]
-//    }
-    
-//    @available(iOS 11.0, *)
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let editAction = UIContextualAction.init(style: UIContextualAction.Style.normal, title: "edit", handler: { (action, view, completion) in
-//            //TODO: Edit
-//            self.editForCell()
-//        })
-//        editAction.backgroundColor = UIColor.gray
-//
-//        let config = UISwipeActionsConfiguration(actions: [editAction])
-//        config.performsFirstActionWithFullSwipe = false
-//        return config
-//    }
-    
-    func editForCell(){
-        print("edit for cell")
     }
 }
 
@@ -132,12 +152,16 @@ extension CategoryListViewController: UITableViewDataSource{
     }
 }
 
+/**
+ SwipeCellKit TableViewCellDalegate
+ **/
 extension CategoryListViewController:SwipeTableViewCellDelegate{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
         let editAction = SwipeAction(style: .default, title: "Edit") { action, indexPath in
             print("swipe cell")
+            self.setFromView()
         }
         editAction.transitionDelegate = ScaleTransition.default
         editAction.image = UIImage(named: "Edit")
